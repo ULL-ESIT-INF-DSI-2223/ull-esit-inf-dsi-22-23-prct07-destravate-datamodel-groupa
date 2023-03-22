@@ -1,4 +1,4 @@
-// Clase para representar un grupo
+/*// Clase para representar un grupo
 class Grupo {
   id: number;
   nombre: string;
@@ -23,3 +23,4 @@ class Grupo {
     [fecha: string]: number[]; // IDs de las rutas realizadas por el grupo en la fecha
   };
 }
+*/

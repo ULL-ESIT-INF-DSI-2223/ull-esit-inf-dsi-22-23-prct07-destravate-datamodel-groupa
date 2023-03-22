@@ -1,3 +1,4 @@
+/*
 // Clase para representar un reto
 class Reto {
   id: number;
@@ -7,3 +8,4 @@ class Reto {
   kmTotales: number;
   usuarios: number[]; // IDs de los usuarios que están realizando el reto
 }
+*/
