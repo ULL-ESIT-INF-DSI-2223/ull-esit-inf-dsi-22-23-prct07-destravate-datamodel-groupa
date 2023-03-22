@@ -1,7 +1,7 @@
 import "mocha";
 import { expect } from "chai";
 
-import { Ruta } from "../../src/Ruta/Ruta";
+import { Ruta } from "../src/Ruta/Ruta";
 
 const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
 
@@ -30,9 +30,9 @@ describe("Ruta class tests", () => {
     expect(ruta.desnivel).to.be.a("number");
     expect(ruta.desnivel).to.equal(1);
   });
-  it("Ruta debería tener un tipo de actividad", () => {
-    expect(ruta.tipo).to.be.a("string");
-    expect(ruta.tipo).to.equal("Ciclismo");
+  it("Ruta debería tener un actividad de actividad", () => {
+    expect(ruta.actividad).to.be.a("string");
+    expect(ruta.actividad).to.equal("Ciclismo");
   });
   it("Ruta debería tener una lista de usuarios", () => {
     expect(ruta.usuarios).to.be.a("array");
