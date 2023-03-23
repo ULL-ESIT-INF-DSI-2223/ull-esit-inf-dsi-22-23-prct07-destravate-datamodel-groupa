@@ -1,9 +1,10 @@
 import "mocha";
 import { expect } from "chai";
 
+import { Coordenada } from "../src/Ruta/Coordenada";
 import { Ruta } from "../src/Ruta/Ruta";
 
-const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
+const ruta = new Ruta("Ruta de prueba", 1, new Coordenada(0, 0), new Coordenada(1, 1), 1, 1, "Ciclismo");
 
 describe("Ruta class tests", () => {
   it("Ruta debería tener un nombre", () => {
@@ -15,12 +16,14 @@ describe("Ruta class tests", () => {
     expect(ruta.id).to.equal(1);
   });
   it("Ruta debería tener una coordenada de inicio", () => {
-    expect(ruta.inicio).to.be.a("array");
-    expect(ruta.inicio).to.deep.equal([0, 0]);
+    expect(ruta.inicio).to.be.an.instanceOf(Coordenada);
+    expect(ruta.inicio.latitud).to.equal(0);
+    expect(ruta.inicio.longitud).to.equal(0);
   });
   it("Ruta debería tener una coordenada de fin", () => {
-    expect(ruta.fin).to.be.a("array");
-    expect(ruta.fin).to.deep.equal([1, 1]);
+    expect(ruta.fin).to.be.an.instanceOf(Coordenada);
+    expect(ruta.fin.latitud).to.equal(1);
+    expect(ruta.fin.longitud).to.equal(1);
   });
   it("Ruta debería tener una longitud", () => {
     expect(ruta.longitud).to.be.a("number");
@@ -38,8 +41,20 @@ describe("Ruta class tests", () => {
     expect(ruta.usuarios).to.be.a("array");
     expect(ruta.usuarios).to.deep.equal([]);
   });
+  it("Ruta debería poder modificar su lista de usuarios", () => { 
+    ruta.addUsuario(1);
+    expect(ruta.usuarios).to.deep.equal([1]);
+  });
+  it("Ruta debería saber cuando un usuario ya está en su lista de usuarios", () => {
+    ruta.addUsuario(1);
+    expect(ruta.usuarios).to.deep.equal([1]);
+  });
   it("Ruta debería tener una calificación", () => {
     expect(ruta.calificacion).to.be.a("number");
     expect(ruta.calificacion).to.equal(0);
+  });
+  it("Ruta debería poder modificar su calificación", () => {
+    ruta.calificacion = 5;
+    expect(ruta.calificacion).to.equal(5);
   });
 });

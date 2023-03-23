@@ -1,9 +1,4 @@
-/**
- * Definición de tupla para representar una coordenada geográfica para las rutas.
- * La primera componente es la latitud y la segunda la longitud.
- * @type {Coordenada}
- */
-export type Coordenada = [number, number];
+import { Coordenada } from "./Coordenada";
 
 /**
  * Interfaz para representar la información básica de una ruta.

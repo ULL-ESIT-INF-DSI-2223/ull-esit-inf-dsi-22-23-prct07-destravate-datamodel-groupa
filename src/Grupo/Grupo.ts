@@ -1,3 +1,16 @@
+import { Estadistica } from "../Usuario/Estadistica";
+
+export interface GrupoInfo {
+  id: number;
+  nombre: string;
+  participantes: number[];
+  estadisticas: Estadistica;
+  ranking: number[];
+  rutasFavoritas: number[];
+}
+
+export class Grupo {}
+
 /*// Clase para representar un grupo
 class Grupo {
   id: number;

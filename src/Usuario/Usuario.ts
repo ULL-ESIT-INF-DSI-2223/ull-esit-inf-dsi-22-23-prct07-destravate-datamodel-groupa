@@ -1,15 +1,25 @@
 import { BasicUsuario } from "./BasicUsuario";
 import { TipoActividad } from "../Ruta/Ruta";
+import { Estadistica } from "./Estadistica";
+import { Registro } from "./Registro";
 
 /**
  * Interfaz para representar la información de un usuario para la aplicación.
  * @interface UsuarioInfo
  * @property {number[]} amigos - Lista de amigos del usuario.
  * @property {number[][]} grupos - Lista de grupos del usuario.
+ * @property {Estadistica} estadisticas - Estadísticas diarias, semanales y mensuales del usuario.
+ * @property {number[]} rutasFavoritas - Lista de rutas favoritas del usuario.
+ * @property {number[]} retos - Lista de retos activos del usuario.
+ * @property {Registro[]} historial - Lista de registros de entrenamientos del usuario.
  */
-interface UsuarioInfo {
+export interface UsuarioInfo {
   amigos: number[];
   grupos: number[][];
+  estadisticas: Estadistica;
+  rutasFavoritas: number[];
+  retos: number[];
+  historial: Registro[];
 }
 
 /**
@@ -26,29 +36,94 @@ interface UsuarioInfo {
 export class Usuario extends BasicUsuario implements UsuarioInfo {
   protected _amigos: number[] = [];
   protected _grupos: number[][] = [];
+  protected _estadisticas: Estadistica = new Estadistica();
+  protected _rutasFavoritas: number[] = [];
+  protected _retos: number[] = [];
+  protected _historial: Registro[] = [];
   constructor(nombre: string, id: number, actividad: TipoActividad) {
     super(nombre, id, actividad);
   }
 
+  /**
+   * Método para acceder a la lista de amigos del usuario.
+   * @returns {number[]} Lista de amigos del usuario.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
+   * usuario.amigos; // []
+   * ```
+   */
   get amigos(): number[] {
     return this._amigos;
   }
 
+  /**
+   * Método para acceder a la lista de grupos del usuario.
+   * @returns {number[][]} Lista de grupos del usuario.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
+   * usuario.grupos; // []
+   * ```
+   */
   get grupos(): number[][] {
     return this._grupos;
   }
-  /*estadisticas: {
-    semana: {
-      km: number;
-      desnivel: number;
-    };
-    mes: {
-      km: number;
-      desnivel: number;
-    };
-    año: {
-      km: number;
-      desnivel: number;
-    };
-  };*/
+
+  /**
+   * Método para acceder a las estadísticas del usuario.
+   * @returns {Estadistica} Estadísticas del usuario.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
+   * usuario.estadisticas.dia.km; // 0
+   * usuario.estadisticas.dia.desnivel; // 0
+   * usuario.estadisticas.semana.km; // 0
+   * usuario.estadisticas.semana.desnivel; // 0
+   * usuario.estadisticas.mes.km; // 0
+   * usuario.estadisticas.mes.desnivel; // 0
+   * ```
+   */
+  get estadisticas(): Estadistica {
+    return this._estadisticas;
+  }
+
+  /**
+   * Método para acceder a la lista de rutas favoritas del usuario.
+   * @returns {number[]} Lista de rutas favoritas del usuario.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
+   * usuario.rutasFavoritas; // []
+   * ```
+   */
+  get rutasFavoritas(): number[] {
+    return this._rutasFavoritas;
+  }
+
+  /**
+   * Método para acceder a la lista de retos activos del usuario.
+   * @returns {number[]} Lista de retos activos del usuario.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
+   * usuario.retos; // []
+   * ```
+   */
+  get retos(): number[] {
+    return this._retos;
+  }
+
+  /**
+   * Método para acceder a la lista de registros de entrenamientos del usuario.
+   * @returns {Registro[]} Lista de registros de entrenamientos del usuario.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
+   * usuario.historial; // []
+   * ```
+   */
+  get historial(): Registro[] {
+    return this._historial;
+  }
 }
