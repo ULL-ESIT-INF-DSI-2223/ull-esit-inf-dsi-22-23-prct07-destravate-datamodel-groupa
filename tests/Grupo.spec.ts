@@ -1,6 +1,5 @@
 import "mocha";
 import { expect } from "chai";
-
 import { Grupo } from "../src/Grupo/Grupo";
 
 describe("Grupo class tests", () => {
