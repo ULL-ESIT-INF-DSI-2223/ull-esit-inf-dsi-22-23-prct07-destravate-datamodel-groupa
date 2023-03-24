@@ -1,5 +1,3 @@
-
-
 /**
  * Interfaz para definir la información de un registro de entrenamiento.
  * @interface RegistroInfo
