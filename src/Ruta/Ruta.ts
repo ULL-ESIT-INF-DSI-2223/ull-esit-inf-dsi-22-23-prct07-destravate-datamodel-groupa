@@ -1,6 +1,7 @@
 import { Coordenada } from "./Coordenada";
 import { BasicRuta } from "./BasicRuta";
 
+
 /**
  * Definición de actividad para representar el actividad de actividad de una ruta.
  * @type {TipoActividad}
