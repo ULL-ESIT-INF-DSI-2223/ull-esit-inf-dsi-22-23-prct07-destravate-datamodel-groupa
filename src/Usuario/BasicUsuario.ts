@@ -1,5 +1,6 @@
 import { TipoActividad } from "../Ruta/Ruta";
 
+
 /**
  * Interfaz para representar la información básica de un usuario.
  * @interface BasicUsuarioInfo
