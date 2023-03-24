@@ -7,7 +7,7 @@
 export interface RegistroInfo {
   readonly fecha: string;
   rutas: number[];
-}
+  }
 
 /**
  * Clase para representar un registro de entrenamiento.
