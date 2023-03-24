@@ -1,5 +1,6 @@
 import { Coordenada } from "./Coordenada";
 
+
 /**
  * Interfaz para representar la información básica de una ruta.
  * @interface BasicRutaInfo
