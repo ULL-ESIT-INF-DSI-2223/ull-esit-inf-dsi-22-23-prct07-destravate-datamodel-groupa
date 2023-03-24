@@ -27,7 +27,7 @@ export interface UsuarioInfo {
  * @class Usuario
  * @extends {BasicUsuario}
  * @implements {UsuarioInfo}
- * @param {string} nombre - Nombre del usuario.
+ * @param {string} nombre - Nombre del usuario. 
  * @param {number} id - Identificador del usuario.
  * @param {TipoActividad} actividad - actividad de actividad del usuario.
  * @param {number[]} amigos - Lista de amigos del usuario.
