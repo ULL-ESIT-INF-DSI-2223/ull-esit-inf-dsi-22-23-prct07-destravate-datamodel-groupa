@@ -2,9 +2,9 @@ import "mocha";
 import { expect } from "chai";
 
 import { Usuario } from "../src/Usuario/Usuario";
-import { Estadistica } from "../src/Usuario/Estadistica";
+import { EstadisticaUsuario } from "../src/Estadistica/EstadisticaUsuario";
 
-const usuario = new Usuario("Iluzio", 0, "Ciclismo");
+const usuario = new Usuario("Iluzio", "Ciclismo");
 
 describe("Usuario class tests", () => {
   it("Usuario debería tener un nombre", () => {
@@ -28,7 +28,7 @@ describe("Usuario class tests", () => {
     expect(usuario.grupos).to.be.empty;
   });
   it("Usuario debería tener unas estadísticas", () => {
-    expect(usuario.estadisticas).to.be.an.instanceOf(Estadistica);
+    expect(usuario.estadisticas).to.be.an.instanceOf(EstadisticaUsuario);
     expect(usuario.estadisticas.dia.km).to.equal(0);
     expect(usuario.estadisticas.dia.desnivel).to.equal(0);
     expect(usuario.estadisticas.semana.km).to.equal(0);

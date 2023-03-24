@@ -59,14 +59,13 @@ export class Ruta extends BasicRuta implements RutaInfo {
   private _calificacion: number;
   constructor(
     readonly nombre: string,
-    id: number,
     inicio: Coordenada,
     fin: Coordenada,
     longitud: number,
     readonly desnivel: number,
     readonly actividad: TipoActividad
   ) {
-    super(id, inicio, fin, longitud);
+    super(inicio, fin, longitud);
     this._usuarios = [];
     this._calificacion = 0;
   }

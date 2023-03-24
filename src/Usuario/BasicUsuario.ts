@@ -1,5 +1,5 @@
+import { IdGenerator } from "../IdGenerator";
 import { TipoActividad } from "../Ruta/Ruta";
-
 
 /**
  * Interfaz para representar la información básica de un usuario.
@@ -18,17 +18,22 @@ export interface BasicUsuarioInfo {
  * Clase para representar la información básica de un usuario.
  * @class BasicUsuario
  * @implements {BasicUsuarioInfo}
+ * @abstract
+ * @param {IdGenerator} idGenerator - Generador de identificadores.
  * @param {string} nombre - Nombre del usuario.
  * @param {number} id - Identificador del usuario.
  * @param {TipoActividad} actividad - actividad de actividad del usuario.
  */
 export abstract class BasicUsuario implements BasicUsuarioInfo {
+  protected static idGenerator = new IdGenerator();
+
   protected _actividad: TipoActividad;
+  public readonly id: number;
   constructor(
     readonly nombre: string,
-    readonly id: number,
     actividad: TipoActividad
   ) {
+    this.id = BasicUsuario.idGenerator.generate();
     this._actividad = actividad;
   }
 

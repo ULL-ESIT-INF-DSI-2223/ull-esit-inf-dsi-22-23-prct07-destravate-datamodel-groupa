@@ -4,7 +4,7 @@ import { expect } from "chai";
 import { Coordenada } from "../src/Ruta/Coordenada";
 import { Ruta } from "../src/Ruta/Ruta";
 
-const ruta = new Ruta("Ruta de prueba", 1, new Coordenada(0, 0), new Coordenada(1, 1), 1, 1, "Ciclismo");
+const ruta = new Ruta("Ruta de prueba", new Coordenada(0, 0), new Coordenada(1, 1), 1, 1, "Ciclismo");
 
 describe("Ruta class tests", () => {
   it("Ruta debería tener un nombre", () => {
@@ -13,7 +13,7 @@ describe("Ruta class tests", () => {
   });
   it("Ruta debería tener un identificador", () => {
     expect(ruta.id).to.be.a("number");
-    expect(ruta.id).to.equal(1);
+    expect(ruta.id).to.equal(0);
   });
   it("Ruta debería tener una coordenada de inicio", () => {
     expect(ruta.inicio).to.be.an.instanceOf(Coordenada);

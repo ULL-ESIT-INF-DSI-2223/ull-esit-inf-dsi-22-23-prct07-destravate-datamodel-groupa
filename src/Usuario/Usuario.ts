@@ -1,14 +1,14 @@
 import { BasicUsuario } from "./BasicUsuario";
 import { TipoActividad } from "../Ruta/Ruta";
-import { Estadistica } from "./Estadistica";
-import { Registro } from "./Registro";
+import { EstadisticaUsuario } from "../Estadistica/EstadisticaUsuario";
+import { Registro } from "../Registro";
 
 /**
  * Interfaz para representar la información de un usuario para la aplicación.
  * @interface UsuarioInfo
  * @property {number[]} amigos - Lista de amigos del usuario.
  * @property {number[][]} grupos - Lista de grupos del usuario.
- * @property {Estadistica} estadisticas - Estadísticas diarias, semanales y mensuales del usuario.
+ * @property {EstadisticaUsuario} estadisticas - Estadísticas diarias, semanales y mensuales del usuario.
  * @property {number[]} rutasFavoritas - Lista de rutas favoritas del usuario.
  * @property {number[]} retos - Lista de retos activos del usuario.
  * @property {Registro[]} historial - Lista de registros de entrenamientos del usuario.
@@ -16,7 +16,7 @@ import { Registro } from "./Registro";
 export interface UsuarioInfo {
   amigos: number[];
   grupos: number[][];
-  estadisticas: Estadistica;
+  estadisticas: EstadisticaUsuario;
   rutasFavoritas: number[];
   retos: number[];
   historial: Registro[];
@@ -36,12 +36,13 @@ export interface UsuarioInfo {
 export class Usuario extends BasicUsuario implements UsuarioInfo {
   protected _amigos: number[] = [];
   protected _grupos: number[][] = [];
-  protected _estadisticas: Estadistica = new Estadistica();
+  protected _estadisticas: EstadisticaUsuario = new EstadisticaUsuario();
   protected _rutasFavoritas: number[] = [];
   protected _retos: number[] = [];
   protected _historial: Registro[] = [];
-  constructor(nombre: string, id: number, actividad: TipoActividad) {
-    super(nombre, id, actividad);
+
+  constructor(nombre: string, actividad: TipoActividad) {
+    super(nombre, actividad);
   }
 
   /**
@@ -72,7 +73,7 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
 
   /**
    * Método para acceder a las estadísticas del usuario.
-   * @returns {Estadistica} Estadísticas del usuario.
+   * @returns {EstadisticaUsuario} Estadísticas del usuario.
    * @example
    * ```typescript
    * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
@@ -84,7 +85,7 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
    * usuario.estadisticas.mes.desnivel; // 0
    * ```
    */
-  get estadisticas(): Estadistica {
+  get estadisticas(): EstadisticaUsuario {
     return this._estadisticas;
   }
 

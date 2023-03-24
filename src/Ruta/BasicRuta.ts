@@ -1,5 +1,5 @@
+import { IdGenerator } from "../IdGenerator";
 import { Coordenada } from "./Coordenada";
-
 
 /**
  * Interfaz para representar la información básica de una ruta.
@@ -26,10 +26,14 @@ export interface BasicRutaInfo {
  * @param {number} longitud - Longitud total de la ruta en kilómetros.
  */
 export class BasicRuta implements BasicRutaInfo {
+  private static idGenerator = new IdGenerator();
+
+  public readonly id: number;
   constructor(
-    readonly id: number,
     readonly inicio: Coordenada,
     readonly fin: Coordenada,
     readonly longitud: number
-  ) {}
+  ) {
+    this.id = BasicRuta.idGenerator.generate();
+  }
 }
