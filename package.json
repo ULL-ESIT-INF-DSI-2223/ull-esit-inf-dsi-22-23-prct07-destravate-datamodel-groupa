@@ -12,8 +12,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@types/inquirer": "^7.3.3",
+    "inquirer": "^7.3.3",
+    "lowdb": "^1.0.0",
+    "press-any-key": "^0.1.1",
+    "prompt-sync": "^4.2.0",
+    "readline-sync": "^1.4.10"
+  },
   "devDependencies": {
     "@types/chai": "^4.3.4",
+    "@types/lowdb": "^1.0.9",
     "@types/mocha": "^10.0.1",
     "@types/prompt-sync": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
@@ -29,10 +38,5 @@
     "tsc-watch": "^6.0.0",
     "typedoc": "^0.23.28",
     "typescript": "^4.9.5"
-  },
-  "dependencies": {
-    "inquirer": "^9.1.5",
-    "prompt-sync": "^4.2.0",
-    "readline-sync": "^1.4.10"
   }
 }

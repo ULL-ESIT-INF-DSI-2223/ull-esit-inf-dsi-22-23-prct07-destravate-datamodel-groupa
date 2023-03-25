@@ -15,7 +15,7 @@ export type TipoActividad = "Ciclismo" | "Running";
  * @interface RutaInfo
  * @property {string} nombre - Nombre de la ruta.
  * @property {number} desnivel - Desnivel medio de la ruta en metros.
- * @property {number[]} usuarios - Lista de usuarios que han realizado la ruta.
+ * @property {Set<number>} usuarios - Lista de usuarios que han realizado la ruta.
  * @method addUsuario - Añade un usuario a la lista de usuarios que han realizado la ruta.
  * @property {TipoActividad} actividad - actividad de actividad de la ruta.
  * @property {number} calificacion - Calificación de la ruta en una escala del 1 al 5.
@@ -23,7 +23,7 @@ export type TipoActividad = "Ciclismo" | "Running";
 export interface RutaInfo {
   nombre: string;
   desnivel: number;
-  usuarios: number[];
+  usuarios: Set<number>;
   addUsuario(id: number): void;
   actividad: TipoActividad;
   calificacion: number;
@@ -36,7 +36,7 @@ export interface RutaInfo {
  * @extends {BasicRuta}
  * @property {string} nombre - Nombre de la ruta.
  * @property {number} desnivel - Desnivel medio de la ruta en metros.
- * @property {number[]} usuarios - Lista de usuarios que han realizado la ruta.
+ * @property { Set<number>;} usuarios - Lista de usuarios que han realizado la ruta.
  * @method addUsuario - Añade un usuario a la lista de usuarios que han realizado la ruta.
  * @property {TipoActividad} actividad - actividad de actividad de la ruta.
  * @property {number} calificacion - Calificación de la ruta en una escala del 1 al 5.
@@ -55,7 +55,7 @@ export interface RutaInfo {
  * ```
  */
 export class Ruta extends BasicRuta implements RutaInfo {
-  private _usuarios: number[];
+  private _usuarios:  Set<number>;
   private _calificacion: number;
   constructor(
     readonly nombre: string,
@@ -66,20 +66,20 @@ export class Ruta extends BasicRuta implements RutaInfo {
     readonly actividad: TipoActividad
   ) {
     super(inicio, fin, longitud);
-    this._usuarios = [];
+    this._usuarios = new Set();
     this._calificacion = 0;
   }
 
   /**
    * Método para acceder a la lista de usuarios que han realizado la ruta.
-   * @returns {number[]} Lista de usuarios que han realizado la ruta.
+   * @returns { Set<number>} Lista de usuarios que han realizado la ruta.
    * @example
    * ```typescript
    * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
    * ruta.usuarios; // []
    * ```
    */
-  get usuarios(): number[] {
+  get usuarios(): Set<number> {
     return this._usuarios;
   }
 
@@ -95,8 +95,8 @@ export class Ruta extends BasicRuta implements RutaInfo {
    * ```
    */
   addUsuario(id: number): void {
-    if (this._usuarios.includes(id)) return;
-    this._usuarios.push(id);
+    if (this._usuarios.has(id)) return
+    this._usuarios.add(id);
   }
 
   /**

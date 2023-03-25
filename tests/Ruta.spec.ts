@@ -38,16 +38,17 @@ describe("Ruta class tests", () => {
     expect(ruta.actividad).to.equal("Ciclismo");
   });
   it("Ruta debería tener una lista de usuarios", () => {
-    expect(ruta.usuarios).to.be.a("array");
-    expect(ruta.usuarios).to.deep.equal([]);
+    expect(ruta.usuarios).to.be.a("set");
+    expect(ruta.usuarios.size).to.be.equal(0);
   });
   it("Ruta debería poder modificar su lista de usuarios", () => { 
     ruta.addUsuario(1);
-    expect(ruta.usuarios).to.deep.equal([1]);
+    expect(ruta.usuarios.has(1)).to.be.true;
   });
   it("Ruta debería saber cuando un usuario ya está en su lista de usuarios", () => {
     ruta.addUsuario(1);
-    expect(ruta.usuarios).to.deep.equal([1]);
+    expect(ruta.usuarios.has(1)).to.be.true;
+    expect(ruta.usuarios.size).to.be.equal(1);
   });
   it("Ruta debería tener una calificación", () => {
     expect(ruta.calificacion).to.be.a("number");

@@ -21,7 +21,15 @@ export interface RetoInfo {
 }
 
 /**
- * 
+ * Clase para representar un reto para la aplicación.
+ * @class Reto
+ * @implements RetoInfo
+ * @property {number} id - Identificador, único, del reto.
+ * @property {string} nombre - Nombre del reto.
+ * @property {number[]} rutas - Rutas que forman parte del reto.
+ * @property {TipoActividad} tipo - Tipo de actividad del reto, en bicicleta o corriendo.
+ * @property {number} km - Kilómetros totales del reto.
+ * @property {number[]} usuarios - Usuarios que están realizando el reto.
  */
 export class Reto implements RetoInfo {
   private static idGenerator = new IdGenerator();
@@ -36,14 +44,26 @@ export class Reto implements RetoInfo {
     this._km = 0;
   }
 
+  /**
+   * Devuelve las rutas que forman parte del reto.
+   * @returns {number[]} - Rutas que forman parte del reto.
+   */
   get rutas(): number[] {
     return this._rutas;
   }
 
+  /**
+   * Devuelve el número de usuarios que realizan el reto.
+   * @returns {number} - Número de usuarios que realizan el reto.
+   */
   get usuarios(): number[] {
     return this._usuarios;
   }
 
+  /**
+   * Devuelve los kilómetros totales del reto.
+   * @returns {number} - Kilómetros totales del reto.
+   */
   get km(): number {
     return this._km;
   }
