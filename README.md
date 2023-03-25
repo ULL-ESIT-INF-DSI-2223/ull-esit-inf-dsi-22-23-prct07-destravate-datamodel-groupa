@@ -6,8 +6,6 @@
 
   Podríamos decir que otro objetivo de la práctica es trabajar en grupo de manera conjunta de tal modo que todos aportemos nuestro conocimiento para cumplir con el objetivo, enunciado y requisitos, todo esto gracias a la comunicación adecuada, al trabajo en grupo y también a herramientas muy útiles que vimos en prácticas anteriores como LiveShare para poder estar todos los componentes del grupo trabjando en el código a la vez.
 
-
-
 ## Desarrollo 
 
   En la actividad se desarrollarán 4 clases principales, que serán las siguientes: `Ruta`, `Usuario`, `Grupo` y `Reto`. Además, se utilizarán los módulos `Inquirer.js` y `Lowdb` para la gestión de datos. Para poder implementar estos módulos, se realizará una clase `Gestor` que se encargará de gestionar la información de los usuarios, grupos, retos y rutas.
@@ -42,15 +40,6 @@ Dentro del directorio src/Ruta tenemos:
 
 ```TypeScript
 import { Coordenada } from "./Coordenada";
-
-/**
- * Interfaz para representar la información básica de una ruta.
- * @interface BasicRutaInfo
- * @property {number} id - Identificador, único, de la ruta.
- * @property {Coordenada} inicio - Coordenada de inicio de la ruta.
- * @property {Coordenada} fin - Coordenada de fin de la ruta.
- * @property {number} longitud - Longitud total de la ruta en kilómetros.
- */
 export interface BasicRutaInfo {
   id: number;
   inicio: Coordenada;
@@ -58,15 +47,6 @@ export interface BasicRutaInfo {
   longitud: number;
 }
 
-/**
- * Clase para representar la información básica de una ruta.
- * @class BasicRuta
- * @implements {BasicRutaInfo}
- * @param {number} id - Identificador, único, de la ruta.
- * @param {Coordenada} inicio - Coordenada de inicio de la ruta.
- * @param {Coordenada} fin - Coordenada de fin de la ruta.
- * @param {number} longitud - Longitud total de la ruta en kilómetros.
- */
 export class BasicRuta implements BasicRutaInfo {
   constructor(
     readonly id: number,
@@ -82,13 +62,7 @@ Se define una interfaz y una clase relacionadas con la información de una ruta.
 - ```Coordenada.ts```:
 
 ```TypeScript
-/**
- * Definición de clase para representar una coordenada geográfica para las rutas.
- * La primera componente es la latitud y la segunda la longitud.
- * @class Coordenada
- * @property {number} latitud - Latitud de la coordenada.
- * @property {number} longitud - Longitud de la coordenada.
- */
+
 export class Coordenada {
   constructor(readonly latitud: number, readonly longitud: number) {}
 }
@@ -101,25 +75,8 @@ Se define una clase llamada ```Coordenada``` que representa una coordenada geogr
 ```TypeScript
 import { Coordenada } from "./Coordenada";
 import { BasicRuta } from "./BasicRuta";
-
-/**
- * Definición de actividad para representar el actividad de actividad de una ruta.
- * @type {TipoActividad}
- * @property {string} Ciclismo - Actividad de ciclismo.
- * @property {string} Running - Actividad de running.
- */
 export type TipoActividad = "Ciclismo" | "Running";
 
-/**
- * Interfaz para representar la información de una ruta.
- * @interface RutaInfo
- * @property {string} nombre - Nombre de la ruta.
- * @property {number} desnivel - Desnivel medio de la ruta en metros.
- * @property {number[]} usuarios - Lista de usuarios que han realizado la ruta.
- * @method addUsuario - Añade un usuario a la lista de usuarios que han realizado la ruta.
- * @property {TipoActividad} actividad - actividad de actividad de la ruta.
- * @property {number} calificacion - Calificación de la ruta en una escala del 1 al 5.
- */
 export interface RutaInfo {
   nombre: string;
   desnivel: number;
@@ -129,31 +86,6 @@ export interface RutaInfo {
   calificacion: number;
 }
 
-/**
- * Clase para representar una ruta.
- * @class Ruta
- * @implements {RutaInfo}
- * @extends {BasicRuta}
- * @property {string} nombre - Nombre de la ruta.
- * @property {number} desnivel - Desnivel medio de la ruta en metros.
- * @property {number[]} usuarios - Lista de usuarios que han realizado la ruta.
- * @method addUsuario - Añade un usuario a la lista de usuarios que han realizado la ruta.
- * @property {TipoActividad} actividad - actividad de actividad de la ruta.
- * @property {number} calificacion - Calificación de la ruta en una escala del 1 al 5.
- * @example
- * ```typescript
- * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
- * ruta.nombre; // "Ruta de prueba"
- * ruta.id; // 1
- * ruta.inicio; // [0, 0]
- * ruta.fin; // [1, 1]
- * ruta.longitud; // 1
- * ruta.desnivel; // 1
- * ruta.actividad; // "Ciclismo"
- * ruta.usuarios; // []
- * ruta.calificacion; // 0
- * ```
- */
 export class Ruta extends BasicRuta implements RutaInfo {
   private _usuarios: number[];
   private _calificacion: number;
@@ -171,59 +103,19 @@ export class Ruta extends BasicRuta implements RutaInfo {
     this._calificacion = 0;
   }
 
-  /**
-   * Método para acceder a la lista de usuarios que han realizado la ruta.
-   * @returns {number[]} Lista de usuarios que han realizado la ruta.
-   * @example
-   * ```typescript
-   * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
-   * ruta.usuarios; // []
-   * ```
-   */
   get usuarios(): number[] {
     return this._usuarios;
   }
 
-  /**
-   * Método para añadir un usuario a la lista de usuarios que han realizado la ruta.
-   * @param {number} id - Identificador del usuario.
-   * @returns {void}
-   * @example
-   * ```typescript
-   * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
-   * ruta.addUsuario(1);
-   * ruta.usuarios; // [1]
-   * ```
-   */
   addUsuario(id: number): void {
     if (this._usuarios.includes(id)) return;
     this._usuarios.push(id);
   }
 
-  /**
-   * Método para acceder a la calificación de la ruta.
-   * @returns {number} Calificación de la ruta en una escala del 1 al 5.
-   * @example
-   * ```typescript
-   * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
-   * ruta.calificacion; // 0
-   * ```
-   */
   get calificacion(): number {
     return this._calificacion;
   }
 
-  /**
-   * Método para modificar la calificación de la ruta.
-   * @param {number} calificacion - Calificación de la ruta en una escala del 1 al 5.
-   * @returns {void}
-   * @example
-   * ```typescript
-   * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
-   * ruta.calificacion = 3;
-   * ruta.calificacion; // 3
-   * ```
-   */
   set calificacion(calificacion: number) {
     this._calificacion = calificacion;
   }
@@ -269,27 +161,12 @@ Dentro del directorio src/Usuario tenemos:
 ```TypeScript
 import { TipoActividad } from "../Ruta/Ruta";
 
-/**
- * Interfaz para representar la información básica de un usuario.
- * @interface BasicUsuarioInfo
- * @property {string} nombre - Nombre del usuario.
- * @property {number} id - Identificador del usuario.
- * @property {TipoActividad} actividad - actividad de actividad del usuario.
- */
 export interface BasicUsuarioInfo {
   nombre: string;
   id: number;
   actividad: TipoActividad;
 }
 
-/**
- * Clase para representar la información básica de un usuario.
- * @class BasicUsuario
- * @implements {BasicUsuarioInfo}
- * @param {string} nombre - Nombre del usuario.
- * @param {number} id - Identificador del usuario.
- * @param {TipoActividad} actividad - actividad de actividad del usuario.
- */
 export abstract class BasicUsuario implements BasicUsuarioInfo {
   protected _actividad: TipoActividad;
   constructor(
@@ -300,15 +177,6 @@ export abstract class BasicUsuario implements BasicUsuarioInfo {
     this._actividad = actividad;
   }
 
-  /**
-   * Método para acceder a la actividad del usuario.
-   * @returns {TipoActividad} Actividad del usuario.
-   * @example
-   * ```typescript
-   * const usuario = new BasicUsuario("Usuario de prueba", 1, "Ciclismo");
-   * usuario.actividad; // "Ciclismo"
-   * ```
-   */
   get actividad(): TipoActividad {
     return this._actividad;
   }
@@ -329,16 +197,6 @@ import { TipoActividad } from "../Ruta/Ruta";
 import { Estadistica } from "./Estadistica";
 import { Registro } from "./Registro";
 
-/**
- * Interfaz para representar la información de un usuario para la aplicación.
- * @interface UsuarioInfo
- * @property {number[]} amigos - Lista de amigos del usuario.
- * @property {number[][]} grupos - Lista de grupos del usuario.
- * @property {Estadistica} estadisticas - Estadísticas diarias, semanales y mensuales del usuario.
- * @property {number[]} rutasFavoritas - Lista de rutas favoritas del usuario.
- * @property {number[]} retos - Lista de retos activos del usuario.
- * @property {Registro[]} historial - Lista de registros de entrenamientos del usuario.
- */
 export interface UsuarioInfo {
   amigos: number[];
   grupos: number[][];
@@ -348,17 +206,6 @@ export interface UsuarioInfo {
   historial: Registro[];
 }
 
-/**
- * Clase para representar la información de un usuario para la aplicación.
- * @class Usuario
- * @extends {BasicUsuario}
- * @implements {UsuarioInfo}
- * @param {string} nombre - Nombre del usuario.
- * @param {number} id - Identificador del usuario.
- * @param {TipoActividad} actividad - actividad de actividad del usuario.
- * @param {number[]} amigos - Lista de amigos del usuario.
- * @param {number[][]} grupos - Lista de grupos del usuario.
- */
 export class Usuario extends BasicUsuario implements UsuarioInfo {
   protected _amigos: number[] = [];
   protected _grupos: number[][] = [];
@@ -370,85 +217,26 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
     super(nombre, id, actividad);
   }
 
-  /**
-   * Método para acceder a la lista de amigos del usuario.
-   * @returns {number[]} Lista de amigos del usuario.
-   * @example
-   * ```typescript
-   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
-   * usuario.amigos; // []
-   * ```
-   */
   get amigos(): number[] {
     return this._amigos;
   }
 
-  /**
-   * Método para acceder a la lista de grupos del usuario.
-   * @returns {number[][]} Lista de grupos del usuario.
-   * @example
-   * ```typescript
-   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
-   * usuario.grupos; // []
-   * ```
-   */
   get grupos(): number[][] {
     return this._grupos;
   }
 
-  /**
-   * Método para acceder a las estadísticas del usuario.
-   * @returns {Estadistica} Estadísticas del usuario.
-   * @example
-   * ```typescript
-   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
-   * usuario.estadisticas.dia.km; // 0
-   * usuario.estadisticas.dia.desnivel; // 0
-   * usuario.estadisticas.semana.km; // 0
-   * usuario.estadisticas.semana.desnivel; // 0
-   * usuario.estadisticas.mes.km; // 0
-   * usuario.estadisticas.mes.desnivel; // 0
-   * ```
-   */
   get estadisticas(): Estadistica {
     return this._estadisticas;
   }
 
-  /**
-   * Método para acceder a la lista de rutas favoritas del usuario.
-   * @returns {number[]} Lista de rutas favoritas del usuario.
-   * @example
-   * ```typescript
-   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
-   * usuario.rutasFavoritas; // []
-   * ```
-   */
   get rutasFavoritas(): number[] {
     return this._rutasFavoritas;
   }
 
-  /**
-   * Método para acceder a la lista de retos activos del usuario.
-   * @returns {number[]} Lista de retos activos del usuario.
-   * @example
-   * ```typescript
-   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
-   * usuario.retos; // []
-   * ```
-   */
   get retos(): number[] {
     return this._retos;
   }
 
-  /**
-   * Método para acceder a la lista de registros de entrenamientos del usuario.
-   * @returns {Registro[]} Lista de registros de entrenamientos del usuario.
-   * @example
-   * ```typescript
-   * const usuario = new Usuario("Usuario de prueba", 1, "Ciclismo");
-   * usuario.historial; // []
-   * ```
-   */
   get historial(): Registro[] {
     return this._historial;
   }
@@ -487,17 +275,6 @@ import { IdGenerator } from "../IdGenerator";
 import { EstadisticaGrupo } from "../Estadistica/EstadisticaGrupo";
 import { Registro } from "../Registro";
 
-/**
- * Interfaz para representar la información básica de un grupo.
- * @interface GrupoInfo
- * @property {number} id - Identificador, único, del grupo.
- * @property {string} nombre - Nombre del grupo.
- * @property {number[]} participantes - IDs de los usuarios del grupo.
- * @property {EstadisticaGrupo} estadisticas - Estadísticas del grupo.
- * @property {number[]} ranking - IDs de los usuarios ordenados por km totales o desnivel acumulado.
- * @property {number[]} rutasFavoritas - IDs de las rutas favoritas del grupo.
- * @property {Registro[]} historial - Lista de registros de entrenamientos del grupo.
- */
 export interface GrupoInfo {
   id: number;
   nombre: string;
@@ -508,18 +285,6 @@ export interface GrupoInfo {
   historial: Registro[];
 }
 
-/**
- * Clase para representar la información de un grupo.
- * @class Grupo
- * @implements GrupoInfo
- * @property {number} id - Identificador, único, del grupo.
- * @property {string} nombre - Nombre del grupo.
- * @property {number[]} participantes - IDs de los usuarios del grupo.
- * @property {EstadisticaGrupo} estadisticas - Estadísticas del grupo.
- * @property {number[]} ranking - IDs de los usuarios ordenados por km totales o desnivel acumulado.
- * @property {number[]} rutasFavoritas - IDs de las rutas favoritas del grupo.
- * @property {Registro[]} historial - Lista de registros de entrenamientos del grupo.
- */
 export class Grupo implements GrupoInfo {
   private static idGenerator = new IdGenerator();
   
@@ -537,43 +302,23 @@ export class Grupo implements GrupoInfo {
     this.id = Grupo.idGenerator.generate();
     this._participantes = participantes;
   }
-  
-  /**
-   * Muestra los participantes del grupo.
-   * @returns {number[]} - Lista de IDs de los participantes.
-   */
+
   get participantes(): number[] {
     return this._participantes;
   }
 
-  /**
-   * Muestra las estadísticas del grupo.
-   * @returns {EstadisticaGrupo} - Estadísticas del grupo.
-   */
   get estadisticas(): EstadisticaGrupo {
     return this._estadisticas;
   }
 
-  /**
-   * Muestra el ranking del grupo.
-   * @returns {number[]} - Lista de IDs de los usuarios ordenados por km totales o desnivel acumulado.
-   */
   get ranking(): number[] {
     return this._ranking;
   }
 
-  /**
-   * Muestra las rutas favoritas del grupo.
-   * @returns {number[]} - Lista de IDs de las rutas favoritas del grupo.
-   */
   get rutasFavoritas(): number[] {
     return this._rutasFavoritas;
   }
 
-  /**
-   * Muestra el historial del grupo.
-   * @returns {Registro[]} - Lista de registros de entrenamientos del grupo.
-   */
   get historial(): Registro[] {
     return this._historial;
   }
@@ -595,13 +340,7 @@ En el directortio src/Estadistica tenemos:
 - ```Entrenamiento.ts```:
 
 ```TypeScript
-/**
- * Definición de la clase para representar un entrenamiento de un usuario en la aplicación.
- * Puede ser diario, semanal o mensual.
- * @class Entrenamiento
- * @property {number} km - Kilómetros recorridos en el entrenamiento, por defecto 0.
- * @property {number} desnivel - Desnivel acumulado en el entrenamiento, por defecto 0.
- */
+
 export class Entrenamiento {
   constructor(public km: number = 0, public desnivel: number = 0) {}
 };
@@ -614,12 +353,6 @@ Aquí una clase llamada ```Entrenamiento``` que representa un entrenamiento de u
 ```TypeScript
 import { Entrenamiento } from './Entrenamiento';
 
-/**
- * Definición de la interfaz para representar las estadísticas de un usuario en la aplicación.
- * @interface Estadistica
- * @property {Entrenamiento} semana - Registro de km recorridos y desnivel acumulado en la semana por el usuario.
- * @property {Entrenamiento} mes - Registro de km recorridos y desnivel acumulado en el mes por el usuario.
- */
 export interface Estadistica {
   semana: Entrenamiento;
   mes: Entrenamiento;
@@ -634,14 +367,6 @@ Aquí tenemos la interfaz llamada ```Estadistica```. La interfaz tiene dos propi
 import { Entrenamiento } from './Entrenamiento';
 import { Estadistica } from './Estadistica';
 
-/**
- * Definición de la clase para representar las estadísticas de un grupo en la aplicación.
- * @class EstadisticaGrupo
- * @extends {Estadistica}
- * @property {Entrenamiento} semana - Registro de km recorridos y desnivel acumulado en la semana por el grupo.
- * @property {Entrenamiento} mes - Registro de km recorridos y desnivel acumulado en el mes por el grupo.
- * @property {Entrenamiento} año - Registro de km recorridos y desnivel acumulado en el año por el grupo.
- */
 export class EstadisticaGrupo implements Estadistica{
   constructor(
     public semana: Entrenamiento = new Entrenamiento(),
@@ -659,14 +384,6 @@ Definimos la clase ```EstadisticaGrupo``` que implementa la interfaz ```Estadist
 import { Entrenamiento } from './Entrenamiento';
 import { Estadistica } from './Estadistica';
 
-/**
- * Definición de la clase para representar las estadísticas de un usuario en la aplicación.
- * @class EstadisticaUsuario
- * @extends {Estadistica}
- * @property {Entrenamiento} dia - Registro de km recorridos y desnivel acumulado en el día.
- * @property {Entrenamiento} semana - Registro de km recorridos y desnivel acumulado en la semana.
- * @property {Entrenamiento} mes - Registro de km recorridos y desnivel acumulado en el mes.
- */
 export class EstadisticaUsuario implements Estadistica{
   constructor(
     public dia: Entrenamiento = new Entrenamiento(),
@@ -705,16 +422,6 @@ En el directorio src/Reto tenemos:
 import { TipoActividad } from "../Ruta/Ruta";
 import { IdGenerator } from "../IdGenerator";
 
-/**
- * Interfaz para representar la información de un reto para la aplicación.
- * @interface RetoInfo
- * @property {number} id - Identificador, único, del reto.
- * @property {string} nombre - Nombre del reto.
- * @property {number[]} rutas - Rutas que forman parte del reto.
- * @property {TipoActividad} tipo - Tipo de actividad del reto, en bicicleta o corriendo.
- * @property {number} km - Kilómetros totales del reto.
- * @property {number[]} usuarios - Usuarios que están realizando el reto.
- */
 export interface RetoInfo {
   id: number;
   nombre: string;
@@ -724,17 +431,6 @@ export interface RetoInfo {
   usuarios: number[];
 }
 
-/**
- * Clase para representar un reto para la aplicación.
- * @class Reto
- * @implements RetoInfo
- * @property {number} id - Identificador, único, del reto.
- * @property {string} nombre - Nombre del reto.
- * @property {number[]} rutas - Rutas que forman parte del reto.
- * @property {TipoActividad} tipo - Tipo de actividad del reto, en bicicleta o corriendo.
- * @property {number} km - Kilómetros totales del reto.
- * @property {number[]} usuarios - Usuarios que están realizando el reto.
- */
 export class Reto implements RetoInfo {
   private static idGenerator = new IdGenerator();
   public readonly id: number;
@@ -748,26 +444,14 @@ export class Reto implements RetoInfo {
     this._km = 0;
   }
 
-  /**
-   * Devuelve las rutas que forman parte del reto.
-   * @returns {number[]} - Rutas que forman parte del reto.
-   */
   get rutas(): number[] {
     return this._rutas;
   }
 
-  /**
-   * Devuelve el número de usuarios que realizan el reto.
-   * @returns {number} - Número de usuarios que realizan el reto.
-   */
   get usuarios(): number[] {
     return this._usuarios;
   }
 
-  /**
-   * Devuelve los kilómetros totales del reto.
-   * @returns {number} - Kilómetros totales del reto.
-   */
   get km(): number {
     return this._km;
   }
@@ -783,55 +467,22 @@ La clase ```Reto``` implementa la interfaz ```RetoInfo``` y agrega algunas propi
 - ```Registro.ts```:
 
 ```TypeScript
-/**
- * Interfaz para definir la información de un registro de entrenamiento.
- * @interface RegistroInfo
- * @property {string} fecha - Fecha del registro.
- * @property {number[]} rutas - Lista de rutas realizadas en el registro.
- */
+
 export interface RegistroInfo {
   readonly fecha: string;
   rutas: number[];
 }
 
-/**
- * Clase para representar un registro de entrenamiento.
- * @class Registro
- * @implements {RegistroInfo}
- * @property {string} fecha - Fecha del registro.
- * @property {number[]} rutas - Lista de rutas realizadas en el registro.
- * @method addRuta - Añade una ruta al registro.
- */
 export class Registro {
   private _rutas: number[] = [];
   constructor(readonly fecha: string, rutas: number[]) {
     this._rutas = rutas;
   }
 
-  /**
-   * Lista de rutas realizadas en el registro.
-   * @returns {number[]}
-   * @example
-   * ```typescript
-   * const registro = new Registro("2020-01-01", [1, 2, 3]);
-   * registro.rutas; // [1, 2, 3]
-   * ```
-   */
   get rutas(): number[] {
     return this._rutas;
   }
 
-  /**
-   * Añade una ruta al registro.
-   * @param {number} id - Identificador de la ruta.
-   * @returns {void}
-   * @example
-   * ```typescript
-   * const registro = new Registro("2020-01-01", [1, 2, 3]);
-   * registro.addRuta(4);
-   * registro.rutas; // [1, 2, 3, 4]
-   * ```
-   */
   addRuta(id: number): void {
     if (this._rutas.includes(id)) 
       return;
@@ -847,23 +498,13 @@ La clase ```Registro``` también tiene un método ```addRuta```, que permite añ
 - ```IdGenerator.ts```:
 
 ```TypeScript
-/**
- * Clase para poder generar los ids únicos de cada una
- * de las clases._amigos.
- * @class IdGenerator
- * @param {number} ids - Ids únicos de cada una de las clases.
- */
+
 export class IdGenerator {
   private ids: number;
   constructor() {
     this.ids = 0;
   }
 
-  /**
-   * Método para generar cada uno de los ids únicos.
-   * @returns {number} Devuelve el id del nuevo usuario, ruta, 
-   * grupo o reto.
-   */
   generate(): number {
     const newId = this.ids++;
     return newId;

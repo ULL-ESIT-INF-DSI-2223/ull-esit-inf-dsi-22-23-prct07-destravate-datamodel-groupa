@@ -16,12 +16,35 @@
 <li><a href="../modules/Grupo_Grupo.html">Grupo/Grupo</a></li>
 <li><a href="Grupo_Grupo.GrupoInfo.html">GrupoInfo</a></li></ul>
 <h1>Interface GrupoInfo</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Interfaz para representar la información básica de un grupo.</p>
+
+<h3>Interface</h3><p>GrupoInfo</p>
+
+<h3>Property</h3><p>Identificador, único, del grupo.</p>
+
+<h3>Property</h3><p>Nombre del grupo.</p>
+
+<h3>Property</h3><p>IDs de los usuarios del grupo.</p>
+
+<h3>Property</h3><p>Estadísticas del grupo.</p>
+
+<h3>Property</h3><p>IDs de los usuarios ordenados por km totales o desnivel acumulado.</p>
+
+<h3>Property</h3><p>IDs de las rutas favoritas del grupo.</p>
+
+<h3>Property</h3><p>Lista de registros de entrenamientos del grupo.</p>
+</div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="target">GrupoInfo</span></li></ul></section><aside class="tsd-sources">
+<li><span class="target">GrupoInfo</span></li></ul></section>
+<section class="tsd-panel">
+<h4>Implemented by</h4>
+<ul class="tsd-hierarchy">
+<li><a href="../classes/Grupo_Grupo.Grupo.html" class="tsd-signature-type" data-tsd-kind="Class">Grupo</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Grupo/Grupo.ts#L3">Grupo/Grupo.ts:3</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Grupo/Grupo.ts#L16">Grupo/Grupo.ts:16</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -30,6 +53,7 @@
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Properties</h3>
 <div class="tsd-index-list"><a href="Grupo_Grupo.GrupoInfo.html#estadisticas" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-1024-path"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)" id="icon-1024-text"></path></svg><span>estadisticas</span></a>
+<a href="Grupo_Grupo.GrupoInfo.html#historial" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>historial</span></a>
 <a href="Grupo_Grupo.GrupoInfo.html#id" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>id</span></a>
 <a href="Grupo_Grupo.GrupoInfo.html#nombre" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>nombre</span></a>
 <a href="Grupo_Grupo.GrupoInfo.html#participantes" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>participantes</span></a>
@@ -40,34 +64,39 @@
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="estadisticas" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>estadisticas</span><a href="#estadisticas" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
-<div class="tsd-signature">estadisticas<span class="tsd-signature-symbol">:</span> <a href="../classes/Usuario_Estadistica.Estadistica.html" class="tsd-signature-type" data-tsd-kind="Class">Estadistica</a></div><aside class="tsd-sources">
+<div class="tsd-signature">estadisticas<span class="tsd-signature-symbol">:</span> <a href="../classes/Estadistica_EstadisticaGrupo.EstadisticaGrupo.html" class="tsd-signature-type" data-tsd-kind="Class">EstadisticaGrupo</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Grupo/Grupo.ts#L7">Grupo/Grupo.ts:7</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Grupo/Grupo.ts#L20">Grupo/Grupo.ts:20</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="historial" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>historial</span><a href="#historial" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">historial<span class="tsd-signature-symbol">:</span> <a href="../classes/Registro.Registro.html" class="tsd-signature-type" data-tsd-kind="Class">Registro</a><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Grupo/Grupo.ts#L23">Grupo/Grupo.ts:23</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="id" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>id</span><a href="#id" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Grupo/Grupo.ts#L4">Grupo/Grupo.ts:4</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Grupo/Grupo.ts#L17">Grupo/Grupo.ts:17</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="nombre" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>nombre</span><a href="#nombre" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">nombre<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Grupo/Grupo.ts#L5">Grupo/Grupo.ts:5</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Grupo/Grupo.ts#L18">Grupo/Grupo.ts:18</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="participantes" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>participantes</span><a href="#participantes" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">participantes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Grupo/Grupo.ts#L6">Grupo/Grupo.ts:6</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Grupo/Grupo.ts#L19">Grupo/Grupo.ts:19</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="ranking" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>ranking</span><a href="#ranking" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">ranking<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Grupo/Grupo.ts#L8">Grupo/Grupo.ts:8</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Grupo/Grupo.ts#L21">Grupo/Grupo.ts:21</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="rutasFavoritas" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>rutas<wbr/>Favoritas</span><a href="#rutasFavoritas" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">rutas<wbr/>Favoritas<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Grupo/Grupo.ts#L9">Grupo/Grupo.ts:9</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Grupo/Grupo.ts#L22">Grupo/Grupo.ts:22</a></li></ul></aside></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -89,21 +118,26 @@
 <ul>
 <li class="current"><a href="../modules.html">DSI</a>
 <ul>
+<li class="tsd-kind-module"><a href="../modules/Estadistica_Entrenamiento.html">Estadistica/<wbr/>Entrenamiento</a></li>
+<li class="tsd-kind-module"><a href="../modules/Estadistica_Estadistica.html">Estadistica/<wbr/>Estadistica</a></li>
+<li class="tsd-kind-module"><a href="../modules/Estadistica_EstadisticaGrupo.html">Estadistica/<wbr/>Estadistica<wbr/>Grupo</a></li>
+<li class="tsd-kind-module"><a href="../modules/Estadistica_EstadisticaUsuario.html">Estadistica/<wbr/>Estadistica<wbr/>Usuario</a></li>
+<li class="tsd-kind-module"><a href="../modules/Gestor_Gestor.html">Gestor/<wbr/>Gestor</a></li>
 <li class="current tsd-kind-module"><a href="../modules/Grupo_Grupo.html">Grupo/<wbr/>Grupo</a></li>
-<li class="tsd-kind-module"><a href="../modules/Reto.html">Reto</a></li>
+<li class="tsd-kind-module"><a href="../modules/IdGenerator.html">Id<wbr/>Generator</a></li>
+<li class="tsd-kind-module"><a href="../modules/Registro.html">Registro</a></li>
+<li class="tsd-kind-module"><a href="../modules/Reto_Reto.html">Reto/<wbr/>Reto</a></li>
 <li class="tsd-kind-module"><a href="../modules/Ruta_BasicRuta.html">Ruta/<wbr/>Basic<wbr/>Ruta</a></li>
 <li class="tsd-kind-module"><a href="../modules/Ruta_Coordenada.html">Ruta/<wbr/>Coordenada</a></li>
 <li class="tsd-kind-module"><a href="../modules/Ruta_Ruta.html">Ruta/<wbr/>Ruta</a></li>
 <li class="tsd-kind-module"><a href="../modules/Usuario_BasicUsuario.html">Usuario/<wbr/>Basic<wbr/>Usuario</a></li>
-<li class="tsd-kind-module"><a href="../modules/Usuario_Entrenamiento.html">Usuario/<wbr/>Entrenamiento</a></li>
-<li class="tsd-kind-module"><a href="../modules/Usuario_Estadistica.html">Usuario/<wbr/>Estadistica</a></li>
-<li class="tsd-kind-module"><a href="../modules/Usuario_Registro.html">Usuario/<wbr/>Registro</a></li>
 <li class="tsd-kind-module"><a href="../modules/Usuario_Usuario.html">Usuario/<wbr/>Usuario</a></li></ul></li></ul></div></details></nav>
 <nav class="tsd-navigation secondary menu-sticky">
 <ul>
 <li class="current tsd-kind-interface tsd-parent-kind-module"><a href="Grupo_Grupo.GrupoInfo.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-256-path"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)" id="icon-256-text"></path></svg><span>Grupo<wbr/>Info</span></a>
 <ul>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="Grupo_Grupo.GrupoInfo.html#estadisticas" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>estadisticas</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="Grupo_Grupo.GrupoInfo.html#historial" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>historial</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="Grupo_Grupo.GrupoInfo.html#id" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>id</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="Grupo_Grupo.GrupoInfo.html#nombre" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>nombre</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="Grupo_Grupo.GrupoInfo.html#participantes" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>participantes</a></li>

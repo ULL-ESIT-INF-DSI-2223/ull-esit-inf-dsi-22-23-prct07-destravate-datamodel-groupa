@@ -13,18 +13,18 @@ describe("Usuario class tests", () => {
   });
   it("Usuario debería tener un identificador", () => {
     expect(usuario.id).to.be.a("number");
-    expect(usuario.id).to.equal(0);
+    expect(usuario.id).to.equal(1);
   });
   it("Usuario debería tener una activad rutinaria", () => {
     expect(usuario.actividad).to.be.a("string");
     expect(usuario.actividad).to.equal("Ciclismo");
   });
   it("Usuario debería tener una lista de amigos", () => {
-    expect(usuario.amigos).to.be.a("array");
+    expect(usuario.amigos).to.be.a("Set{}");
     expect(usuario.amigos).to.be.empty;
   });
   it("Usuario debería tener una lista de grupos de amigos", () => {
-    expect(usuario.grupos).to.be.a("array");
+    expect(usuario.grupos).to.be.a("Set{}");
     expect(usuario.grupos).to.be.empty;
   });
   it("Usuario debería tener unas estadísticas", () => {
@@ -37,15 +37,15 @@ describe("Usuario class tests", () => {
     expect(usuario.estadisticas.mes.desnivel).to.equal(0);
   });
   it("Usuario debería tener una lista de rutas favoritas", () => {
-    expect(usuario.rutasFavoritas).to.be.a("array");
+    expect(usuario.rutasFavoritas).to.be.a("Set{}");
     expect(usuario.rutasFavoritas).to.be.empty;
   });
   it("Usuario debería tener una lista de retos activos", () => {
-    expect(usuario.retos).to.be.a("array");
+    expect(usuario.retos).to.be.a("Set{}");
     expect(usuario.retos).to.be.empty;
   });
   it("Usuario debería tener un registro de sus rutas", () => {
-    expect(usuario.historial).to.be.a("array");
+    expect(usuario.historial).to.be.a("Set{}");
     expect(usuario.historial).to.be.empty;
   });
 });

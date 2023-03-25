@@ -41,7 +41,7 @@
 <ul class="tsd-hierarchy">
 <li><a href="../interfaces/Usuario_Usuario.UsuarioInfo.html" class="tsd-signature-type" data-tsd-kind="Interface">UsuarioInfo</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L36">Usuario/Usuario.ts:36</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L36">Usuario/Usuario.ts:36</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -62,6 +62,7 @@
 <a href="Usuario_Usuario.Usuario.html#_rutasFavoritas" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-protected"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>_rutas<wbr/>Favoritas</span></a>
 <a href="Usuario_Usuario.Usuario.html#id" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>id</span></a>
 <a href="Usuario_Usuario.Usuario.html#nombre" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>nombre</span></a>
+<a href="Usuario_Usuario.Usuario.html#idGenerator" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>id<wbr/>Generator</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Accessors</h3>
@@ -78,7 +79,7 @@
 <section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class"><a id="constructor" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-<li class="tsd-signature tsd-anchor-link" id="constructor.new_Usuario">new <wbr/>Usuario<span class="tsd-signature-symbol">(</span>nombre<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, actividad<span class="tsd-signature-symbol">: </span><a href="../types/Ruta_Ruta.TipoActividad.html" class="tsd-signature-type" data-tsd-kind="Type alias">TipoActividad</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Usuario_Usuario.Usuario.html" class="tsd-signature-type" data-tsd-kind="Class">Usuario</a><a href="#constructor.new_Usuario" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="constructor.new_Usuario">new <wbr/>Usuario<span class="tsd-signature-symbol">(</span>nombre<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, actividad<span class="tsd-signature-symbol">: </span><a href="../types/Ruta_Ruta.TipoActividad.html" class="tsd-signature-type" data-tsd-kind="Type alias">TipoActividad</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Usuario_Usuario.Usuario.html" class="tsd-signature-type" data-tsd-kind="Class">Usuario</a><a href="#constructor.new_Usuario" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -86,13 +87,11 @@
 <li>
 <h5>nombre: <span class="tsd-signature-type">string</span></h5></li>
 <li>
-<h5>id: <span class="tsd-signature-type">number</span></h5></li>
-<li>
 <h5>actividad: <a href="../types/Ruta_Ruta.TipoActividad.html" class="tsd-signature-type" data-tsd-kind="Type alias">TipoActividad</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="Usuario_Usuario.Usuario.html" class="tsd-signature-type" data-tsd-kind="Class">Usuario</a></h4><aside class="tsd-sources">
 <p>Overrides <a href="Usuario_BasicUsuario.BasicUsuario.html">BasicUsuario</a>.<a href="Usuario_BasicUsuario.BasicUsuario.html#constructor">constructor</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L43">Usuario/Usuario.ts:43</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L44">Usuario/Usuario.ts:44</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-inherited"><a id="_actividad" class="tsd-anchor"></a>
@@ -100,49 +99,55 @@
 <div class="tsd-signature">_actividad<span class="tsd-signature-symbol">:</span> <a href="../types/Ruta_Ruta.TipoActividad.html" class="tsd-signature-type" data-tsd-kind="Type alias">TipoActividad</a></div><aside class="tsd-sources">
 <p>Inherited from <a href="Usuario_BasicUsuario.BasicUsuario.html">BasicUsuario</a>.<a href="Usuario_BasicUsuario.BasicUsuario.html#_actividad">_actividad</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/BasicUsuario.ts#L25">Usuario/BasicUsuario.ts:25</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/BasicUsuario.ts#L30">Usuario/BasicUsuario.ts:30</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a id="_amigos" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <span>_amigos</span><a href="#_amigos" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">_amigos<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div><aside class="tsd-sources">
+<div class="tsd-signature">_amigos<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L37">Usuario/Usuario.ts:37</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L37">Usuario/Usuario.ts:37</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a id="_estadisticas" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <span>_estadisticas</span><a href="#_estadisticas" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">_estadisticas<span class="tsd-signature-symbol">:</span> <a href="Usuario_Estadistica.Estadistica.html" class="tsd-signature-type" data-tsd-kind="Class">Estadistica</a><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<div class="tsd-signature">_estadisticas<span class="tsd-signature-symbol">:</span> <a href="Estadistica_EstadisticaUsuario.EstadisticaUsuario.html" class="tsd-signature-type" data-tsd-kind="Class">EstadisticaUsuario</a><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L39">Usuario/Usuario.ts:39</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L39">Usuario/Usuario.ts:39</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a id="_grupos" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <span>_grupos</span><a href="#_grupos" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">_grupos<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div><aside class="tsd-sources">
+<div class="tsd-signature">_grupos<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L38">Usuario/Usuario.ts:38</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L38">Usuario/Usuario.ts:38</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a id="_historial" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <span>_historial</span><a href="#_historial" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">_historial<span class="tsd-signature-symbol">:</span> <a href="Usuario_Registro.Registro.html" class="tsd-signature-type" data-tsd-kind="Class">Registro</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div><aside class="tsd-sources">
+<div class="tsd-signature">_historial<span class="tsd-signature-symbol">:</span> <a href="Registro.Registro.html" class="tsd-signature-type" data-tsd-kind="Class">Registro</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L42">Usuario/Usuario.ts:42</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L42">Usuario/Usuario.ts:42</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a id="_retos" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <span>_retos</span><a href="#_retos" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">_retos<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div><aside class="tsd-sources">
+<div class="tsd-signature">_retos<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L41">Usuario/Usuario.ts:41</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L41">Usuario/Usuario.ts:41</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a id="_rutasFavoritas" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagProtected">Protected</code> <span>_rutas<wbr/>Favoritas</span><a href="#_rutasFavoritas" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">_rutas<wbr/>Favoritas<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div><aside class="tsd-sources">
+<div class="tsd-signature">_rutas<wbr/>Favoritas<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L40">Usuario/Usuario.ts:40</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L40">Usuario/Usuario.ts:40</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a id="id" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>id</span><a href="#id" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="Usuario_BasicUsuario.BasicUsuario.html">BasicUsuario</a>.<a href="Usuario_BasicUsuario.BasicUsuario.html#id">id</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/BasicUsuario.ts#L28">Usuario/BasicUsuario.ts:28</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/BasicUsuario.ts#L31">Usuario/BasicUsuario.ts:31</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a id="nombre" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>nombre</span><a href="#nombre" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">nombre<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
 <p>Inherited from <a href="Usuario_BasicUsuario.BasicUsuario.html">BasicUsuario</a>.<a href="Usuario_BasicUsuario.BasicUsuario.html#nombre">nombre</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/BasicUsuario.ts#L27">Usuario/BasicUsuario.ts:27</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/BasicUsuario.ts#L33">Usuario/BasicUsuario.ts:33</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-inherited"><a id="idGenerator" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <code class="tsd-tag ts-flagProtected">Protected</code> <span>id<wbr/>Generator</span><a href="#idGenerator" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">id<wbr/>Generator<span class="tsd-signature-symbol">:</span> <a href="IdGenerator.IdGenerator.html" class="tsd-signature-type" data-tsd-kind="Class">IdGenerator</a><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<p>Inherited from <a href="Usuario_BasicUsuario.BasicUsuario.html">BasicUsuario</a>.<a href="Usuario_BasicUsuario.BasicUsuario.html#idGenerator">idGenerator</a></p>
+<ul>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/BasicUsuario.ts#L28">Usuario/BasicUsuario.ts:28</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Accessors</h2>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a id="actividad" class="tsd-anchor"></a>
@@ -154,109 +159,109 @@
 
 <h3>Returns</h3><p>Actividad del usuario.</p>
 
-<h3>Example</h3><pre><code class="language-typescript"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">usuario</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-3">BasicUsuario</span><span class="hl-1">(</span><span class="hl-4">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-5">1</span><span class="hl-1">, </span><span class="hl-4">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">actividad</span><span class="hl-1">; </span><span class="hl-7">// &quot;Ciclismo&quot;</span>
+<h3>Example</h3><pre><code class="language-typescript"><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-8">usuario</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">BasicUsuario</span><span class="hl-1">(</span><span class="hl-3">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-3">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">actividad</span><span class="hl-1">; </span><span class="hl-9">// &quot;Ciclismo&quot;</span>
 </code></pre>
 </div>
 <h4 class="tsd-returns-title">Returns <a href="../types/Ruta_Ruta.TipoActividad.html" class="tsd-signature-type" data-tsd-kind="Type alias">TipoActividad</a></h4><aside class="tsd-sources">
 <p>Inherited from BasicUsuario.actividad</p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/BasicUsuario.ts#L43">Usuario/BasicUsuario.ts:43</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/BasicUsuario.ts#L49">Usuario/BasicUsuario.ts:49</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="amigos" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>amigos</span><a href="#amigos" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="amigos.amigos-1"><span class="tsd-signature-symbol">get</span> amigos<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+<li class="tsd-signature" id="amigos.amigos-1"><span class="tsd-signature-symbol">get</span> amigos<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Método para acceder a la lista de amigos del usuario.</p>
 
 <h3>Returns</h3><p>Lista de amigos del usuario.</p>
 
-<h3>Example</h3><pre><code class="language-typescript"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">usuario</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-3">Usuario</span><span class="hl-1">(</span><span class="hl-4">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-5">1</span><span class="hl-1">, </span><span class="hl-4">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">amigos</span><span class="hl-1">; </span><span class="hl-7">// []</span>
+<h3>Example</h3><pre><code class="language-typescript"><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-8">usuario</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Usuario</span><span class="hl-1">(</span><span class="hl-3">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-3">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">amigos</span><span class="hl-1">; </span><span class="hl-9">// []</span>
 </code></pre>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/Usuario_Usuario.UsuarioInfo.html">UsuarioInfo</a>.<a href="../interfaces/Usuario_Usuario.UsuarioInfo.html#amigos">amigos</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L56">Usuario/Usuario.ts:56</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L61">Usuario/Usuario.ts:61</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="estadisticas" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>estadisticas</span><a href="#estadisticas" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="estadisticas.estadisticas-1"><span class="tsd-signature-symbol">get</span> estadisticas<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Usuario_Estadistica.Estadistica.html" class="tsd-signature-type" data-tsd-kind="Class">Estadistica</a></li>
+<li class="tsd-signature" id="estadisticas.estadisticas-1"><span class="tsd-signature-symbol">get</span> estadisticas<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Estadistica_EstadisticaUsuario.EstadisticaUsuario.html" class="tsd-signature-type" data-tsd-kind="Class">EstadisticaUsuario</a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Método para acceder a las estadísticas del usuario.</p>
 
 <h3>Returns</h3><p>Estadísticas del usuario.</p>
 
-<h3>Example</h3><pre><code class="language-typescript"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">usuario</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-3">Usuario</span><span class="hl-1">(</span><span class="hl-4">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-5">1</span><span class="hl-1">, </span><span class="hl-4">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">estadisticas</span><span class="hl-1">.</span><span class="hl-6">dia</span><span class="hl-1">.</span><span class="hl-6">km</span><span class="hl-1">; </span><span class="hl-7">// 0</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">estadisticas</span><span class="hl-1">.</span><span class="hl-6">dia</span><span class="hl-1">.</span><span class="hl-6">desnivel</span><span class="hl-1">; </span><span class="hl-7">// 0</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">estadisticas</span><span class="hl-1">.</span><span class="hl-6">semana</span><span class="hl-1">.</span><span class="hl-6">km</span><span class="hl-1">; </span><span class="hl-7">// 0</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">estadisticas</span><span class="hl-1">.</span><span class="hl-6">semana</span><span class="hl-1">.</span><span class="hl-6">desnivel</span><span class="hl-1">; </span><span class="hl-7">// 0</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">estadisticas</span><span class="hl-1">.</span><span class="hl-6">mes</span><span class="hl-1">.</span><span class="hl-6">km</span><span class="hl-1">; </span><span class="hl-7">// 0</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">estadisticas</span><span class="hl-1">.</span><span class="hl-6">mes</span><span class="hl-1">.</span><span class="hl-6">desnivel</span><span class="hl-1">; </span><span class="hl-7">// 0</span>
+<h3>Example</h3><pre><code class="language-typescript"><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-8">usuario</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Usuario</span><span class="hl-1">(</span><span class="hl-3">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-3">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">estadisticas</span><span class="hl-1">.</span><span class="hl-2">dia</span><span class="hl-1">.</span><span class="hl-2">km</span><span class="hl-1">; </span><span class="hl-9">// 0</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">estadisticas</span><span class="hl-1">.</span><span class="hl-2">dia</span><span class="hl-1">.</span><span class="hl-2">desnivel</span><span class="hl-1">; </span><span class="hl-9">// 0</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">estadisticas</span><span class="hl-1">.</span><span class="hl-2">semana</span><span class="hl-1">.</span><span class="hl-2">km</span><span class="hl-1">; </span><span class="hl-9">// 0</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">estadisticas</span><span class="hl-1">.</span><span class="hl-2">semana</span><span class="hl-1">.</span><span class="hl-2">desnivel</span><span class="hl-1">; </span><span class="hl-9">// 0</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">estadisticas</span><span class="hl-1">.</span><span class="hl-2">mes</span><span class="hl-1">.</span><span class="hl-2">km</span><span class="hl-1">; </span><span class="hl-9">// 0</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">estadisticas</span><span class="hl-1">.</span><span class="hl-2">mes</span><span class="hl-1">.</span><span class="hl-2">desnivel</span><span class="hl-1">; </span><span class="hl-9">// 0</span>
 </code></pre>
 </div>
-<h4 class="tsd-returns-title">Returns <a href="Usuario_Estadistica.Estadistica.html" class="tsd-signature-type" data-tsd-kind="Class">Estadistica</a></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <a href="Estadistica_EstadisticaUsuario.EstadisticaUsuario.html" class="tsd-signature-type" data-tsd-kind="Class">EstadisticaUsuario</a></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/Usuario_Usuario.UsuarioInfo.html">UsuarioInfo</a>.<a href="../interfaces/Usuario_Usuario.UsuarioInfo.html#estadisticas">estadisticas</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L87">Usuario/Usuario.ts:87</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L92">Usuario/Usuario.ts:92</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="grupos" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>grupos</span><a href="#grupos" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="grupos.grupos-1"><span class="tsd-signature-symbol">get</span> grupos<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></li>
+<li class="tsd-signature" id="grupos.grupos-1"><span class="tsd-signature-symbol">get</span> grupos<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Método para acceder a la lista de grupos del usuario.</p>
 
 <h3>Returns</h3><p>Lista de grupos del usuario.</p>
 
-<h3>Example</h3><pre><code class="language-typescript"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">usuario</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-3">Usuario</span><span class="hl-1">(</span><span class="hl-4">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-5">1</span><span class="hl-1">, </span><span class="hl-4">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">grupos</span><span class="hl-1">; </span><span class="hl-7">// []</span>
+<h3>Example</h3><pre><code class="language-typescript"><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-8">usuario</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Usuario</span><span class="hl-1">(</span><span class="hl-3">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-3">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">grupos</span><span class="hl-1">; </span><span class="hl-9">// []</span>
 </code></pre>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/Usuario_Usuario.UsuarioInfo.html">UsuarioInfo</a>.<a href="../interfaces/Usuario_Usuario.UsuarioInfo.html#grupos">grupos</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L69">Usuario/Usuario.ts:69</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L74">Usuario/Usuario.ts:74</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="historial" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>historial</span><a href="#historial" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="historial.historial-1"><span class="tsd-signature-symbol">get</span> historial<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Usuario_Registro.Registro.html" class="tsd-signature-type" data-tsd-kind="Class">Registro</a><span class="tsd-signature-symbol">[]</span></li>
+<li class="tsd-signature" id="historial.historial-1"><span class="tsd-signature-symbol">get</span> historial<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Registro.Registro.html" class="tsd-signature-type" data-tsd-kind="Class">Registro</a><span class="tsd-signature-symbol">[]</span></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Método para acceder a la lista de registros de entrenamientos del usuario.</p>
 
 <h3>Returns</h3><p>Lista de registros de entrenamientos del usuario.</p>
 
-<h3>Example</h3><pre><code class="language-typescript"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">usuario</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-3">Usuario</span><span class="hl-1">(</span><span class="hl-4">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-5">1</span><span class="hl-1">, </span><span class="hl-4">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">historial</span><span class="hl-1">; </span><span class="hl-7">// []</span>
+<h3>Example</h3><pre><code class="language-typescript"><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-8">usuario</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Usuario</span><span class="hl-1">(</span><span class="hl-3">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-3">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">historial</span><span class="hl-1">; </span><span class="hl-9">// []</span>
 </code></pre>
 </div>
-<h4 class="tsd-returns-title">Returns <a href="Usuario_Registro.Registro.html" class="tsd-signature-type" data-tsd-kind="Class">Registro</a><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <a href="Registro.Registro.html" class="tsd-signature-type" data-tsd-kind="Class">Registro</a><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/Usuario_Usuario.UsuarioInfo.html">UsuarioInfo</a>.<a href="../interfaces/Usuario_Usuario.UsuarioInfo.html#historial">historial</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L126">Usuario/Usuario.ts:126</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L131">Usuario/Usuario.ts:131</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="retos" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>retos</span><a href="#retos" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="retos.retos-1"><span class="tsd-signature-symbol">get</span> retos<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+<li class="tsd-signature" id="retos.retos-1"><span class="tsd-signature-symbol">get</span> retos<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Método para acceder a la lista de retos activos del usuario.</p>
 
 <h3>Returns</h3><p>Lista de retos activos del usuario.</p>
 
-<h3>Example</h3><pre><code class="language-typescript"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">usuario</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-3">Usuario</span><span class="hl-1">(</span><span class="hl-4">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-5">1</span><span class="hl-1">, </span><span class="hl-4">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">retos</span><span class="hl-1">; </span><span class="hl-7">// []</span>
+<h3>Example</h3><pre><code class="language-typescript"><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-8">usuario</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Usuario</span><span class="hl-1">(</span><span class="hl-3">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-3">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">retos</span><span class="hl-1">; </span><span class="hl-9">// []</span>
 </code></pre>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/Usuario_Usuario.UsuarioInfo.html">UsuarioInfo</a>.<a href="../interfaces/Usuario_Usuario.UsuarioInfo.html#retos">retos</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L113">Usuario/Usuario.ts:113</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L118">Usuario/Usuario.ts:118</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class"><a id="rutasFavoritas" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>rutas<wbr/>Favoritas</span><a href="#rutasFavoritas" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-<li class="tsd-signature" id="rutasFavoritas.rutasFavoritas-1"><span class="tsd-signature-symbol">get</span> rutasFavoritas<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+<li class="tsd-signature" id="rutasFavoritas.rutasFavoritas-1"><span class="tsd-signature-symbol">get</span> rutasFavoritas<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Método para acceder a la lista de rutas favoritas del usuario.</p>
 
 <h3>Returns</h3><p>Lista de rutas favoritas del usuario.</p>
 
-<h3>Example</h3><pre><code class="language-typescript"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">usuario</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-3">Usuario</span><span class="hl-1">(</span><span class="hl-4">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-5">1</span><span class="hl-1">, </span><span class="hl-4">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-6">usuario</span><span class="hl-1">.</span><span class="hl-6">rutasFavoritas</span><span class="hl-1">; </span><span class="hl-7">// []</span>
+<h3>Example</h3><pre><code class="language-typescript"><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-8">usuario</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">Usuario</span><span class="hl-1">(</span><span class="hl-3">&quot;Usuario de prueba&quot;</span><span class="hl-1">, </span><span class="hl-7">1</span><span class="hl-1">, </span><span class="hl-3">&quot;Ciclismo&quot;</span><span class="hl-1">);</span><br/><span class="hl-2">usuario</span><span class="hl-1">.</span><span class="hl-2">rutasFavoritas</span><span class="hl-1">; </span><span class="hl-9">// []</span>
 </code></pre>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Implementation of <a href="../interfaces/Usuario_Usuario.UsuarioInfo.html">UsuarioInfo</a>.<a href="../interfaces/Usuario_Usuario.UsuarioInfo.html#rutasFavoritas">rutasFavoritas</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/d326d68/src/Usuario/Usuario.ts#L100">Usuario/Usuario.ts:100</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupa/blob/fd8e669/src/Usuario/Usuario.ts#L105">Usuario/Usuario.ts:105</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -278,15 +283,19 @@
 <ul>
 <li class="current"><a href="../modules.html">DSI</a>
 <ul>
+<li class="tsd-kind-module"><a href="../modules/Estadistica_Entrenamiento.html">Estadistica/<wbr/>Entrenamiento</a></li>
+<li class="tsd-kind-module"><a href="../modules/Estadistica_Estadistica.html">Estadistica/<wbr/>Estadistica</a></li>
+<li class="tsd-kind-module"><a href="../modules/Estadistica_EstadisticaGrupo.html">Estadistica/<wbr/>Estadistica<wbr/>Grupo</a></li>
+<li class="tsd-kind-module"><a href="../modules/Estadistica_EstadisticaUsuario.html">Estadistica/<wbr/>Estadistica<wbr/>Usuario</a></li>
+<li class="tsd-kind-module"><a href="../modules/Gestor_Gestor.html">Gestor/<wbr/>Gestor</a></li>
 <li class="tsd-kind-module"><a href="../modules/Grupo_Grupo.html">Grupo/<wbr/>Grupo</a></li>
-<li class="tsd-kind-module"><a href="../modules/Reto.html">Reto</a></li>
+<li class="tsd-kind-module"><a href="../modules/IdGenerator.html">Id<wbr/>Generator</a></li>
+<li class="tsd-kind-module"><a href="../modules/Registro.html">Registro</a></li>
+<li class="tsd-kind-module"><a href="../modules/Reto_Reto.html">Reto/<wbr/>Reto</a></li>
 <li class="tsd-kind-module"><a href="../modules/Ruta_BasicRuta.html">Ruta/<wbr/>Basic<wbr/>Ruta</a></li>
 <li class="tsd-kind-module"><a href="../modules/Ruta_Coordenada.html">Ruta/<wbr/>Coordenada</a></li>
 <li class="tsd-kind-module"><a href="../modules/Ruta_Ruta.html">Ruta/<wbr/>Ruta</a></li>
 <li class="tsd-kind-module"><a href="../modules/Usuario_BasicUsuario.html">Usuario/<wbr/>Basic<wbr/>Usuario</a></li>
-<li class="tsd-kind-module"><a href="../modules/Usuario_Entrenamiento.html">Usuario/<wbr/>Entrenamiento</a></li>
-<li class="tsd-kind-module"><a href="../modules/Usuario_Estadistica.html">Usuario/<wbr/>Estadistica</a></li>
-<li class="tsd-kind-module"><a href="../modules/Usuario_Registro.html">Usuario/<wbr/>Registro</a></li>
 <li class="current tsd-kind-module"><a href="../modules/Usuario_Usuario.html">Usuario/<wbr/>Usuario</a></li></ul></li></ul></div></details></nav>
 <nav class="tsd-navigation secondary menu-sticky">
 <ul>
@@ -302,6 +311,7 @@
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="Usuario_Usuario.Usuario.html#_rutasFavoritas" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_rutas<wbr/>Favoritas</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="Usuario_Usuario.Usuario.html#id" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>id</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="Usuario_Usuario.Usuario.html#nombre" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>nombre</a></li>
+<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected tsd-is-inherited"><a href="Usuario_Usuario.Usuario.html#idGenerator" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>id<wbr/>Generator</a></li>
 <li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="Usuario_Usuario.Usuario.html#actividad" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg>actividad</a></li>
 <li class="tsd-kind-accessor tsd-parent-kind-class"><a href="Usuario_Usuario.Usuario.html#amigos" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg>amigos</a></li>
 <li class="tsd-kind-accessor tsd-parent-kind-class"><a href="Usuario_Usuario.Usuario.html#estadisticas" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg>estadisticas</a></li>
