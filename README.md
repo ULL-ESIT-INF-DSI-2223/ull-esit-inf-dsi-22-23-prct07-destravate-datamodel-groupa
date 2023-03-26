@@ -60,7 +60,7 @@ export class BasicRuta implements BasicRutaInfo {
 }
 ```
 
-Se define una interfaz y una clase relacionadas con la información de una ruta. La interfaz se llama ```BasicRutaInfo```` y define cuatro propiedades: un identificador único ```id```, una coordenada de inicio ```inicio```, una coordenada final ```fin``` y la longitud total de la ruta en kilómetros ```longitud```. La clase ```BasicRuta``` implementa esta interfaz y tiene un ```constructor``` que acepta los mismos parámetros que la interfaz, y los almacena como propiedades de sólo lectura en la instancia de la clase. La clase y la interfaz dependen de la clase ```Coordenada```, que se importa desde otro archivo.
+Se define una interfaz y una clase relacionadas con la información de una ruta. La interfaz se llama ```BasicRutaInfo``` y define cuatro propiedades: un identificador único ```id```, una coordenada de inicio ```inicio```, una coordenada final ```fin``` y la longitud total de la ruta en kilómetros ```longitud```. La clase ```BasicRuta``` implementa esta interfaz y tiene un ```constructor``` que acepta los mismos parámetros que la interfaz, y los almacena como propiedades de sólo lectura en la instancia de la clase. La clase y la interfaz dependen de la clase ```Coordenada```, que se importa desde otro archivo.
 
 - ```Coordenada.ts```:
 
@@ -1111,6 +1111,13 @@ All files               |   96.19 |    91.66 |    97.4 |   96.59 |
   Coordenada.ts         |     100 |      100 |     100 |     100 |
 ------------------------|---------|----------|---------|---------|-------------------
 ```
+
+Así que por último mostramos su funcionamiento por terminal:
+
+```bash
+
+```
+
 
 ## Conclusión 
 

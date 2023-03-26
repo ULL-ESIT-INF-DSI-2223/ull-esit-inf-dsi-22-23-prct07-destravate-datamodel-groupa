@@ -149,17 +149,9 @@ const salirDeGrupo: inquirer.QuestionCollection = [
   },
 ];
 
-const nuevoGrupo: inquirer.QuestionCollection = [
-  {
-    type: "input",
-    name: "nombre",
-    message: "Introduzca el nombre del grupo: ",
-  },
-];
-
 enum RetosCommands {
-  Añadir = "Añadir Reto",
-  Eliminar = "Eliminar Reto",
+  Entrar = "Entrar en Reto",
+  Salir = "Salir de Reto",
   Volver = "Volver",
 }
 
@@ -169,6 +161,49 @@ const retosSubMenuQuestions: inquirer.QuestionCollection = [
     name: "command",
     message: "¿Qué acción desea realizar?",
     choices: Object.values(RetosCommands),
+  },
+];
+
+const entrarEnReto: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre del reto al que desea entrar: ",
+  },
+];
+
+const salirDeReto: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre del reto del que desee salir: ",
+  },
+];
+
+const retoQuestion: inquirer.QuestionCollection = [
+  {
+    type: "list",
+    name: "tipo",
+    message: "Introduzca el tipo de actividad para el reto: ",
+    choices: ["Ciclismo", "Running"],
+  },
+  {
+    type: "input",
+    name: "km",
+    message: "Introduzca el número de kilómetros para el reto: ",
+  },
+  {
+    type: "input",
+    name: "rutas",
+    message: "Introduzca el número de rutas para el reto: ",
+  }
+];
+
+const retoFormQuestions: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre de la ruta a añadir: ",
   },
 ];
 
@@ -261,16 +296,16 @@ export class Gestor extends BasicGestor implements GestorInfo {
   }
 
   async login() {
-    const usuario = await inquirer.prompt(loginQuestion);
+    const loggedUser = await inquirer.prompt(loginQuestion);
 
-    if (this._usuarios.find((usuario) => usuario.nombre === usuario.nombre)) {
-      console.log("Bienvenido de nuevo, " + usuario);
+    if (this._usuarios.find((usuario) => usuario.nombre === loggedUser.nombre)) {
+      console.log("Bienvenido de nuevo, " + loggedUser);
     } else {
       const actividad = await inquirer.prompt(activityQuestion);
-      this.addUsuario(new Usuario(usuario.nombre, actividad.tipo));
+      this.addUsuario(new Usuario(loggedUser.nombre, actividad.tipo));
     }
     const id = this._usuarios.find(
-      (usuario) => usuario.nombre === usuario.nombre
+      (usuario) => usuario.nombre === loggedUser.nombre
     )?.id;
     if (id !== undefined) this.usuarioActual = id;
 
@@ -376,9 +411,11 @@ export class Gestor extends BasicGestor implements GestorInfo {
                 console.log("=================================");
                 console.log("ID: " + grupo?.id);
                 console.log("Nombre: " + grupo?.nombre);
-                const participantes : string[] = [];
+                const participantes: string[] = [];
                 grupo?.participantes.forEach((id) => {
-                  const nombre = this._usuarios.find((usuario) => usuario.id === id)?.nombre;
+                  const nombre = this._usuarios.find(
+                    (usuario) => usuario.id === id
+                  )?.nombre;
                   if (nombre !== undefined) participantes.push(nombre);
                 });
                 console.log("Participantes: " + participantes);
@@ -390,24 +427,34 @@ export class Gestor extends BasicGestor implements GestorInfo {
             switch (command) {
               case GruposCommands.Entrar:
                 const nuevo = await inquirer.prompt(entrarEnGrupo);
-                if (this._grupos.find((grupo) => grupo.nombre === nuevo.nombre) === undefined) {
+                if (
+                  this._grupos.find(
+                    (grupo) => grupo.nombre === nuevo.nombre
+                  ) === undefined
+                ) {
                   this.addGrupo(new Grupo(nuevo.nombre, this.usuarioActual));
                 }
-                const idNuevo = this._grupos.find((grupo) => grupo.nombre === nuevo.nombre)?.id;
+                const idNuevo = this._grupos.find(
+                  (grupo) => grupo.nombre === nuevo.nombre
+                )?.id;
                 if (idNuevo !== undefined)
                   this._usuarios
-                  .find((usuario) => usuario.id === this.usuarioActual)
-                  ?.addGrupo(idNuevo);
+                    .find((usuario) => usuario.id === this.usuarioActual)
+                    ?.addGrupo(idNuevo);
                 break;
               case GruposCommands.Salir:
-                  const viejo = await inquirer.prompt(salirDeGrupo);
-                  const idViejo = this._grupos.find((grupo) => grupo.nombre === viejo.nombre)?.id;
-                  if (idViejo !== undefined) {
-                    this._usuarios
+                const viejo = await inquirer.prompt(salirDeGrupo);
+                const idViejo = this._grupos.find(
+                  (grupo) => grupo.nombre === viejo.nombre
+                )?.id;
+                if (idViejo !== undefined) {
+                  this._usuarios
                     .find((usuario) => usuario.id === this.usuarioActual)
                     ?.removeGrupo(idViejo);
-                    this._grupos.find((grupo) => grupo.id === idViejo)?.removeParticipante(this.usuarioActual);
-                  }
+                  this._grupos
+                    .find((grupo) => grupo.id === idViejo)
+                    ?.removeParticipante(this.usuarioActual);
+                }
                 break;
               case GruposCommands.Volver:
                 exitGrupos = true;
@@ -417,12 +464,90 @@ export class Gestor extends BasicGestor implements GestorInfo {
           break;
         case PromptCommands.Retos:
           let exitRetos: boolean = false;
+          if (
+            this._usuarios.find((usuario) => usuario.id === this.usuarioActual)
+              ?.retos.length !== 0
+          ) {
+            console.log("=================================");
+            console.log("RETOS");
+            this._usuarios
+              .find((usuario) => usuario.id === this.usuarioActual)
+              ?.retos.forEach((id) => {
+                const reto = this._retos.find((reto) => reto.id === id);
+                console.log("=================================");
+                console.log("ID: " + reto?.id);
+                console.log("Nombre: " + reto?.nombre);
+                console.log("Tipo: " + reto?.tipo);
+                const rutas: string[] = [];
+                reto?.rutas.forEach((id) => {
+                  const nombre = this._rutas.find(
+                    (ruta) => ruta.id === id
+                  )?.nombre;
+                  if (nombre !== undefined) rutas.push(nombre);
+                });
+                console.log("Rutas: " + rutas);
+                console.log("Kilometros: " + reto?.km);
+                const participantes: string[] = [];
+                reto?.usuarios.forEach((id) => {
+                  const nombre = this._usuarios.find(
+                    (usuario) => usuario.id === id
+                  )?.nombre;
+                  if (nombre !== undefined) participantes.push(nombre);
+                });
+                console.log("Participantes: " + participantes);
+              });
+            console.log("=================================");
+          }
           while (!exitRetos) {
             const { command } = await inquirer.prompt(retosSubMenuQuestions);
             switch (command) {
-              case RetosCommands.Añadir:
+              case RetosCommands.Entrar:
+                const nuevo = await inquirer.prompt(entrarEnReto);
+                if (
+                  this._retos.find(
+                    (reto) => reto.nombre === nuevo.nombre
+                  ) === undefined
+                ) {
+                  const actividad = await inquirer.prompt(retoQuestion);
+                  this.addReto(new Reto(nuevo.nombre, actividad.tipo));
+                  const reto = this._retos.find((reto) => reto.nombre === nuevo.nombre);
+                  if (reto !== undefined) {
+                    reto.addUsuario(this.usuarioActual);
+                    reto.km = actividad.km;
+                  }
+                  let i = 0;
+                  while (i < parseInt(actividad.rutas)) {
+                    const nuevaRuta = await inquirer.prompt(retoFormQuestions);
+                    const idRuta = this._rutas.find((ruta) => ruta.nombre === nuevaRuta.nombre)?.id;
+                    if (idRuta !== undefined)
+                      this._retos.find((reto) => reto.nombre === nuevo.nombre)?.addRuta(idRuta);
+                    i++;
+                  }
+                  const ruta = this._rutas.find((ruta) => ruta.nombre === actividad.ruta);
+                  if (ruta !== undefined)
+                    this._retos.find((reto) => reto.nombre === nuevo.nombre)?.addRuta(ruta.id);
+                }
+                const idNuevo = this._retos.find(
+                  (reto) => reto.nombre === nuevo.nombre
+                )?.id;
+                if (idNuevo !== undefined)
+                  this._usuarios
+                    .find((usuario) => usuario.id === this.usuarioActual)
+                    ?.addReto(idNuevo);
                 break;
-              case RetosCommands.Eliminar:
+              case RetosCommands.Salir:
+                const viejo = await inquirer.prompt(salirDeReto);
+                const idViejo = this._retos.find(
+                  (reto) => reto.nombre === viejo.nombre
+                )?.id;
+                if (idViejo !== undefined) {
+                  this._usuarios
+                    .find((usuario) => usuario.id === this.usuarioActual)
+                    ?.removeReto(idViejo);
+                  this._retos
+                    .find((reto) => reto.id === idViejo)
+                    ?.removeUsuario(this.usuarioActual);
+                }
                 break;
               case RetosCommands.Volver:
                 exitRetos = true;
