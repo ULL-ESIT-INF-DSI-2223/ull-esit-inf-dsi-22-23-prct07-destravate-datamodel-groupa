@@ -1,4 +1,4 @@
-import "mocha";
+/*import "mocha";
 import { expect } from "chai";
 
 import { Usuario } from "../src/Usuario/Usuario";
@@ -7,7 +7,7 @@ import { Gestor } from "../src/Gestor/Gestor";
 
 const usuario = new Usuario("Pepe", "Ciclismo");
 const gestor = new Gestor();
-/*
+
 describe("Gestor class tests", () => {
   it("Gestor debería tener una colección de usuarios", () => {
     expect(gestor.usuarios).to.be.an("array");

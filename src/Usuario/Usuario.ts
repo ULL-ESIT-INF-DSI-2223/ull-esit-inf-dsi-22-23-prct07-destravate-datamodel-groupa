@@ -4,42 +4,125 @@ import { EstadisticaUsuario } from "../Estadistica/EstadisticaUsuario";
 import { Registro } from "../Otros/Registro";
 
 /**
- * Interfaz para representar la información de un usuario para la aplicación.
- * @interface UsuarioInfo
- * @property {number[]} amigos - Lista de amigos del usuario.
- * @property {number[][]} grupos - Lista de grupos del usuario.
- * @property {EstadisticaUsuario} estadisticas - Estadísticas diarias, semanales y mensuales del usuario.
- * @property {number[]} rutasFavoritas - Lista de rutas favoritas del usuario.
- * @property {number[]} retos - Lista de retos activos del usuario.
- * @property {Registro[]} historial - Lista de registros de entrenamientos del usuario.
+ * Interfaz para representar la información de un usuario estándar para la aplicación.
+ * Sirve como una extensión de la información básica de un usuario.
  */
 export interface UsuarioInfo {
+  /**
+   * Lista de los ids de los amigos del usuario.
+   * @type {number[]}
+   */
   amigos: number[];
-  grupos: number[][];
+  /**
+   * Método para añadir un amigo a la lista de amigos del usuario.
+   * @param id Identificador del amigo a añadir.
+   */
+  addAmigo(id: number): void;
+  /**
+   * Método para eliminar un amigo de la lista de amigos del usuario.
+   * @param id Identificador del amigo a eliminar.
+   */
+  removeAmigo(id: number): void;
+  /**
+   * Lista de los ids de los grupos del usuario.
+   * @type {number[]}
+   */
+  grupos: number[];
+  /**
+   * Método para añadir un grupo a la lista de grupos del usuario.
+   * @param id Identificador del grupo a añadir.
+   */
+  addGrupo(id: number): void;
+  /**
+   * Método para eliminar un grupo de la lista de grupos del usuario.
+   * @param id Identificador del grupo a eliminar.
+   */
+  removeGrupo(id: number): void;
+  /**
+   * Estadísticas del usuario diarias, semanales y mensuales.
+   * @type {EstadisticaUsuario}
+   */
   estadisticas: EstadisticaUsuario;
+  /**
+   * Lista de los ids de las rutas favoritas del usuario.
+   * @type {number[]}
+   */
   rutasFavoritas: number[];
+  /**
+   * Método para añadir una ruta a la lista de rutas favoritas del usuario.
+   * @param id Identificador de la ruta a añadir.
+   */
+  addRutaFavorita(id: number): void;
+  /**
+   * Método para eliminar una ruta de la lista de rutas favoritas del usuario.
+   * @param id Identificador de la ruta a eliminar.
+   */
+  removeRutaFavorita(id: number): void;
+  /**
+   * Lista de los ids de los retos del usuario.
+   * @type {number[]}
+   */
   retos: number[];
+  /**
+   * Método para añadir un reto a la lista de retos del usuario.
+   * @param id Identificador del reto a añadir.
+   */
+  addReto(id: number): void;
+  /**
+   * Método para eliminar un reto de la lista de retos del usuario.
+   * @param id Identificador del reto a eliminar.
+   */
+  removeReto(id: number): void;
+  /**
+   * Lista de los registros diarios del usuario.
+   * @type {Registro[]}
+   */
   historial: Registro[];
 }
 
 /**
  * Clase para representar la información de un usuario para la aplicación.
- * @class Usuario
- * @extends {BasicUsuario}
- * @implements {UsuarioInfo}
- * @param {string} nombre - Nombre del usuario. 
- * @param {number} id - Identificador del usuario.
- * @param {TipoActividad} actividad - actividad de actividad del usuario.
- * @param {number[]} amigos - Lista de amigos del usuario.
- * @param {number[][]} grupos - Lista de grupos del usuario.
+<<<<<<< HEAD
+ * El usuario cuenta con un identificador único, un nombre, amigos, grupos de amigos,
+ * estadísticas, rutas favoritas, retos y un historial de registros.
  */
 export class Usuario extends BasicUsuario implements UsuarioInfo {
-  protected _amigos: number[] = [];
-  protected _grupos: number[][] = [];
-  protected _estadisticas: EstadisticaUsuario = new EstadisticaUsuario();
-  protected _rutasFavoritas: number[] = [];
-  protected _retos: number[] = [];
-  protected _historial: Registro[] = [];
+  /**
+   * Lista de los ids de los amigos del usuario.
+   * @private
+   * @type {Set<number>}
+   */
+  private _amigos: Set<number> = new Set();
+  /**
+   * Lista de los ids de los grupos del usuario.
+   * @private
+   * @type {Set<number>}
+   */
+  private _grupos: Set<number> = new Set();
+  /**
+   * Estadísticas del usuario diarias, semanales y mensuales.
+   * @private
+   * @type {EstadisticaUsuario}
+   */
+  private _estadisticas: EstadisticaUsuario = new EstadisticaUsuario();
+  /**
+   * Lista de los ids de las rutas favoritas del usuario.
+   * @private
+   * @type {Set<number>}
+   */
+  private _rutasFavoritas: Set<number> = new Set();
+  /**
+   * Lista de los ids de los retos del usuario.
+   * @private
+   * @type {Set<number>}
+   */
+  private _retos: Set<number> = new Set();
+  /**
+   * Lista de los registros diarios del usuario.
+   * @private
+   * @type {Registro[]}
+   */
+  private _historial: Registro[] = [];
 
   /**
    * Inicializa una nueva instancia de la clase Usuario.
@@ -48,10 +131,6 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
    */
   constructor(nombre: string, actividad: TipoActividad) {
     super(nombre, actividad);
-    this._amigos = new Set();
-    this._grupos = new Set();
-    this._rutasFavoritas = new Set();
-    this._retos = new Set();
   }
 
   /**
@@ -64,12 +143,70 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
    * ```
    */
   get amigos(): number[] {
-    return this._amigos;
+    return Array.from(this._amigos);
+  }
+
+  /**
+   * Método para añadir un amigo a la lista de amigos del usuario.
+   * @param id Identificador del amigo a añadir.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", "Ciclismo");
+   * usuario.amigos; // []
+   * usuario.addAmigo(1);
+   * usuario.amigos; // [1]
+   * ```
+   */
+  addAmigo(id: number): void {
+    this._amigos.add(id);
+  }
+
+  /**
+   * Método para eliminar un amigo de la lista de amigos del usuario.
+   * @param id Identificador del amigo a eliminar.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", "Ciclismo");
+   * usuario.amigos; // []
+   * usuario.addAmigo(1);
+   * usuario.removeAmigo(1);
+   * usuario.amigos; // []
+   */
+  removeAmigo(id: number): void {
+    this._amigos.delete(id);
   }
 
   /**
    * Método para acceder a la lista de grupos del usuario.
-   * @returns {number[][]} Lista de grupos del usuario.
+   * @returns {number[]} Lista de grupos del usuario.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", "Ciclismo");
+   * usuario.grupos; // []
+   * ```
+   */
+  get grupos(): number[] {
+    return Array.from(this._grupos);
+  }
+
+  /**
+   * Método para añadir un grupo a la lista de grupos del usuario.
+   * @param id Identificador del grupo a añadir.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", "Ciclismo");
+   * usuario.grupos; // []
+   * usuario.addGrupo(1);
+   * usuario.grupos; // [1]
+   * ```
+   */
+  addGrupo(id: number): void {
+    this._grupos.add(id);
+  }
+
+  /**
+   * Método para eliminar un grupo de la lista de grupos del usuario.
+   * @param id Identificador del grupo a eliminar.
    * @example
    * ```typescript
    * const usuario = new Usuario("Usuario de prueba", "Ciclismo");
@@ -79,8 +216,8 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
    * usuario.grupos; // []
    * ```
    */
-  get grupos(): number[][] {
-    return this._grupos;
+  removeGrupo(id: number): void {
+    this._grupos.delete(id);
   }
 
   /**
@@ -111,7 +248,38 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
    * ```
    */
   get rutasFavoritas(): number[] {
-    return this._rutasFavoritas;
+    return Array.from(this._rutasFavoritas);
+  }
+
+  /**
+   * Método para añadir una ruta a la lista de rutas favoritas del usuario.
+   * @param id Identificador de la ruta a añadir.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", "Ciclismo");
+   * usuario.rutasFavoritas; // []
+   * usuario.addRutaFavorita(1);
+   * usuario.rutasFavoritas; // [1]
+   * ```
+   */
+  addRutaFavorita(id: number): void {
+    this._rutasFavoritas.add(id);
+  }
+
+  /**
+   * Método para eliminar una ruta de la lista de rutas favoritas del usuario.
+   * @param id Identificador de la ruta a eliminar.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", "Ciclismo");
+   * usuario.rutasFavoritas; // []
+   * usuario.addRutaFavorita(1);
+   * usuario.removeRutaFavorita(1);
+   * usuario.rutasFavoritas; // []
+   * ```
+   */
+  removeRutaFavorita(id: number): void {
+    this._rutasFavoritas.delete(id);
   }
 
   /**
@@ -124,7 +292,38 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
    * ```
    */
   get retos(): number[] {
-    return this._retos;
+    return Array.from(this._retos);
+  }
+
+  /**
+   * Método para añadir un reto a la lista de retos activos del usuario.
+   * @param id Identificador del reto a añadir.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", "Ciclismo");
+   * usuario.retos; // []
+   * usuario.addReto(1);
+   * usuario.retos; // [1]
+   * ```
+   */
+  addReto(id: number): void {
+    this._retos.add(id);
+  }
+
+  /**
+   * Método para eliminar un reto de la lista de retos activos del usuario.
+   * @param id Identificador del reto a eliminar.
+   * @example
+   * ```typescript
+   * const usuario = new Usuario("Usuario de prueba", "Ciclismo");
+   * usuario.retos; // []
+   * usuario.addReto(1);
+   * usuario.removeReto(1);
+   * usuario.retos; // []
+   * ```
+   */
+  removeReto(id: number): void {
+    this._retos.delete(id);
   }
 
   /**

@@ -1,4 +1,4 @@
-import { IdGenerator } from "../IdGenerator";
+import { IdGenerator } from "../Otros/IdGenerator";
 import { TipoActividad } from "../Ruta/Ruta";
 
 /**

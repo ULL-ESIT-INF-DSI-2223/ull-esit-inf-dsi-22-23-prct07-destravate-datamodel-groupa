@@ -60,7 +60,7 @@ export interface RetoInfo {
 }
 
 /**
- * 
+ * Clase para representar un reto para la aplicación de rutas.
  */
 export class Reto implements RetoInfo {
   /**
@@ -116,6 +116,15 @@ export class Reto implements RetoInfo {
     this._km = 0;
   }
 
+  /**
+   * Método para acceder a la lista de rutas que forman parte del reto.
+   * @returns {number[]} - Rutas que forman parte del reto.
+   * @example
+   * ```typescript
+   * const reto = new Reto("Reto de la semana", TipoActividad.BICICLETA, 1, 2, 3);
+   * console.log(reto.rutas); // [1, 2, 3]
+   * ```
+   */
   get rutas(): number[] {
     return Array.from(this._rutas);
   }
@@ -150,6 +159,18 @@ export class Reto implements RetoInfo {
     this._rutas.delete(id);
   }
 
+  /**
+   * Método para acceder a la lista de usuarios que están realizando el reto.
+   * @returns {number} - Número de usuarios que realizan el reto.
+   * @example
+   * ```typescript
+   * const reto = new Reto("Reto de la semana", TipoActividad.BICICLETA, 1, 2, 3);
+   * console.log(reto.usuarios); // []
+   * reto.addUsuario(1);
+   * console.log(reto.usuarios); // [1]
+   * reto.addUsuario(2);
+   * ```
+   */
   get usuarios(): number[] {
     return Array.from(this._usuarios);
   }
@@ -187,6 +208,15 @@ export class Reto implements RetoInfo {
     this._usuarios.delete(id);
   }
 
+  /**
+   * Método para acceder a los kilómetros totales del reto.
+   * @returns {number} - Kilómetros totales del reto.
+   * @example
+   * ```typescript
+   * const reto = new Reto("Reto de la semana", TipoActividad.BICICLETA, 1, 2, 3);
+   * console.log(reto.km); // 0
+   * ```
+   */
   get km(): number {
     return this._km;
   }

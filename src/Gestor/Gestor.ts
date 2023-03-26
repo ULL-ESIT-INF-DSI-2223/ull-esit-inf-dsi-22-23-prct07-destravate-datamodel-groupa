@@ -1,4 +1,4 @@
-import * as inquirer from "inquirer";
+/*import * as inquirer from "inquirer";
 
 import lowdb = require("lowdb");
 import FileSync = require("lowdb/adapters/FileSync");
@@ -75,3 +75,4 @@ export class Gestor {
       });
   }
 }
+*/
