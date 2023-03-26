@@ -1,16 +1,14 @@
 # Práctica 7 - Destravate
 
-## Introducción 
+## Introducción
 
-  El objetivo de esta práctica es desarrollar un diseño orientado a objetos del modelo de datos de un sistema de información que permita almacenar registros de actividades deportivas.
+El objetivo de esta práctica es desarrollar un diseño orientado a objetos del modelo de datos de un sistema de información que permita almacenar registros de actividades deportivas.
 
-  Podríamos decir que otro objetivo de la práctica es trabajar en grupo de manera conjunta de tal modo que todos aportemos nuestro conocimiento para cumplir con el objetivo, enunciado y requisitos, todo esto gracias a la comunicación adecuada, al trabajo en grupo y también a herramientas muy útiles que vimos en prácticas anteriores como LiveShare para poder estar todos los componentes del grupo trabjando en el código a la vez.
+Podríamos decir que otro objetivo de la práctica es trabajar en grupo de manera conjunta de tal modo que todos aportemos nuestro conocimiento para cumplir con el objetivo, enunciado y requisitos, todo esto gracias a la comunicación adecuada, al trabajo en grupo y también a herramientas muy útiles que vimos en prácticas anteriores como LiveShare para poder estar todos los componentes del grupo trabjando en el código a la vez.
 
+## Desarrollo
 
-
-## Desarrollo 
-
-  En la actividad se desarrollarán 4 clases principales, que serán las siguientes: `Ruta`, `Usuario`, `Grupo` y `Reto`. Además, se utilizarán los módulos `Inquirer.js` y `Lowdb` para la gestión de datos. Para poder implementar estos módulos, se realizará una clase `Gestor` que se encargará de gestionar la información de los usuarios, grupos, retos y rutas.
+En la actividad se desarrollarán 4 clases principales, que serán las siguientes: `Ruta`, `Usuario`, `Grupo` y `Reto`. Además, se utilizarán los módulos `Inquirer.js` y `Lowdb` para la gestión de datos. Para poder implementar estos módulos, se realizará una clase `Gestor` que se encargará de gestionar la información de los usuarios, grupos, retos y rutas.
 
 ### Rutas
 
@@ -33,12 +31,12 @@ Los requisitos que se nos pedían para las Rutas son los siguientes:
 8. Tipo de actividad: Indicador si la ruta se puede realizar en bicicleta o corriendo.
 
 9. Calificación media de la ruta.
-  
+
 #### Código
 
 Dentro del directorio src/Ruta tenemos:
 
-- ```BasicRuta.ts```:
+- `BasicRuta.ts`:
 
 ```TypeScript
 import { Coordenada } from "./Coordenada";
@@ -60,9 +58,9 @@ export class BasicRuta implements BasicRutaInfo {
 }
 ```
 
-Se define una interfaz y una clase relacionadas con la información de una ruta. La interfaz se llama ```BasicRutaInfo``` y define cuatro propiedades: un identificador único ```id```, una coordenada de inicio ```inicio```, una coordenada final ```fin``` y la longitud total de la ruta en kilómetros ```longitud```. La clase ```BasicRuta``` implementa esta interfaz y tiene un ```constructor``` que acepta los mismos parámetros que la interfaz, y los almacena como propiedades de sólo lectura en la instancia de la clase. La clase y la interfaz dependen de la clase ```Coordenada```, que se importa desde otro archivo.
+Se define una interfaz y una clase relacionadas con la información de una ruta. La interfaz se llama `BasicRutaInfo` y define cuatro propiedades: un identificador único `id`, una coordenada de inicio `inicio`, una coordenada final `fin` y la longitud total de la ruta en kilómetros `longitud`. La clase `BasicRuta` implementa esta interfaz y tiene un `constructor` que acepta los mismos parámetros que la interfaz, y los almacena como propiedades de sólo lectura en la instancia de la clase. La clase y la interfaz dependen de la clase `Coordenada`, que se importa desde otro archivo.
 
-- ```Coordenada.ts```:
+- `Coordenada.ts`:
 
 ```TypeScript
 
@@ -71,9 +69,9 @@ export class Coordenada {
 }
 ```
 
-Se define una clase llamada ```Coordenada``` que representa una coordenada geográfica con dos propiedades: ```latitud``` y ```longitud```. La clase tiene un ```constructor``` que toma dos argumentos, ```latitud``` y ```longitud```, y los asigna a las propiedades correspondientes de solo lectura de la clase.
+Se define una clase llamada `Coordenada` que representa una coordenada geográfica con dos propiedades: `latitud` y `longitud`. La clase tiene un `constructor` que toma dos argumentos, `latitud` y `longitud`, y los asigna a las propiedades correspondientes de solo lectura de la clase.
 
-- ```Ruta.ts```:
+- `Ruta.ts`:
 
 ```TypeScript
 import { Coordenada } from "./Coordenada";
@@ -127,13 +125,11 @@ export class Ruta extends BasicRuta implements RutaInfo {
 }
 ```
 
-Aquí tenemos la implementación de una clase y una interfaz para representar la ruta y su información asociada. La clase ```Ruta``` implementa la interfaz ```RutaInfo``` y extiende la clase ```BasicRuta```.
+Aquí tenemos la implementación de una clase y una interfaz para representar la ruta y su información asociada. La clase `Ruta` implementa la interfaz `RutaInfo` y extiende la clase `BasicRuta`.
 
-La interfaz ```RutaInfo``` describe la información que debe tener un objeto de tipo ```Ruta```, incluyendo el nombre, el desnivel, la lista de usuarios que han realizado la ruta, la actividad de la ruta y su calificación. Además, la interfaz define un método ```addUsuario``` para añadir usuarios a la lista de usuarios que han realizado la ruta.
+La interfaz `RutaInfo` describe la información que debe tener un objeto de tipo `Ruta`, incluyendo el nombre, el desnivel, la lista de usuarios que han realizado la ruta, la actividad de la ruta y su calificación. Además, la interfaz define un método `addUsuario` para añadir usuarios a la lista de usuarios que han realizado la ruta.
 
-La clase ```Ruta``` tiene los mismos atributos y método que la interfaz ```RutaInfo```. Además, tiene un ```constructor``` que toma los mismos parámetros que la interfaz, así como un identificador único para la ruta. La clase también tiene ```getters``` y ```setters``` para los atributos de la ruta, como la lista de usuarios que han realizado la ruta y la calificación de la ruta.
-
-
+La clase `Ruta` tiene los mismos atributos y método que la interfaz `RutaInfo`. Además, tiene un `constructor` que toma los mismos parámetros que la interfaz, así como un identificador único para la ruta. La clase también tiene `getters` y `setters` para los atributos de la ruta, como la lista de usuarios que han realizado la ruta y la calificación de la ruta.
 
 ### Usuario
 
@@ -161,7 +157,7 @@ Los requisitos que se nos pedían para los usuarios son los siguientes:
 
 Dentro del directorio src/Usuario tenemos:
 
-- ```BasicUsuario.ts```:
+- `BasicUsuario.ts`:
 
 ```TypeScript
 import { TipoActividad } from "../Ruta/Ruta";
@@ -189,13 +185,13 @@ export abstract class BasicUsuario implements BasicUsuarioInfo {
 }
 ```
 
-Se define una interfaz llamada ```BasicUsuarioInfo``` que describe la información básica de un usuario. La interfaz tiene tres propiedades: ```nombre```, ```id``` y ```actividad```. La propiedad actividad es de tipo ```TipoActividad```, que se define en el archivo comentado anteriormente llamado ```Ruta.ts```.
+Se define una interfaz llamada `BasicUsuarioInfo` que describe la información básica de un usuario. La interfaz tiene tres propiedades: `nombre`, `id` y `actividad`. La propiedad actividad es de tipo `TipoActividad`, que se define en el archivo comentado anteriormente llamado `Ruta.ts`.
 
-Luego, se define una clase abstracta llamada ```BasicUsuario```, que implementa la interfaz ```BasicUsuarioInfo```. La clase tiene tres propiedades: ```nombre, ```id``` y ```_actividad```. La propiedad ```_actividad``` está protegida y no es accesible desde fuera de la clase. El ```constructor``` de la clase acepta los mismos tres parámetros que la interfaz ```BasicUsuarioInfo``` que ya habíamos mencionado.
+Luego, se define una clase abstracta llamada `BasicUsuario`, que implementa la interfaz `BasicUsuarioInfo`. La clase tiene tres propiedades: `nombre, `id`y`\_actividad`. La propiedad `\_actividad`está protegida y no es accesible desde fuera de la clase. El`constructor`de la clase acepta los mismos tres parámetros que la interfaz`BasicUsuarioInfo``` que ya habíamos mencionado.
 
-La clase tiene un método ```getter``` llamado ```actividad``` que devuelve la propiedad ```_actividad```.
+La clase tiene un método `getter` llamado `actividad` que devuelve la propiedad `_actividad`.
 
-- ```Entrenamiento.ts```:
+- `Entrenamiento.ts`:
 
 ```TypeScript
 
@@ -204,9 +200,9 @@ export class Entrenamiento {
 };
 ```
 
-Aquí una clase llamada ```Entrenamiento``` que representa un entrenamiento de un usuario en una aplicación. La clase tiene dos propiedades públicas llamadas ```km``` y ```desnivel```, que representan los kilómetros recorridos y el desnivel acumulado en el entrenamiento respectivamente. El ```constructor``` de la clase tiene dos parámetros opcionales que inicializan las propiedades ```km``` y ```desnivel``` con un valor predeterminado de 0.
+Aquí una clase llamada `Entrenamiento` que representa un entrenamiento de un usuario en una aplicación. La clase tiene dos propiedades públicas llamadas `km` y `desnivel`, que representan los kilómetros recorridos y el desnivel acumulado en el entrenamiento respectivamente. El `constructor` de la clase tiene dos parámetros opcionales que inicializan las propiedades `km` y `desnivel` con un valor predeterminado de 0.
 
-- ```Estadistica.ts```:
+- `Estadistica.ts`:
 
 ```TypeScript
 import { Entrenamiento } from './Entrenamiento';
@@ -220,9 +216,9 @@ export class Estadistica {
 }
 ```
 
-Se define la clase llamada ```Estadistica``` que tiene tres propiedades: ```dia```, ```semana``` y ```mes```, todas del tipo ```Entrenamiento```. La clase tiene un ```constructor``` que inicializa las propiedades con valores predeterminados de un objeto ```Entrenamiento``` vacío.
+Se define la clase llamada `Estadistica` que tiene tres propiedades: `dia`, `semana` y `mes`, todas del tipo `Entrenamiento`. La clase tiene un `constructor` que inicializa las propiedades con valores predeterminados de un objeto `Entrenamiento` vacío.
 
-- ```Registro.ts```:
+- `Registro.ts`:
 
 ```TypeScript
 
@@ -242,18 +238,18 @@ export class Registro {
   }
 
   addRuta(id: number): void {
-    if (this._rutas.includes(id)) 
+    if (this._rutas.includes(id))
       return;
     this._rutas.push(id);
   }
 }
 ```
 
-Se define una interfaz y una clase para representar registros de entrenamiento. La interfaz ```RegistroInfo``` define los atributos de un registro, como su ```fecha``` y las ```rutas``` realizadas durante el entrenamiento. La clase ```Registro``` implementa la interfaz ```RegistroInfo``` y define su ```constructor```, que toma una fecha y una lista de rutas realizadas durante el entrenamiento.
+Se define una interfaz y una clase para representar registros de entrenamiento. La interfaz `RegistroInfo` define los atributos de un registro, como su `fecha` y las `rutas` realizadas durante el entrenamiento. La clase `Registro` implementa la interfaz `RegistroInfo` y define su `constructor`, que toma una fecha y una lista de rutas realizadas durante el entrenamiento.
 
-La clase ```Registro``` también tiene un método ```addRuta```, que permite añadir una nueva ruta al registro. La propiedad ```rutas``` de la clase ```Registro``` devuelve la lista de rutas realizadas durante el entrenamiento.
+La clase `Registro` también tiene un método `addRuta`, que permite añadir una nueva ruta al registro. La propiedad `rutas` de la clase `Registro` devuelve la lista de rutas realizadas durante el entrenamiento.
 
-- ```Usuario.ts```:
+- `Usuario.ts`:
 
 ```TypeScript
 import { BasicUsuario } from "./BasicUsuario";
@@ -307,14 +303,13 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
 }
 ```
 
-Es definida una interfaz llamada ```UsuarioInfo``` que especifica la información que debe contener la clase ```Usuario```. La clase ```Usuario``` extiende otra clase llamada ```BasicUsuario``` y también implementa la interfaz ```UsuarioInfo```. La clase ```Usuario``` tiene seis propiedades protegidas que representan la información del usuario: ```_amigos```, ```_grupos```, ```_estadisticas```, ```_rutasFavoritas```, ```_retos``` y ```_historial```. La clase también tiene seis métodos ```getter``` que permiten acceder a estas propiedades protegidas.
-
+Es definida una interfaz llamada `UsuarioInfo` que especifica la información que debe contener la clase `Usuario`. La clase `Usuario` extiende otra clase llamada `BasicUsuario` y también implementa la interfaz `UsuarioInfo`. La clase `Usuario` tiene seis propiedades protegidas que representan la información del usuario: `_amigos`, `_grupos`, `_estadisticas`, `_rutasFavoritas`, `_retos` y `_historial`. La clase también tiene seis métodos `getter` que permiten acceder a estas propiedades protegidas.
 
 ### Grupos
 
 ### Retos
 
-## Conclusión 
+## Conclusión
 
 ## Elementos Bibliográficos:
 
@@ -323,4 +318,3 @@ Es definida una interfaz llamada ```UsuarioInfo``` que especifica la informació
 - Principios SOLID, https://profile.es/blog/principios-solid-desarrollo-software-calidad/.
 
 - Adam Freeman - Essential TypeScript 4: From Beginner to ProURL,https://www.oreilly.com/library/view/essential-typescript-4/9781484270110/html/Part_1.xhtml .
-

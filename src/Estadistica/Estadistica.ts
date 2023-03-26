@@ -1,12 +1,17 @@
-import { Entrenamiento } from './Entrenamiento';
+import { Entrenamiento } from "./Entrenamiento";
 
 /**
- * Definición de la interfaz para representar las estadísticas de un usuario en la aplicación.
- * @interface Estadistica
- * @property {Entrenamiento} semana - Registro de km recorridos y desnivel acumulado en la semana por el usuario.
- * @property {Entrenamiento} mes - Registro de km recorridos y desnivel acumulado en el mes por el usuario.
+ * Definición de la interfaz para representar las estadísticas básicas de los usuarios y grupos en la aplicación.
  */
 export interface Estadistica {
+  /**
+   * Entrenamiento semanal del usuario o grupo.
+   * @type {Entrenamiento}
+   */
   semana: Entrenamiento;
+  /**
+   * Entrenamiento mensual del usuario o grupo.
+   * @type {Entrenamiento}
+   */
   mes: Entrenamiento;
 }
