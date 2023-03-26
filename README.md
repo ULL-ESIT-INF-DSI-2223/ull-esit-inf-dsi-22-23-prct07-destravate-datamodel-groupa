@@ -1112,6 +1112,13 @@ All files               |   96.19 |    91.66 |    97.4 |   96.59 |
 ------------------------|---------|----------|---------|---------|-------------------
 ```
 
+Así que por último mostramos su funcionamiento por terminal:
+
+```bash
+
+```
+
+
 ## Conclusión 
 
 Ha sido una práctica con cierto nivel de complejidad pero que nos a ayudado no a saber trabajar en equipo por separado si no a usar herramientas como LiveShare en VSC que ha sido de gran ayuda. Cabe destacar que en esta práctica hemos alcanzado nuestro objetivo que era acabar con algo funcional, gracias al uso de todos los conocimientos adquiridos en la asignatura hasta esta semana. Incluso utilizamos patrones como ```Singleton``` por ejemplo. También tuvimos en cuenta y respetamos los principios Solid.
