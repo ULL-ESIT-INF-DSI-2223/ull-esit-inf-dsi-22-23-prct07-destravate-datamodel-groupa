@@ -21,6 +21,9 @@ export type Database = {
   retos: Reto[];
 };
 
+/**
+ * Pregunta para el login.
+ */
 const loginQuestion: inquirer.QuestionCollection = [
   {
     type: "input",
@@ -29,6 +32,9 @@ const loginQuestion: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Pregunta para el registro de un nuevo usuario.
+ */
 const activityQuestion: inquirer.QuestionCollection = [
   {
     type: "list",
@@ -38,12 +44,18 @@ const activityQuestion: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Comandos para la gestión de rutas.
+ */
 enum RutasCommands {
   Añadir = "Añadir Ruta",
   Eliminar = "Eliminar Ruta",
   Volver = "Volver",
 }
 
+/**
+ * Preguntas para la creación de una nueva ruta.
+ */
 const rutasFormQuestions: inquirer.QuestionCollection = [
   {
     type: "input",
@@ -88,6 +100,9 @@ const rutasFormQuestions: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Pregunta para la eliminación de una ruta.
+ */
 const deleteRutaQuestion: inquirer.QuestionCollection = [
   {
     type: "input",
@@ -96,6 +111,9 @@ const deleteRutaQuestion: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Preguntas para la gestión de rutas.
+ */
 const rutasSubMenuQuestions: inquirer.QuestionCollection = [
   {
     type: "list",
@@ -105,10 +123,16 @@ const rutasSubMenuQuestions: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Comandos para la gestión de usuarios.
+ */
 enum UsuariosCommands {
   Volver = "Volver",
 }
 
+/**
+ * Preguntas para la gestión de usuarios.
+ */
 const usuariosSubMenuQuestions: inquirer.QuestionCollection = [
   {
     type: "list",
@@ -118,12 +142,18 @@ const usuariosSubMenuQuestions: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Comandos para la gestión de grupos.
+ */
 enum GruposCommands {
   Entrar = "Entrar en Grupo",
   Salir = "Salir de Grupo",
   Volver = "Volver",
 }
 
+/**
+ * Preguntas para la gestión de grupos.
+ */
 const gruposSubMenuQuestions: inquirer.QuestionCollection = [
   {
     type: "list",
@@ -133,6 +163,9 @@ const gruposSubMenuQuestions: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Pregunta para entrar en un grupo.
+ */
 const entrarEnGrupo: inquirer.QuestionCollection = [
   {
     type: "input",
@@ -141,6 +174,9 @@ const entrarEnGrupo: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Pregunta para salir de un grupo.
+ */
 const salirDeGrupo: inquirer.QuestionCollection = [
   {
     type: "input",
@@ -149,12 +185,18 @@ const salirDeGrupo: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Comandos para la gestión de retos.
+ */
 enum RetosCommands {
   Entrar = "Entrar en Reto",
   Salir = "Salir de Reto",
   Volver = "Volver",
 }
 
+/**
+ * Preguntas para la gestión de retos.
+ */
 const retosSubMenuQuestions: inquirer.QuestionCollection = [
   {
     type: "list",
@@ -164,6 +206,9 @@ const retosSubMenuQuestions: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Pregunta para entrar en un reto.
+ */
 const entrarEnReto: inquirer.QuestionCollection = [
   {
     type: "input",
@@ -172,6 +217,9 @@ const entrarEnReto: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Pregunta para salir de un reto.
+ */
 const salirDeReto: inquirer.QuestionCollection = [
   {
     type: "input",
@@ -180,6 +228,9 @@ const salirDeReto: inquirer.QuestionCollection = [
   },
 ];
 
+/**
+ * Preguntas para la creación de un nuevo reto.
+ */
 const retoQuestion: inquirer.QuestionCollection = [
   {
     type: "list",
@@ -199,6 +250,9 @@ const retoQuestion: inquirer.QuestionCollection = [
   }
 ];
 
+/**
+ * Preguntas para la creación de un nuevo reto.
+ */
 const retoFormQuestions: inquirer.QuestionCollection = [
   {
     type: "input",
@@ -218,6 +272,9 @@ enum PromptCommands {
   Salir = "Salir",
 }
 
+/**
+ * Preguntas para el menú principal del gestor de la aplicación.
+ */
 const mainMenuQuestions: inquirer.QuestionCollection = [
   {
     type: "list",
@@ -278,6 +335,10 @@ export class Gestor extends BasicGestor implements GestorInfo {
     this.database
       .defaults({ rutas: [], usuarios: [], grupos: [], retos: [] })
       .write();
+    this._usuarios = this.database.get("usuarios").value();
+    this._rutas = this.database.get("rutas").value();
+    this._grupos = this.database.get("grupos").value();
+    this._retos = this.database.get("retos").value();
   }
 
   /**
@@ -295,6 +356,11 @@ export class Gestor extends BasicGestor implements GestorInfo {
     return Gestor.instance;
   }
 
+  /* istanbul ignore next */
+  /**
+   * Método para iniciar sesión en el gestor de la aplicación.
+   * @async
+   */
   async login() {
     const loggedUser = await inquirer.prompt(loginQuestion);
 
@@ -560,5 +626,18 @@ export class Gestor extends BasicGestor implements GestorInfo {
           break;
       }
     }
+    this.database.setState({ usuarios: [], rutas: [], grupos: [], retos: [] }).write();
+    this._usuarios.forEach((usuario) => {
+      this.database.get("usuarios").push(usuario).write();
+    });
+    this._rutas.forEach((ruta) => {
+      this.database.get("rutas").push(ruta).write();
+    });
+    this._grupos.forEach((grupo) => {
+      this.database.get("grupos").push(grupo).write();
+    });
+    this._retos.forEach((reto) => {
+      this.database.get("retos").push(reto).write();
+    });
   }
 }

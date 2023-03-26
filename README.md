@@ -9,7 +9,7 @@ El objetivo de esta práctica es desarrollar un diseño orientado a objetos del 
 
 Podríamos decir que otro objetivo de la práctica es trabajar en grupo de manera conjunta de tal modo que todos aportemos nuestro conocimiento para cumplir con el objetivo, enunciado y requisitos, todo esto gracias a la comunicación adecuada, al trabajo en grupo y también a herramientas muy útiles que vimos en prácticas anteriores como LiveShare para poder estar todos los componentes del grupo trabjando en el código a la vez.
 
-## Desarrollo 
+## Desarrollo
 
 En la actividad se desarrollarán 4 clases principales, que serán las siguientes: `Ruta`, `Usuario`, `Grupo` y `Reto`. Además, se utilizarán los módulos `Inquirer.js` y `Lowdb` para la gestión de datos. Para poder implementar estos módulos, se realizará una clase `Gestor` que se encargará de gestionar la información de los usuarios, grupos, retos y rutas.
 
@@ -39,7 +39,7 @@ Los requisitos que se nos pedían para las Rutas son los siguientes:
 
 Dentro del directorio src/Ruta tenemos:
 
-- ```BasicRuta.ts```:
+- `BasicRuta.ts`:
 
 ```TypeScript
 import { Coordenada } from "./Coordenada";
@@ -60,9 +60,9 @@ export class BasicRuta implements BasicRutaInfo {
 }
 ```
 
-Se define una interfaz y una clase relacionadas con la información de una ruta. La interfaz se llama ```BasicRutaInfo``` y define cuatro propiedades: un identificador único ```id```, una coordenada de inicio ```inicio```, una coordenada final ```fin``` y la longitud total de la ruta en kilómetros ```longitud```. La clase ```BasicRuta``` implementa esta interfaz y tiene un ```constructor``` que acepta los mismos parámetros que la interfaz, y los almacena como propiedades de sólo lectura en la instancia de la clase. La clase y la interfaz dependen de la clase ```Coordenada```, que se importa desde otro archivo.
+Se define una interfaz y una clase relacionadas con la información de una ruta. La interfaz se llama `BasicRutaInfo` y define cuatro propiedades: un identificador único `id`, una coordenada de inicio `inicio`, una coordenada final `fin` y la longitud total de la ruta en kilómetros `longitud`. La clase `BasicRuta` implementa esta interfaz y tiene un `constructor` que acepta los mismos parámetros que la interfaz, y los almacena como propiedades de sólo lectura en la instancia de la clase. La clase y la interfaz dependen de la clase `Coordenada`, que se importa desde otro archivo.
 
-- ```Coordenada.ts```:
+- `Coordenada.ts`:
 
 ```TypeScript
 
@@ -71,9 +71,9 @@ export class Coordenada {
 }
 ```
 
-Se define una clase llamada ```Coordenada``` que representa una coordenada geográfica con dos propiedades: ```latitud``` y ```longitud```. La clase tiene un ```constructor``` que toma dos argumentos, ```latitud``` y ```longitud```, y los asigna a las propiedades correspondientes de solo lectura de la clase.
+Se define una clase llamada `Coordenada` que representa una coordenada geográfica con dos propiedades: `latitud` y `longitud`. La clase tiene un `constructor` que toma dos argumentos, `latitud` y `longitud`, y los asigna a las propiedades correspondientes de solo lectura de la clase.
 
-- ```Ruta.ts```:
+- `Ruta.ts`:
 
 ```TypeScript
 import { Coordenada } from "./Coordenada";
@@ -125,11 +125,11 @@ export class Ruta extends BasicRuta implements RutaInfo {
 }
 ```
 
-Aquí tenemos la implementación de una clase y una interfaz para representar la ruta y su información asociada. La clase ```Ruta``` implementa la interfaz ```RutaInfo``` y extiende la clase ```BasicRuta```.
+Aquí tenemos la implementación de una clase y una interfaz para representar la ruta y su información asociada. La clase `Ruta` implementa la interfaz `RutaInfo` y extiende la clase `BasicRuta`.
 
-La interfaz ```RutaInfo``` describe la información que debe tener un objeto de tipo ```Ruta```, incluyendo el nombre, el desnivel, la lista de usuarios que han realizado la ruta, la actividad de la ruta y su calificación. Además, la interfaz define un método `addUsuario` para añadir usuarios a la lista de usuarios que han realizado la ruta.
+La interfaz `RutaInfo` describe la información que debe tener un objeto de tipo `Ruta`, incluyendo el nombre, el desnivel, la lista de usuarios que han realizado la ruta, la actividad de la ruta y su calificación. Además, la interfaz define un método `addUsuario` para añadir usuarios a la lista de usuarios que han realizado la ruta.
 
-La clase ```Ruta``` tiene los mismos atributos y método que la interfaz ```RutaInfo```. Además, tiene un ```constructor``` que toma los mismos parámetros que la interfaz, así como un identificador único para la ruta. La clase también tiene ```getters``` y ```setters``` para los atributos de la ruta, como la lista de usuarios que han realizado la ruta y la calificación de la ruta.
+La clase `Ruta` tiene los mismos atributos y método que la interfaz `RutaInfo`. Además, tiene un `constructor` que toma los mismos parámetros que la interfaz, así como un identificador único para la ruta. La clase también tiene `getters` y `setters` para los atributos de la ruta, como la lista de usuarios que han realizado la ruta y la calificación de la ruta.
 
 ### Usuario
 
@@ -157,7 +157,7 @@ Los requisitos que se nos pedían para los usuarios son los siguientes:
 
 Dentro del directorio src/Usuario tenemos:
 
-- ```BasicUsuario.ts```:
+- `BasicUsuario.ts`:
 
 ```TypeScript
 import { TipoActividad } from "../Ruta/Ruta";
@@ -184,12 +184,11 @@ export abstract class BasicUsuario implements BasicUsuarioInfo {
 }
 ```
 
-Se define una interfaz llamada ```BasicUsuarioInfo``` que describe la información básica de un usuario. La interfaz tiene tres propiedades: ```nombre```, ```id``` y ```actividad```. La propiedad actividad es de tipo ```TipoActividad```, que se define en el archivo comentado anteriormente llamado ```Ruta.ts```.
+Se define una interfaz llamada `BasicUsuarioInfo` que describe la información básica de un usuario. La interfaz tiene tres propiedades: `nombre`, `id` y `actividad`. La propiedad actividad es de tipo `TipoActividad`, que se define en el archivo comentado anteriormente llamado `Ruta.ts`.
 
-Luego, se define una clase abstracta llamada ```BasicUsuario```, que implementa la interfaz ```BasicUsuarioInfo```. La clase tiene tres propiedades: ```nombre``, ```id``` y ```_actividad```. La propiedad ```_actividad``` está protegida y no es accesible desde fuera de la clase. El```constructor```de la clase acepta los mismos tres parámetros que la interfaz```BasicUsuarioInfo``` que ya habíamos mencionado.
+Luego, se define una clase abstracta llamada `BasicUsuario`, que implementa la interfaz `BasicUsuarioInfo`. La clase tiene tres propiedades: ` nombre``,  `id`y`\_actividad`. La propiedad `\_actividad` está protegida y no es accesible desde fuera de la clase. El`constructor`de la clase acepta los mismos tres parámetros que la interfaz`BasicUsuarioInfo``` que ya habíamos mencionado.
 
-La clase tiene un método ```getter``` llamado ```actividad``` que devuelve la propiedad ```_actividad```.
-
+La clase tiene un método `getter` llamado `actividad` que devuelve la propiedad `_actividad`.
 
 - `Usuario.ts`:
 
@@ -245,7 +244,7 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
 }
 ```
 
-Es definida una interfaz llamada ```UsuarioInfo``` que especifica la información que debe contener la clase ```Usuario```. La clase ```Usuario``` extiende otra clase llamada ```BasicUsuario``` y también implementa la interfaz ```UsuarioInfo```. La clase ```Usuario``` tiene seis propiedades protegidas que representan la información del usuario: ```_amigos```, ```_grupos```, ```_estadisticas```, ```_rutasFavoritas```, ```_retos``` y ```_historial```. La clase también tiene seis métodos ```getter``` que permiten acceder a estas propiedades protegidas.
+Es definida una interfaz llamada `UsuarioInfo` que especifica la información que debe contener la clase `Usuario`. La clase `Usuario` extiende otra clase llamada `BasicUsuario` y también implementa la interfaz `UsuarioInfo`. La clase `Usuario` tiene seis propiedades protegidas que representan la información del usuario: `_amigos`, `_grupos`, `_estadisticas`, `_rutasFavoritas`, `_retos` y `_historial`. La clase también tiene seis métodos `getter` que permiten acceder a estas propiedades protegidas.
 
 ### Grupos
 
@@ -269,7 +268,7 @@ Los requisitos para grupos son los siguientes:
 
 Dentro del directorio src/Grupo tenemos:
 
-- ```Grupo.ts```:
+- `Grupo.ts`:
 
 ```TypeScript
 import { IdGenerator } from "../IdGenerator";
@@ -288,14 +287,14 @@ export interface GrupoInfo {
 
 export class Grupo implements GrupoInfo {
   private static idGenerator = new IdGenerator();
-  
+
   public readonly id: number;
   private _participantes: number[] = [];
   private _estadisticas: EstadisticaGrupo = new EstadisticaGrupo();
   private _ranking: number[] = [];
   private _rutasFavoritas: number[] = [];
   private _historial: Registro[] = [];
-  
+
   constructor(
     public nombre: string,
     ...participantes: number[]
@@ -326,11 +325,11 @@ export class Grupo implements GrupoInfo {
 }
 ```
 
-La interfaz ```GrupoInfo``` define las propiedades que debe tener un objeto que represente la información básica de un grupo, incluyendo su ```ID```, ```nombre```, ```participantes```, ```estadisticas```, ```ranking```, ```rutasFavoritas``` e ```historial``` de entrenamientos.
+La interfaz `GrupoInfo` define las propiedades que debe tener un objeto que represente la información básica de un grupo, incluyendo su `ID`, `nombre`, `participantes`, `estadisticas`, `ranking`, `rutasFavoritas` e `historial` de entrenamientos.
 
-La clase ```Grupo``` implementa la interfaz ```GrupoInfo``` y define las propiedades y métodos de un objeto que representa un grupo. La clase tiene una propiedad ```id``` única generada por la clase ```IdGenerator```, que asigna un ```ID``` automáticamente cada vez que se crea una nueva instancia de la clase ```Grupo```. Además, la clase tiene propiedades para el nombre del grupo, los IDs de los participantes, las estadísticas del grupo, el ranking, las rutas favoritas y el historial de entrenamientos.
+La clase `Grupo` implementa la interfaz `GrupoInfo` y define las propiedades y métodos de un objeto que representa un grupo. La clase tiene una propiedad `id` única generada por la clase `IdGenerator`, que asigna un `ID` automáticamente cada vez que se crea una nueva instancia de la clase `Grupo`. Además, la clase tiene propiedades para el nombre del grupo, los IDs de los participantes, las estadísticas del grupo, el ranking, las rutas favoritas y el historial de entrenamientos.
 
-La clase también tiene métodos ```getter``` para cada una de las propiedades, lo que permite acceder a ellas desde fuera de la clase. Finalmente, el ```constructor``` de la clase acepta el nombre del grupo y una lista variable de IDs de participantes como argumentos y asigna estas propiedades a las correspondientes en la instancia de la clase.
+La clase también tiene métodos `getter` para cada una de las propiedades, lo que permite acceder a ellas desde fuera de la clase. Finalmente, el `constructor` de la clase acepta el nombre del grupo y una lista variable de IDs de participantes como argumentos y asigna estas propiedades a las correspondientes en la instancia de la clase.
 
 ### Estadística
 
@@ -338,7 +337,7 @@ La clase también tiene métodos ```getter``` para cada una de las propiedades, 
 
 En el directortio src/Estadistica tenemos:
 
-- ```Entrenamiento.ts```:
+- `Entrenamiento.ts`:
 
 ```TypeScript
 
@@ -347,9 +346,9 @@ export class Entrenamiento {
 };
 ```
 
-Aquí una clase llamada ```Entrenamiento``` que representa un entrenamiento de un usuario en una aplicación. La clase tiene dos propiedades públicas llamadas ```km``` y ```desnivel```, que representan los kilómetros recorridos y el desnivel acumulado en el entrenamiento respectivamente. El ```constructor``` de la clase tiene dos parámetros opcionales que inicializan las propiedades ```km``` y ```desnivel``` con un valor predeterminado de 0.
+Aquí una clase llamada `Entrenamiento` que representa un entrenamiento de un usuario en una aplicación. La clase tiene dos propiedades públicas llamadas `km` y `desnivel`, que representan los kilómetros recorridos y el desnivel acumulado en el entrenamiento respectivamente. El `constructor` de la clase tiene dos parámetros opcionales que inicializan las propiedades `km` y `desnivel` con un valor predeterminado de 0.
 
-- ```Estadistica.ts```:
+- `Estadistica.ts`:
 
 ```TypeScript
 import { Entrenamiento } from './Entrenamiento';
@@ -360,9 +359,9 @@ export interface Estadistica {
 }
 ```
 
-Aquí tenemos la interfaz llamada ```Estadistica```. La interfaz tiene dos propiedades: ```semana``` y ```mes```, ambas son del tipo ```Entrenamiento```, que es otra clase definida en el archivo ```Entrenamiento.ts```. La interfaz ```Estadistica``` se utiliza para representar las estadísticas de un usuario, y cada estadística tiene información de km recorridos y desnivel acumulado en una semana o un mes.
+Aquí tenemos la interfaz llamada `Estadistica`. La interfaz tiene dos propiedades: `semana` y `mes`, ambas son del tipo `Entrenamiento`, que es otra clase definida en el archivo `Entrenamiento.ts`. La interfaz `Estadistica` se utiliza para representar las estadísticas de un usuario, y cada estadística tiene información de km recorridos y desnivel acumulado en una semana o un mes.
 
-- ```EstadisticaGrupo.ts ```:
+- `EstadisticaGrupo.ts `:
 
 ```TypeScript
 import { Entrenamiento } from './Entrenamiento';
@@ -377,9 +376,9 @@ export class EstadisticaGrupo implements Estadistica{
 }
 ```
 
-Definimos la clase ```EstadisticaGrupo``` que implementa la interfaz ```Estadistica```. La clase tiene tres propiedades públicas que representan los registros de entrenamiento de un grupo en una ```semana```, ```mes``` y ```año```. Estas propiedades son instancias de la clase ```Entrenamiento```, que no se proporciona en el código que se muestra. El ```constructor``` de la clase inicializa estas propiedades con instancias vacías de la clase ```Entrenamiento``` si no se proporcionan valores al momento de crear una instancia de ```EstadisticaGrupo```. La clase ```EstadisticaGrupo``` extiende la clase ```Estadistica```, lo que significa que debe implementar todas las propiedades y métodos definidos en la interfaz ```Estadistica```.
+Definimos la clase `EstadisticaGrupo` que implementa la interfaz `Estadistica`. La clase tiene tres propiedades públicas que representan los registros de entrenamiento de un grupo en una `semana`, `mes` y `año`. Estas propiedades son instancias de la clase `Entrenamiento`, que no se proporciona en el código que se muestra. El `constructor` de la clase inicializa estas propiedades con instancias vacías de la clase `Entrenamiento` si no se proporcionan valores al momento de crear una instancia de `EstadisticaGrupo`. La clase `EstadisticaGrupo` extiende la clase `Estadistica`, lo que significa que debe implementar todas las propiedades y métodos definidos en la interfaz `Estadistica`.
 
-- ```EstadisticaUsuario.ts ```:
+- `EstadisticaUsuario.ts `:
 
 ```TypeScript
 import { Entrenamiento } from './Entrenamiento';
@@ -394,8 +393,7 @@ export class EstadisticaUsuario implements Estadistica{
 }
 ```
 
-Se define la clase ```EstadisticaUsuario``` que implementa la interfaz ```Estadistica```. La clase tiene tres propiedades públicas, ```dia```, ```semana``` y ```mes```, que representan las estadísticas de un usuario para un día, una semana y un mes. Cada una de estas propiedades es un objeto de la clase ```Entrenamiento```, que registra la distancia recorrida y el desnivel acumulado. Además, el ```constructor``` de la clase inicializa estas propiedades con nuevos objetos de la clase ```Entrenamiento``` si no se proporcionan valores para ellas en el momento en el que se crea del objeto ```EstadisticaUsuario```.
-
+Se define la clase `EstadisticaUsuario` que implementa la interfaz `Estadistica`. La clase tiene tres propiedades públicas, `dia`, `semana` y `mes`, que representan las estadísticas de un usuario para un día, una semana y un mes. Cada una de estas propiedades es un objeto de la clase `Entrenamiento`, que registra la distancia recorrida y el desnivel acumulado. Además, el `constructor` de la clase inicializa estas propiedades con nuevos objetos de la clase `Entrenamiento` si no se proporcionan valores para ellas en el momento en el que se crea del objeto `EstadisticaUsuario`.
 
 ### Retos
 
@@ -417,7 +415,7 @@ Los requisitos para los retos son los siguientes:
 
 En el directorio src/Reto tenemos:
 
-- ```Reto.ts```:
+- `Reto.ts`:
 
 ```TypeScript
 import { TipoActividad } from "../Ruta/Ruta";
@@ -438,7 +436,7 @@ export class Reto implements RetoInfo {
   private _rutas: number[] = [];
   private _usuarios: number[] = [];
   private _km: number;
-  
+
   constructor(public nombre: string, public readonly tipo: TipoActividad, ...rutas: number[]) {
     this.id = Reto.idGenerator.generate();
     this._rutas = rutas;
@@ -459,15 +457,15 @@ export class Reto implements RetoInfo {
 }
 ```
 
-La interfaz ```RetoInfo``` define las propiedades que deben tener los objetos que representan un reto, como su identificador único, nombre, rutas, tipo de actividad (bicicleta o correr), kilómetros totales y usuarios que están realizando el reto.
+La interfaz `RetoInfo` define las propiedades que deben tener los objetos que representan un reto, como su identificador único, nombre, rutas, tipo de actividad (bicicleta o correr), kilómetros totales y usuarios que están realizando el reto.
 
-La clase ```Reto``` implementa la interfaz ```RetoInfo``` y agrega algunas propiedades y métodos adicionales. En su ```constructor```, toma como parámetros el ```nombre``` del reto, el ```tipo``` de actividad y un número variable de ```rutas``` que forman parte del reto. El identificador del reto se genera automáticamente utilizando una clase ```IdGenerator```. La propiedad ```_rutas``` devuelve un array de números que representa las rutas que forman parte del reto. La propiedad ```_usuarios``` devuelve un array de números que representa los usuarios que están realizando el reto. La propiedad ```_km``` devuelve el total de kilómetros del reto.
+La clase `Reto` implementa la interfaz `RetoInfo` y agrega algunas propiedades y métodos adicionales. En su `constructor`, toma como parámetros el `nombre` del reto, el `tipo` de actividad y un número variable de `rutas` que forman parte del reto. El identificador del reto se genera automáticamente utilizando una clase `IdGenerator`. La propiedad `_rutas` devuelve un array de números que representa las rutas que forman parte del reto. La propiedad `_usuarios` devuelve un array de números que representa los usuarios que están realizando el reto. La propiedad `_km` devuelve el total de kilómetros del reto.
 
 ### Otros
 
 En el directorio src/Otros tenemos:
 
-- ```Registro.ts```:
+- `Registro.ts`:
 
 ```TypeScript
 
@@ -487,18 +485,18 @@ export class Registro {
   }
 
   addRuta(id: number): void {
-    if (this._rutas.includes(id)) 
+    if (this._rutas.includes(id))
       return;
     this._rutas.push(id);
   }
 }
 ```
 
-Se define una interfaz y una clase para representar registros de entrenamiento. La interfaz ```RegistroInfo``` define los atributos de un registro, como su ```fecha``` y las ```rutas``` realizadas durante el entrenamiento. La clase ```Registro``` implementa la interfaz ```RegistroInfo``` y define su ```constructor```, que toma una fecha y una lista de rutas realizadas durante el entrenamiento.
+Se define una interfaz y una clase para representar registros de entrenamiento. La interfaz `RegistroInfo` define los atributos de un registro, como su `fecha` y las `rutas` realizadas durante el entrenamiento. La clase `Registro` implementa la interfaz `RegistroInfo` y define su `constructor`, que toma una fecha y una lista de rutas realizadas durante el entrenamiento.
 
-La clase ```Registro``` también tiene un método ```addRuta```, que permite añadir una nueva ruta al registro. La propiedad ```rutas``` de la clase ```Registro``` devuelve la lista de rutas realizadas durante el entrenamiento.
+La clase `Registro` también tiene un método `addRuta`, que permite añadir una nueva ruta al registro. La propiedad `rutas` de la clase `Registro` devuelve la lista de rutas realizadas durante el entrenamiento.
 
-- ```IdGenerator.ts```:
+- `IdGenerator.ts`:
 
 ```TypeScript
 
@@ -515,7 +513,7 @@ export class IdGenerator {
 }
 ```
 
-Se define una clase llamada ```IdGenerator``` que se utiliza para generar IDs únicos para cada una de las instancias de la clase ```_amigos```. La clase contiene un atributo privado ```ids``` que se inicializa a cero en el ```constructor``` y un método público ```generate()``` que devuelve un nuevo ID único cada vez que se llama.
+Se define una clase llamada `IdGenerator` que se utiliza para generar IDs únicos para cada una de las instancias de la clase `_amigos`. La clase contiene un atributo privado `ids` que se inicializa a cero en el `constructor` y un método público `generate()` que devuelve un nuevo ID único cada vez que se llama.
 
 ### Gestor
 
@@ -533,31 +531,626 @@ Unirse a un grupo existente. Este apartado considera la opción de un usuario qu
 
 Visualizar, crear y borrar grupos. Un usuario podrá borrar un grupo, pero solo si esta ha sido creado por él, es decir, no se podrá borrar un grupo pre-cargado en el sistema. Por otro lado, los grupos se podrán guardar usando el mismo sistema empleado para guardar la información cargada en el sistema. Por último, considere que en posteriores conexiones al sistema, el usuario podrá desear borrar un grupo que haya creado anteriormente. Debido a esto, se deberá distinguir entre los grupos creados por el usuario y los creados por el sistema con el objetivo de evitar borrar información sin permiso.
 
-#### Código 
+#### Código
 
 Dentro del fichero src/Gestor tenemos:
 
-- ```BasicGestor.ts```:
+- `BasicGestor.ts`:
 
 ```TypeScript
+import { Ruta } from "../Ruta/Ruta";
+import { Usuario } from "../Usuario/Usuario";
+import { Grupo } from "../Grupo/Grupo";
+import { Reto } from "../Reto/Reto";
 
+export abstract class BasicGestor {
+
+  protected _rutas: Ruta[] = [];
+
+  protected _usuarios: Usuario[] = [];
+
+  protected _grupos: Grupo[] = [];
+
+  protected _retos: Reto[] = [];
+
+  get rutas(): Ruta[] {
+    return this._rutas;
+  }
+
+  addRuta(ruta: Ruta): void {
+    this._rutas.push(ruta);
+  }
+
+  removeRuta(id: number): void {
+    this._rutas = this._rutas.filter((ruta) => ruta.id !== id);
+  }
+
+  get usuarios(): Usuario[] {
+    return this._usuarios;
+  }
+
+  addUsuario(usuario: Usuario): void {
+    this._usuarios.push(usuario);
+  }
+
+  removeUsuario(id: number): void {
+    this._usuarios = this._usuarios.filter((usuario) => usuario.id !== id);
+  }
+
+  get grupos(): Grupo[] {
+    return this._grupos;
+  }
+
+  addGrupo(grupo: Grupo): void {
+    this._grupos.push(grupo);
+  }
+
+  removeGrupo(id: number): void {
+    this._grupos = this._grupos.filter((grupo) => grupo.id !== id);
+  }
+
+  get retos(): Reto[] {
+    return this._retos;
+  }
+
+  addReto(reto: Reto): void {
+    this._retos.push(reto);
+  }
+
+  removeReto(id: number): void {
+    this._retos = this._retos.filter((reto) => reto.id !== id);
+  }
+}
 ```
 
+Aquí se define una clase abstracta llamada `BasicGestor` que tiene propiedades para almacenar listas de objetos de tipo `Ruta`, `Usuario`, `Grupo` y `Reto`. También tiene métodos para agregar y eliminar objetos de estas listas.
 
+Los métodos `get` permiten acceder a las listas de objetos desde fuera de la clase, mientras que los métodos `add` permiten agregar nuevos objetos a las listas y los métodos `remove` permiten eliminar objetos de las listas por su identificador `id`.
 
-- ```Gestor.ts```:
+Esta clase es abstracta, lo que significa que no se puede crear una instancia directamente, sino que debe ser extendida por otras clases que proporcionen una implementación para los métodos abstractos definidos en la clase padre.
+
+- `Gestor.ts`:
 
 ```TypeScript
+import * as inquirer from "inquirer";
 
+import lowdb = require("lowdb");
+import FileSync = require("lowdb/adapters/FileSync");
+
+import { Coordenada } from "../Ruta/Coordenada";
+import { Ruta } from "../Ruta/Ruta";
+import { Usuario } from "../Usuario/Usuario";
+import { Grupo } from "../Grupo/Grupo";
+import { Reto } from "../Reto/Reto";
+
+import { BasicGestor } from "./BasicGestor";
+
+export type Database = {
+  rutas: Ruta[];
+  usuarios: Usuario[];
+  grupos: Grupo[];
+  retos: Reto[];
+};
+
+const loginQuestion: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre de usuario: ",
+  },
+];
+
+const activityQuestion: inquirer.QuestionCollection = [
+  {
+    type: "list",
+    name: "tipo",
+    message: "Introduzca el tipo de actividad que desea realizar: ",
+    choices: ["Ciclismo", "Running"],
+  },
+];
+
+enum RutasCommands {
+  Añadir = "Añadir Ruta",
+  Eliminar = "Eliminar Ruta",
+  Volver = "Volver",
+}
+
+const rutasFormQuestions: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre de la ruta: ",
+  },
+  {
+    type: "input",
+    name: "inicioX",
+    message: "Introduzca la coordenada X del punto de inicio de la ruta: ",
+  },
+  {
+    type: "input",
+    name: "inicioY",
+    message: "Introduzca la coordenada Y del punto de inicio de la ruta: ",
+  },
+  {
+    type: "input",
+    name: "finX",
+    message: "Introduzca la coordenada X del punto de fin de la ruta: ",
+  },
+  {
+    type: "input",
+    name: "finY",
+    message: "Introduzca la coordenada Y del punto de fin de la ruta: ",
+  },
+  {
+    type: "input",
+    name: "longitud",
+    message: "Introduzca la longitud de la ruta: ",
+  },
+  {
+    type: "input",
+    name: "desnivel",
+    message: "Introduzca el desnivel de la ruta: ",
+  },
+  {
+    type: "list",
+    name: "actividad",
+    message: "Introduzca el tipo de actividad de la ruta: ",
+    choices: ["Ciclismo", "Running"],
+  },
+];
+
+const deleteRutaQuestion: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "id",
+    message: "Introduzca el id de la ruta que desea eliminar: ",
+  },
+];
+
+const rutasSubMenuQuestions: inquirer.QuestionCollection = [
+  {
+    type: "list",
+    name: "command",
+    message: "¿Qué acción desea realizar?",
+    choices: Object.values(RutasCommands),
+  },
+];
+
+enum UsuariosCommands {
+  Volver = "Volver",
+}
+
+const usuariosSubMenuQuestions: inquirer.QuestionCollection = [
+  {
+    type: "list",
+    name: "command",
+    message: "¿Qué acción desea realizar?",
+    choices: Object.values(UsuariosCommands),
+  },
+];
+
+enum GruposCommands {
+  Entrar = "Entrar en Grupo",
+  Salir = "Salir de Grupo",
+  Volver = "Volver",
+}
+
+const gruposSubMenuQuestions: inquirer.QuestionCollection = [
+  {
+    type: "list",
+    name: "command",
+    message: "¿Qué acción desea realizar?",
+    choices: Object.values(GruposCommands),
+  },
+];
+
+const entrarEnGrupo: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre del Grupo al que desea entrar: ",
+  },
+];
+
+const salirDeGrupo: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre del Grupo del que desee salir: ",
+  },
+];
+
+enum RetosCommands {
+  Entrar = "Entrar en Reto",
+  Salir = "Salir de Reto",
+  Volver = "Volver",
+}
+
+const retosSubMenuQuestions: inquirer.QuestionCollection = [
+  {
+    type: "list",
+    name: "command",
+    message: "¿Qué acción desea realizar?",
+    choices: Object.values(RetosCommands),
+  },
+];
+
+const entrarEnReto: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre del reto al que desea entrar: ",
+  },
+];
+
+const salirDeReto: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre del reto del que desee salir: ",
+  },
+];
+
+const retoQuestion: inquirer.QuestionCollection = [
+  {
+    type: "list",
+    name: "tipo",
+    message: "Introduzca el tipo de actividad para el reto: ",
+    choices: ["Ciclismo", "Running"],
+  },
+  {
+    type: "input",
+    name: "km",
+    message: "Introduzca el número de kilómetros para el reto: ",
+  },
+  {
+    type: "input",
+    name: "rutas",
+    message: "Introduzca el número de rutas para el reto: ",
+  }
+];
+
+const retoFormQuestions: inquirer.QuestionCollection = [
+  {
+    type: "input",
+    name: "nombre",
+    message: "Introduzca el nombre de la ruta a añadir: ",
+  },
+];
+
+enum PromptCommands {
+  Rutas = "Visualizar Rutas",
+  Usuarios = "Visualizar Usuarios",
+  Grupos = "Visualizar Grupos",
+  Retos = "Visualizar Retos",
+  Salir = "Salir",
+}
+
+const mainMenuQuestions: inquirer.QuestionCollection = [
+  {
+    type: "list",
+    name: "command",
+    message: "Menú principal. Escoge una opción: ",
+    choices: Object.values(PromptCommands),
+  },
+];
+
+export interface GestorInfo {
+
+  login(): void;
+
+  promptUser(): void;
+}
+
+export class Gestor extends BasicGestor implements GestorInfo {
+
+  private static instance: Gestor;
+
+  private database: lowdb.LowdbSync<Database>;
+
+  private usuarioActual: number = -1;
+
+  private constructor() {
+    super();
+    this.database = lowdb(new FileSync("databases/DeStravaTe.json"));
+    this.database
+      .defaults({ rutas: [], usuarios: [], grupos: [], retos: [] })
+      .write();
+    this._usuarios = this.database.get("usuarios").value();
+    this._rutas = this.database.get("rutas").value();
+    this._grupos = this.database.get("grupos").value();
+    this._retos = this.database.get("retos").value();
+  }
+
+  static getInstance(): Gestor {
+    if (!Gestor.instance) Gestor.instance = new Gestor();
+    return Gestor.instance;
+  }
+
+  async login() {
+    const loggedUser = await inquirer.prompt(loginQuestion);
+
+    if (this._usuarios.find((usuario) => usuario.nombre === loggedUser.nombre)) {
+      console.log("Bienvenido de nuevo, " + loggedUser);
+    } else {
+      const actividad = await inquirer.prompt(activityQuestion);
+      this.addUsuario(new Usuario(loggedUser.nombre, actividad.tipo));
+    }
+    const id = this._usuarios.find(
+      (usuario) => usuario.nombre === loggedUser.nombre
+    )?.id;
+    if (id !== undefined) this.usuarioActual = id;
+
+    this.promptUser();
+  }
+
+  async promptUser() {
+    let exit: boolean = false;
+    while (!exit) {
+      console.clear();
+      const { command } = await inquirer.prompt(mainMenuQuestions);
+      console.clear();
+      switch (command) {
+        case PromptCommands.Rutas:
+          let exitRutas: boolean = false;
+          while (!exitRutas) {
+            if (this.rutas.length !== 0) {
+              console.log("=================================");
+              console.log("RUTAS");
+              this.rutas.forEach((ruta) => {
+                console.log("=================================");
+                console.log("ID: " + ruta.id);
+                console.log("Nombre: " + ruta.nombre);
+                console.log(
+                  "Inicio: " + ruta.inicio.latitud + ", " + ruta.inicio.longitud
+                );
+                console.log(
+                  "Fin: " + ruta.fin.latitud + ", " + ruta.fin.longitud
+                );
+                console.log("Longitud: " + ruta.longitud);
+                console.log("Desnivel: " + ruta.desnivel);
+                console.log("Actividad: " + ruta.actividad);
+              });
+              console.log("=================================");
+            }
+            const { command } = await inquirer.prompt(rutasSubMenuQuestions);
+            switch (command) {
+              case RutasCommands.Añadir:
+                const ruta = await inquirer.prompt(rutasFormQuestions);
+                console.clear();
+                this.addRuta(
+                  new Ruta(
+                    ruta.nombre,
+                    new Coordenada(ruta.inicioX, ruta.inicioY),
+                    new Coordenada(ruta.finX, ruta.finY),
+                    ruta.longitud,
+                    ruta.desnivel,
+                    ruta.actividad
+                  )
+                );
+                break;
+              case RutasCommands.Eliminar:
+                const { id } = await inquirer.prompt(deleteRutaQuestion);
+                console.clear();
+                this.removeRuta(parseInt(id));
+                break;
+              case RutasCommands.Volver:
+                exitRutas = true;
+                break;
+            }
+          }
+          break;
+        case PromptCommands.Usuarios:
+          let exitUsuarios: boolean = false;
+          while (!exitUsuarios) {
+            if (this.usuarios.length !== 0) {
+              console.log("=================================");
+              console.log("USUARIOS");
+              this.usuarios.forEach((usuario) => {
+                console.log("=================================");
+                console.log("ID: " + usuario.id);
+                console.log("Nombre: " + usuario.nombre);
+                console.log("Actividad: " + usuario.actividad);
+              });
+              console.log("=================================");
+            }
+            const { command } = await inquirer.prompt(usuariosSubMenuQuestions);
+            switch (command) {
+              case UsuariosCommands.Volver:
+                exitUsuarios = true;
+                break;
+            }
+          }
+          break;
+        case PromptCommands.Grupos:
+          let exitGrupos: boolean = false;
+
+          if (
+            this._usuarios.find((usuario) => usuario.id === this.usuarioActual)
+              ?.grupos.length !== 0
+          ) {
+            console.log("=================================");
+            console.log("GRUPOS");
+            this._usuarios
+              .find((usuario) => usuario.id === this.usuarioActual)
+              ?.grupos.forEach((id) => {
+                const grupo = this._grupos.find((grupo) => grupo.id === id);
+                console.log("=================================");
+                console.log("ID: " + grupo?.id);
+                console.log("Nombre: " + grupo?.nombre);
+                const participantes: string[] = [];
+                grupo?.participantes.forEach((id) => {
+                  const nombre = this._usuarios.find(
+                    (usuario) => usuario.id === id
+                  )?.nombre;
+                  if (nombre !== undefined) participantes.push(nombre);
+                });
+                console.log("Participantes: " + participantes);
+              });
+            console.log("=================================");
+          }
+          while (!exitGrupos) {
+            const { command } = await inquirer.prompt(gruposSubMenuQuestions);
+            switch (command) {
+              case GruposCommands.Entrar:
+                const nuevo = await inquirer.prompt(entrarEnGrupo);
+                if (
+                  this._grupos.find(
+                    (grupo) => grupo.nombre === nuevo.nombre
+                  ) === undefined
+                ) {
+                  this.addGrupo(new Grupo(nuevo.nombre, this.usuarioActual));
+                }
+                const idNuevo = this._grupos.find(
+                  (grupo) => grupo.nombre === nuevo.nombre
+                )?.id;
+                if (idNuevo !== undefined)
+                  this._usuarios
+                    .find((usuario) => usuario.id === this.usuarioActual)
+                    ?.addGrupo(idNuevo);
+                break;
+              case GruposCommands.Salir:
+                const viejo = await inquirer.prompt(salirDeGrupo);
+                const idViejo = this._grupos.find(
+                  (grupo) => grupo.nombre === viejo.nombre
+                )?.id;
+                if (idViejo !== undefined) {
+                  this._usuarios
+                    .find((usuario) => usuario.id === this.usuarioActual)
+                    ?.removeGrupo(idViejo);
+                  this._grupos
+                    .find((grupo) => grupo.id === idViejo)
+                    ?.removeParticipante(this.usuarioActual);
+                }
+                break;
+              case GruposCommands.Volver:
+                exitGrupos = true;
+                break;
+            }
+          }
+          break;
+        case PromptCommands.Retos:
+          let exitRetos: boolean = false;
+          if (
+            this._usuarios.find((usuario) => usuario.id === this.usuarioActual)
+              ?.retos.length !== 0
+          ) {
+            console.log("=================================");
+            console.log("RETOS");
+            this._usuarios
+              .find((usuario) => usuario.id === this.usuarioActual)
+              ?.retos.forEach((id) => {
+                const reto = this._retos.find((reto) => reto.id === id);
+                console.log("=================================");
+                console.log("ID: " + reto?.id);
+                console.log("Nombre: " + reto?.nombre);
+                console.log("Tipo: " + reto?.tipo);
+                const rutas: string[] = [];
+                reto?.rutas.forEach((id) => {
+                  const nombre = this._rutas.find(
+                    (ruta) => ruta.id === id
+                  )?.nombre;
+                  if (nombre !== undefined) rutas.push(nombre);
+                });
+                console.log("Rutas: " + rutas);
+                console.log("Kilometros: " + reto?.km);
+                const participantes: string[] = [];
+                reto?.usuarios.forEach((id) => {
+                  const nombre = this._usuarios.find(
+                    (usuario) => usuario.id === id
+                  )?.nombre;
+                  if (nombre !== undefined) participantes.push(nombre);
+                });
+                console.log("Participantes: " + participantes);
+              });
+            console.log("=================================");
+          }
+          while (!exitRetos) {
+            const { command } = await inquirer.prompt(retosSubMenuQuestions);
+            switch (command) {
+              case RetosCommands.Entrar:
+                const nuevo = await inquirer.prompt(entrarEnReto);
+                if (
+                  this._retos.find(
+                    (reto) => reto.nombre === nuevo.nombre
+                  ) === undefined
+                ) {
+                  const actividad = await inquirer.prompt(retoQuestion);
+                  this.addReto(new Reto(nuevo.nombre, actividad.tipo));
+                  const reto = this._retos.find((reto) => reto.nombre === nuevo.nombre);
+                  if (reto !== undefined) {
+                    reto.addUsuario(this.usuarioActual);
+                    reto.km = actividad.km;
+                  }
+                  let i = 0;
+                  while (i < parseInt(actividad.rutas)) {
+                    const nuevaRuta = await inquirer.prompt(retoFormQuestions);
+                    const idRuta = this._rutas.find((ruta) => ruta.nombre === nuevaRuta.nombre)?.id;
+                    if (idRuta !== undefined)
+                      this._retos.find((reto) => reto.nombre === nuevo.nombre)?.addRuta(idRuta);
+                    i++;
+                  }
+                  const ruta = this._rutas.find((ruta) => ruta.nombre === actividad.ruta);
+                  if (ruta !== undefined)
+                    this._retos.find((reto) => reto.nombre === nuevo.nombre)?.addRuta(ruta.id);
+                }
+                const idNuevo = this._retos.find(
+                  (reto) => reto.nombre === nuevo.nombre
+                )?.id;
+                if (idNuevo !== undefined)
+                  this._usuarios
+                    .find((usuario) => usuario.id === this.usuarioActual)
+                    ?.addReto(idNuevo);
+                break;
+              case RetosCommands.Salir:
+                const viejo = await inquirer.prompt(salirDeReto);
+                const idViejo = this._retos.find(
+                  (reto) => reto.nombre === viejo.nombre
+                )?.id;
+                if (idViejo !== undefined) {
+                  this._usuarios
+                    .find((usuario) => usuario.id === this.usuarioActual)
+                    ?.removeReto(idViejo);
+                  this._retos
+                    .find((reto) => reto.id === idViejo)
+                    ?.removeUsuario(this.usuarioActual);
+                }
+                break;
+              case RetosCommands.Volver:
+                exitRetos = true;
+                break;
+            }
+          }
+          break;
+        case PromptCommands.Salir:
+          exit = true;
+          break;
+      }
+    }
+    this.database.setState({ usuarios: [], rutas: [], grupos: [], retos: [] }).write();
+    this._usuarios.forEach((usuario) => {
+      this.database.get("usuarios").push(usuario).write();
+    });
+    this._rutas.forEach((ruta) => {
+      this.database.get("rutas").push(ruta).write();
+    });
+    this._grupos.forEach((grupo) => {
+      this.database.get("grupos").push(grupo).write();
+    });
+    this._retos.forEach((reto) => {
+      this.database.get("retos").push(reto).write();
+    });
+  }
+}
 ```
 
-
+Y por último en este fichero es dónde utilizamos y enlazamos todo el proyecto.
 
 ## Pruebas y cubrimiento
 
 Han sido realiazadas pruebas con mucha y chai con el fin de verificar el correcto funcionamiento de todos y cada uno de los ficheros del proyecto. A continuación se muestras las pruebas realizadas para cada parte:
 
-- ```Estadistica.spec.ts```:
+- `Estadistica.spec.ts`:
 
 ```TypeScript
 import "mocha";
@@ -591,7 +1184,7 @@ describe("EstadisticaGrupo class tests", () => {
 });
 ```
 
-- ```Gestor.spec.ts```:
+- `Gestor.spec.ts`:
 
 ```TypeScript
 import "mocha";
@@ -696,7 +1289,7 @@ describe("Gestor class tests", () => {
 });
 ```
 
-- ```Grupo.spec.ts```:
+- `Grupo.spec.ts`:
 
 ```TypeScript
 import "mocha";
@@ -766,7 +1359,7 @@ describe("Grupo class tests", () => {
 });
 ```
 
-- ```Reto.spec.ts```:
+- `Reto.spec.ts`:
 
 ```TypeScript
 import "mocha";
@@ -825,7 +1418,7 @@ describe("Reto class tests", () => {
 });
 ```
 
-- ```Ruta.spec.ts```:
+- `Ruta.spec.ts`:
 
 ```TypeScript
 import "mocha";
@@ -908,7 +1501,7 @@ describe("Ruta class tests", () => {
 });
 ```
 
-- ```Usuario.spec.ts```:
+- `Usuario.spec.ts`:
 
 ```TypeScript
 import "mocha";
@@ -1002,7 +1595,9 @@ describe("Usuario class tests", () => {
   });
 });
 ```
+
 Y como podemos ver a continuación todas las pruebas fueron superadas con éxito:
+
 ```bash
   EstadisticaUsuario class tests
     ✔ EstadisticaUsuario debería tener estadísticas diarias, semanales, mensuales y anuales
@@ -1092,38 +1687,90 @@ También podemos comprobar el cubrimiento de código con Istanbul y Coveralls:
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |   96.19 |    91.66 |    97.4 |   96.59 | 
- Estadistica            |     100 |      100 |     100 |     100 | 
-  Entrenamiento.ts      |     100 |      100 |     100 |     100 | 
-  EstadisticaGrupo.ts   |     100 |      100 |     100 |     100 | 
-  EstadisticaUsuario.ts |     100 |      100 |     100 |     100 | 
- Gestor                 |   90.27 |    85.71 |    92.3 |    90.9 | 
-  BasicGestor.ts        |     100 |      100 |     100 |     100 | 
+All files               |   96.19 |    91.66 |    97.4 |   96.59 |
+ Estadistica            |     100 |      100 |     100 |     100 |
+  Entrenamiento.ts      |     100 |      100 |     100 |     100 |
+  EstadisticaGrupo.ts   |     100 |      100 |     100 |     100 |
+  EstadisticaUsuario.ts |     100 |      100 |     100 |     100 |
+ Gestor                 |   90.27 |    85.71 |    92.3 |    90.9 |
+  BasicGestor.ts        |     100 |      100 |     100 |     100 |
   Gestor.ts             |   86.27 |    85.71 |   77.77 |   87.75 | 227-235
- Grupo                  |     100 |      100 |     100 |     100 | 
-  Grupo.ts              |     100 |      100 |     100 |     100 | 
- Otros                  |     100 |      100 |     100 |     100 | 
-  IdGenerator.ts        |     100 |      100 |     100 |     100 | 
- Reto                   |     100 |      100 |     100 |     100 | 
-  Reto.ts               |     100 |      100 |     100 |     100 | 
- Ruta                   |     100 |      100 |     100 |     100 | 
-  BasicRuta.ts          |     100 |      100 |     100 |     100 | 
+ Grupo                  |     100 |      100 |     100 |     100 |
+  Grupo.ts              |     100 |      100 |     100 |     100 |
+ Otros                  |     100 |      100 |     100 |     100 |
+  IdGenerator.ts        |     100 |      100 |     100 |     100 |
+ Reto                   |     100 |      100 |     100 |     100 |
+  Reto.ts               |     100 |      100 |     100 |     100 |
+ Ruta                   |     100 |      100 |     100 |     100 |
+  BasicRuta.ts          |     100 |      100 |     100 |     100 |
   Coordenada.ts         |     100 |      100 |     100 |     100 |
 ------------------------|---------|----------|---------|---------|-------------------
 ```
 
 Así que por último mostramos su funcionamiento por terminal:
 
-```bash
-
+```console
+? Introduzca el nombre de usuario:  Iluzio
+? Introduzca el tipo de actividad que desea realizar:
+  Ciclismo
+> Running
+? Menú principal. Escoge una opción:  (Use arrow keys)
+> Visualizar Rutas
+  Visualizar Usuarios
+  Visualizar Grupos
+  Visualizar Retos
+  Salir
+  =================================
+  RUTAS
+  =================================
+  ID: 0
+  Nombre: Camino de Santiago
+  Inicio: 0, 0
+  Fin: 5, 5
+  Longitud: 4
+  Desnivel: 1
+  Actividad: Running
+  =================================
+  =================================
+  USUARIOS
+  =================================
+  ID: 0
+  Nombre: Iluzio
+  Actividad: Running
+  =================================
+  ? ¿Qué acción desea realizar? (Use arrow keys)
+  > Volver
+  ? ¿Qué acción desea realizar? (Use arrow keys)
+  > Entrar en Grupo
+  Salir de Grupo
+  Volver
+  ? ¿Qué acción desea realizar? Entrar en Grupo
+  ? Introduzca el nombre del Grupo al que desea entrar:  DSI
+  =================================
+  GRUPOS
+  =================================
+  ID: 0
+  Nombre: DSI
+  Participantes: Iluzio
+  =================================
+  =================================
+  RETOS
+  =================================
+  ID: 0
+  Nombre: one for all
+  Tipo: Running
+  Rutas:
+  Kilometros: 9999999999999999999999
+  Participantes: Iluzio
+  =================================
 ```
 
+## Conclusión
 
-## Conclusión 
-
-Ha sido una práctica con cierto nivel de complejidad pero que nos a ayudado no a saber trabajar en equipo por separado si no a usar herramientas como LiveShare en VSC que ha sido de gran ayuda. Cabe destacar que en esta práctica hemos alcanzado nuestro objetivo que era acabar con algo funcional, gracias al uso de todos los conocimientos adquiridos en la asignatura hasta esta semana. Incluso utilizamos patrones como ```Singleton``` por ejemplo. También tuvimos en cuenta y respetamos los principios Solid.
+Ha sido una práctica con cierto nivel de complejidad pero que nos a ayudado no a saber trabajar en equipo por separado si no a usar herramientas como LiveShare en VSC que ha sido de gran ayuda. Cabe destacar que en esta práctica hemos alcanzado nuestro objetivo que era acabar con algo funcional, gracias al uso de todos los conocimientos adquiridos en la asignatura hasta esta semana. Incluso utilizamos patrones como `Singleton` por ejemplo. También tuvimos en cuenta y respetamos los principios Solid.
 
 Por último, hay que mencionar la gran utilidad de Istanbul, Coveralls y Sonar, que te ayudan ha realizar un seguimiento y cubrimiento del código ejemplar junto a una buena caliad de código.
+
 ## Elementos Bibliográficos:
 
 - Guión de la práctica 7, https://ull-esit-inf-dsi-2223.github.io/prct07-destravate-dataModel/.

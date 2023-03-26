@@ -82,7 +82,6 @@ export interface UsuarioInfo {
 
 /**
  * Clase para representar la información de un usuario para la aplicación.
-<<<<<<< HEAD
  * El usuario cuenta con un identificador único, un nombre, amigos, grupos de amigos,
  * estadísticas, rutas favoritas, retos y un historial de registros.
  */
