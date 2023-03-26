@@ -1687,23 +1687,27 @@ También podemos comprobar el cubrimiento de código con Istanbul y Coveralls:
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |   96.19 |    91.66 |    97.4 |   96.59 |
- Estadistica            |     100 |      100 |     100 |     100 |
-  Entrenamiento.ts      |     100 |      100 |     100 |     100 |
-  EstadisticaGrupo.ts   |     100 |      100 |     100 |     100 |
-  EstadisticaUsuario.ts |     100 |      100 |     100 |     100 |
- Gestor                 |   90.27 |    85.71 |    92.3 |    90.9 |
-  BasicGestor.ts        |     100 |      100 |     100 |     100 |
-  Gestor.ts             |   86.27 |    85.71 |   77.77 |   87.75 | 227-235
- Grupo                  |     100 |      100 |     100 |     100 |
-  Grupo.ts              |     100 |      100 |     100 |     100 |
- Otros                  |     100 |      100 |     100 |     100 |
-  IdGenerator.ts        |     100 |      100 |     100 |     100 |
- Reto                   |     100 |      100 |     100 |     100 |
-  Reto.ts               |     100 |      100 |     100 |     100 |
- Ruta                   |     100 |      100 |     100 |     100 |
-  BasicRuta.ts          |     100 |      100 |     100 |     100 |
-  Coordenada.ts         |     100 |      100 |     100 |     100 |
+All files               |     100 |      100 |     100 |     100 | 
+ Estadistica            |     100 |      100 |     100 |     100 | 
+  Entrenamiento.ts      |     100 |      100 |     100 |     100 | 
+  EstadisticaGrupo.ts   |     100 |      100 |     100 |     100 | 
+  EstadisticaUsuario.ts |     100 |      100 |     100 |     100 | 
+ Gestor                 |     100 |      100 |     100 |     100 | 
+  BasicGestor.ts        |     100 |      100 |     100 |     100 | 
+  Gestor.ts             |     100 |      100 |     100 |     100 | 
+ Grupo                  |     100 |      100 |     100 |     100 | 
+  Grupo.ts              |     100 |      100 |     100 |     100 | 
+ Otros                  |     100 |      100 |     100 |     100 | 
+  IdGenerator.ts        |     100 |      100 |     100 |     100 | 
+ Reto                   |     100 |      100 |     100 |     100 | 
+  Reto.ts               |     100 |      100 |     100 |     100 | 
+ Ruta                   |     100 |      100 |     100 |     100 | 
+  BasicRuta.ts          |     100 |      100 |     100 |     100 | 
+  Coordenada.ts         |     100 |      100 |     100 |     100 | 
+  Ruta.ts               |     100 |      100 |     100 |     100 | 
+ Usuario                |     100 |      100 |     100 |     100 | 
+  BasicUsuario.ts       |     100 |      100 |     100 |     100 | 
+  Usuario.ts            |     100 |      100 |     100 |     100 | 
 ------------------------|---------|----------|---------|---------|-------------------
 ```
 
