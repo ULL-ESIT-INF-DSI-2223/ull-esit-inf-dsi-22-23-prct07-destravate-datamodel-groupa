@@ -8,8 +8,14 @@ import { BasicRuta } from "./BasicRuta";
 export type TipoActividad = "Ciclismo" | "Running";
 
 /**
- * Interfaz para representar la información estándar de una ruta.
- * Se puede considerar una extensión de la información básica de una ruta.
+ * Interfaz para representar la información de una ruta.
+ * @interface RutaInfo
+ * @property {string} nombre - Nombre de la ruta.
+ * @property {number} desnivel - Desnivel medio de la ruta en metros.
+ * @property {number[]} usuarios - Lista de usuarios que han realizado la ruta.
+ * @method addUsuario - Añade un usuario a la lista de usuarios que han realizado la ruta.
+ * @property {TipoActividad} actividad - actividad de actividad de la ruta.
+ * @property {number} calificacion - Calificación de la ruta en una escala del 1 al 5.
  */
 export interface RutaInfo {
   /**
@@ -22,15 +28,7 @@ export interface RutaInfo {
    * @type {number}
    */
   desnivel: number;
-  /**
-   * Lista de usuarios que han realizado la ruta.
-   * @type {number[]}
-   */
   usuarios: number[];
-  /**
-   * Método para añadir un usuario a la lista de usuarios que han realizado la ruta.
-   * @param id Identificador del usuario a añadir.
-   */
   addUsuario(id: number): void;
   /**
    * Método para eliminar un usuario de la lista de usuarios que han realizado la ruta.
@@ -49,21 +47,32 @@ export interface RutaInfo {
 }
 
 /**
- * Clase para representar una ruta de la aplicación de rutas deportivas.
+ * Clase para representar una ruta.
+ * @class Ruta
+ * @implements {RutaInfo}
+ * @extends {BasicRuta}
+ * @property {string} nombre - Nombre de la ruta.
+ * @property {number} desnivel - Desnivel medio de la ruta en metros.
+ * @property {number[]} usuarios - Lista de usuarios que han realizado la ruta.
+ * @method addUsuario - Añade un usuario a la lista de usuarios que han realizado la ruta.
+ * @property {TipoActividad} actividad - actividad de actividad de la ruta.
+ * @property {number} calificacion - Calificación de la ruta en una escala del 1 al 5.
+ * @example
+ * ```typescript
+ * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
+ * ruta.nombre; // "Ruta de prueba"
+ * ruta.id; // 1
+ * ruta.inicio; // [0, 0]
+ * ruta.fin; // [1, 1]
+ * ruta.longitud; // 1
+ * ruta.desnivel; // 1
+ * ruta.actividad; // "Ciclismo"
+ * ruta.usuarios; // []
+ * ruta.calificacion; // 0
+ * ```
  */
 export class Ruta extends BasicRuta implements RutaInfo {
-  /**
-   * Lista de usuarios que han realizado la ruta.
-   * @private
-   * @type {Set<number>}
-   */
-  private _usuarios: Set<number> = new Set<number>();
-
-  /**
-   * Calificación de la ruta determinada por los usuarios que la han realizado, en una escala del 1 al 5.
-   * @private
-   * @type {number}
-   */
+  private _usuarios: number[];
   private _calificacion: number;
 
   /**
@@ -88,12 +97,13 @@ export class Ruta extends BasicRuta implements RutaInfo {
     readonly actividad: TipoActividad
   ) {
     super(inicio, fin, longitud);
+    this._usuarios = [];
     this._calificacion = 0;
   }
 
   /**
    * Método para acceder a la lista de usuarios que han realizado la ruta.
-   * @returns Lista con los identificadores de los usuarios que han realizado la ruta.
+   * @returns {number[]} Lista de usuarios que han realizado la ruta.
    * @example
    * ```typescript
    * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
@@ -101,7 +111,7 @@ export class Ruta extends BasicRuta implements RutaInfo {
    * ```
    */
   get usuarios(): number[] {
-    return Array.from(this._usuarios);
+    return this._usuarios;
   }
 
   /**
@@ -115,23 +125,8 @@ export class Ruta extends BasicRuta implements RutaInfo {
    * ```
    */
   addUsuario(id: number): void {
-    this._usuarios.add(id);
-  }
-
-  /**
-   * Método para eliminar un usuario de la lista de usuarios que han realizado la ruta.
-   * @param id Identificador del usuario a eliminar de la lista de usuarios.
-   * @example
-   * ```typescript
-   * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
-   * ruta.addUsuario(1);
-   * ruta.usuarios; // [1]
-   * ruta.removeUsuario(1);
-   * ruta.usuarios; // []
-   * ```
-   */
-  removeUsuario(id: number): void {
-    this._usuarios.delete(id);
+    if (this._usuarios.includes(id)) return;
+    this._usuarios.push(id);
   }
 
   /**
