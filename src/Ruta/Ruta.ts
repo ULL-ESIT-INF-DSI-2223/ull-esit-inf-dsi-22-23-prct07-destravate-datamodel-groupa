@@ -76,7 +76,7 @@ export class Ruta extends BasicRuta implements RutaInfo {
    * @param actividad Tipo de actividad de la ruta.
    * @example
    * ```typescript
-   * const ruta = new Ruta("Ruta de prueba", 1, [0, 0], [1, 1], 1, 1, "Ciclismo");
+   * const ruta = new Ruta("Ruta de prueba", [0, 0], [1, 1], 1, 1, "Ciclismo");
    * ```
    */
   constructor(

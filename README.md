@@ -39,7 +39,7 @@ Los requisitos que se nos pedían para las Rutas son los siguientes:
 
 Dentro del directorio src/Ruta tenemos:
 
-- `BasicRuta.ts`:
+- ```BasicRuta.ts```:
 
 ```TypeScript
 import { Coordenada } from "./Coordenada";
@@ -60,9 +60,9 @@ export class BasicRuta implements BasicRutaInfo {
 }
 ```
 
-Se define una interfaz y una clase relacionadas con la información de una ruta. La interfaz se llama `BasicRutaInfo` y define cuatro propiedades: un identificador único `id`, una coordenada de inicio `inicio`, una coordenada final `fin` y la longitud total de la ruta en kilómetros `longitud`. La clase `BasicRuta` implementa esta interfaz y tiene un `constructor` que acepta los mismos parámetros que la interfaz, y los almacena como propiedades de sólo lectura en la instancia de la clase. La clase y la interfaz dependen de la clase `Coordenada`, que se importa desde otro archivo.
+Se define una interfaz y una clase relacionadas con la información de una ruta. La interfaz se llama ```BasicRutaInfo```` y define cuatro propiedades: un identificador único ```id```, una coordenada de inicio ```inicio```, una coordenada final ```fin``` y la longitud total de la ruta en kilómetros ```longitud```. La clase ```BasicRuta``` implementa esta interfaz y tiene un ```constructor``` que acepta los mismos parámetros que la interfaz, y los almacena como propiedades de sólo lectura en la instancia de la clase. La clase y la interfaz dependen de la clase ```Coordenada```, que se importa desde otro archivo.
 
-- `Coordenada.ts`:
+- ```Coordenada.ts```:
 
 ```TypeScript
 
@@ -71,9 +71,9 @@ export class Coordenada {
 }
 ```
 
-Se define una clase llamada `Coordenada` que representa una coordenada geográfica con dos propiedades: `latitud` y `longitud`. La clase tiene un `constructor` que toma dos argumentos, `latitud` y `longitud`, y los asigna a las propiedades correspondientes de solo lectura de la clase.
+Se define una clase llamada ```Coordenada``` que representa una coordenada geográfica con dos propiedades: ```latitud``` y ```longitud```. La clase tiene un ```constructor``` que toma dos argumentos, ```latitud``` y ```longitud```, y los asigna a las propiedades correspondientes de solo lectura de la clase.
 
-- `Ruta.ts`:
+- ```Ruta.ts```:
 
 ```TypeScript
 import { Coordenada } from "./Coordenada";
@@ -125,11 +125,11 @@ export class Ruta extends BasicRuta implements RutaInfo {
 }
 ```
 
-Aquí tenemos la implementación de una clase y una interfaz para representar la ruta y su información asociada. La clase `Ruta` implementa la interfaz `RutaInfo` y extiende la clase `BasicRuta`.
+Aquí tenemos la implementación de una clase y una interfaz para representar la ruta y su información asociada. La clase ```Ruta``` implementa la interfaz ```RutaInfo``` y extiende la clase ```BasicRuta```.
 
-La interfaz `RutaInfo` describe la información que debe tener un objeto de tipo `Ruta`, incluyendo el nombre, el desnivel, la lista de usuarios que han realizado la ruta, la actividad de la ruta y su calificación. Además, la interfaz define un método `addUsuario` para añadir usuarios a la lista de usuarios que han realizado la ruta.
+La interfaz ```RutaInfo``` describe la información que debe tener un objeto de tipo ```Ruta```, incluyendo el nombre, el desnivel, la lista de usuarios que han realizado la ruta, la actividad de la ruta y su calificación. Además, la interfaz define un método `addUsuario` para añadir usuarios a la lista de usuarios que han realizado la ruta.
 
-La clase `Ruta` tiene los mismos atributos y método que la interfaz `RutaInfo`. Además, tiene un `constructor` que toma los mismos parámetros que la interfaz, así como un identificador único para la ruta. La clase también tiene `getters` y `setters` para los atributos de la ruta, como la lista de usuarios que han realizado la ruta y la calificación de la ruta.
+La clase ```Ruta``` tiene los mismos atributos y método que la interfaz ```RutaInfo```. Además, tiene un ```constructor``` que toma los mismos parámetros que la interfaz, así como un identificador único para la ruta. La clase también tiene ```getters``` y ```setters``` para los atributos de la ruta, como la lista de usuarios que han realizado la ruta y la calificación de la ruta.
 
 ### Usuario
 
@@ -157,7 +157,7 @@ Los requisitos que se nos pedían para los usuarios son los siguientes:
 
 Dentro del directorio src/Usuario tenemos:
 
-- `BasicUsuario.ts`:
+- ```BasicUsuario.ts```:
 
 ```TypeScript
 import { TipoActividad } from "../Ruta/Ruta";
@@ -184,69 +184,12 @@ export abstract class BasicUsuario implements BasicUsuarioInfo {
 }
 ```
 
-Se define una interfaz llamada `BasicUsuarioInfo` que describe la información básica de un usuario. La interfaz tiene tres propiedades: `nombre`, `id` y `actividad`. La propiedad actividad es de tipo `TipoActividad`, que se define en el archivo comentado anteriormente llamado `Ruta.ts`.
+Se define una interfaz llamada ```BasicUsuarioInfo``` que describe la información básica de un usuario. La interfaz tiene tres propiedades: ```nombre```, ```id``` y ```actividad```. La propiedad actividad es de tipo ```TipoActividad```, que se define en el archivo comentado anteriormente llamado ```Ruta.ts```.
 
-Luego, se define una clase abstracta llamada `BasicUsuario`, que implementa la interfaz `BasicUsuarioInfo`. La clase tiene tres propiedades: `nombre, `id`y`\_actividad`. La propiedad `\_actividad`está protegida y no es accesible desde fuera de la clase. El`constructor`de la clase acepta los mismos tres parámetros que la interfaz`BasicUsuarioInfo``` que ya habíamos mencionado.
+Luego, se define una clase abstracta llamada ```BasicUsuario```, que implementa la interfaz ```BasicUsuarioInfo```. La clase tiene tres propiedades: ```nombre``, ```id``` y ```_actividad```. La propiedad ```_actividad``` está protegida y no es accesible desde fuera de la clase. El```constructor```de la clase acepta los mismos tres parámetros que la interfaz```BasicUsuarioInfo``` que ya habíamos mencionado.
 
 La clase tiene un método ```getter``` llamado ```actividad``` que devuelve la propiedad ```_actividad```.
 
-- ```Entrenamiento.ts```:
-
-```TypeScript
-
-export class Entrenamiento {
-  constructor(public km: number = 0, public desnivel: number = 0) {}
-};
-```
-
-Aquí una clase llamada ```Entrenamiento``` que representa un entrenamiento de un usuario en una aplicación. La clase tiene dos propiedades públicas llamadas ```km``` y ```desnivel```, que representan los kilómetros recorridos y el desnivel acumulado en el entrenamiento respectivamente. El ```constructor``` de la clase tiene dos parámetros opcionales que inicializan las propiedades ```km``` y ```desnivel``` con un valor predeterminado de 0.
-
-- ```Estadistica.ts```:
-
-```TypeScript
-import { Entrenamiento } from './Entrenamiento';
-
-export class Estadistica {
-  constructor(
-    public dia: Entrenamiento = new Entrenamiento(),
-    public semana: Entrenamiento = new Entrenamiento(),
-    public mes: Entrenamiento = new Entrenamiento()
-  ) {}
-}
-```
-
-Se define la clase llamada ```Estadistica``` que tiene tres propiedades: ```dia```, ```semana``` y ```mes```, todas del tipo ```Entrenamiento```. La clase tiene un ```constructor``` que inicializa las propiedades con valores predeterminados de un objeto ```Entrenamiento``` vacío.
-
-- ```Registro.ts```:
-
-```TypeScript
-
-export interface RegistroInfo {
-  readonly fecha: string;
-  rutas: number[];
-}
-
-export class Registro {
-  private _rutas: number[] = [];
-  constructor(readonly fecha: string, rutas: number[]) {
-    this._rutas = rutas;
-  }
-
-  get rutas(): number[] {
-    return this._rutas;
-  }
-
-  addRuta(id: number): void {
-    if (this._rutas.includes(id)) 
-      return;
-    this._rutas.push(id);
-  }
-}
-```
-
-Se define una interfaz y una clase para representar registros de entrenamiento. La interfaz ```RegistroInfo``` define los atributos de un registro, como su ```fecha``` y las ```rutas``` realizadas durante el entrenamiento. La clase ```Registro``` implementa la interfaz ```RegistroInfo``` y define su ```constructor```, que toma una fecha y una lista de rutas realizadas durante el entrenamiento.
-
-La clase ```Registro``` también tiene un método ```addRuta```, que permite añadir una nueva ruta al registro. La propiedad ```rutas``` de la clase ```Registro``` devuelve la lista de rutas realizadas durante el entrenamiento.
 
 - `Usuario.ts`:
 
@@ -302,7 +245,7 @@ export class Usuario extends BasicUsuario implements UsuarioInfo {
 }
 ```
 
-Es definida una interfaz llamada `UsuarioInfo` que especifica la información que debe contener la clase `Usuario`. La clase `Usuario` extiende otra clase llamada `BasicUsuario` y también implementa la interfaz `UsuarioInfo`. La clase `Usuario` tiene seis propiedades protegidas que representan la información del usuario: `_amigos`, `_grupos`, `_estadisticas`, `_rutasFavoritas`, `_retos` y `_historial`. La clase también tiene seis métodos `getter` que permiten acceder a estas propiedades protegidas.
+Es definida una interfaz llamada ```UsuarioInfo``` que especifica la información que debe contener la clase ```Usuario```. La clase ```Usuario``` extiende otra clase llamada ```BasicUsuario``` y también implementa la interfaz ```UsuarioInfo```. La clase ```Usuario``` tiene seis propiedades protegidas que representan la información del usuario: ```_amigos```, ```_grupos```, ```_estadisticas```, ```_rutasFavoritas```, ```_retos``` y ```_historial```. La clase también tiene seis métodos ```getter``` que permiten acceder a estas propiedades protegidas.
 
 ### Grupos
 
@@ -520,7 +463,9 @@ La interfaz ```RetoInfo``` define las propiedades que deben tener los objetos qu
 
 La clase ```Reto``` implementa la interfaz ```RetoInfo``` y agrega algunas propiedades y métodos adicionales. En su ```constructor```, toma como parámetros el ```nombre``` del reto, el ```tipo``` de actividad y un número variable de ```rutas``` que forman parte del reto. El identificador del reto se genera automáticamente utilizando una clase ```IdGenerator```. La propiedad ```_rutas``` devuelve un array de números que representa las rutas que forman parte del reto. La propiedad ```_usuarios``` devuelve un array de números que representa los usuarios que están realizando el reto. La propiedad ```_km``` devuelve el total de kilómetros del reto.
 
-### Aparte de todo lo anterior también tenemos en el directorio src/ lo siguiente:
+### Otros
+
+En el directorio src/Otros tenemos:
 
 - ```Registro.ts```:
 
@@ -572,9 +517,606 @@ export class IdGenerator {
 
 Se define una clase llamada ```IdGenerator``` que se utiliza para generar IDs únicos para cada una de las instancias de la clase ```_amigos```. La clase contiene un atributo privado ```ids``` que se inicializa a cero en el ```constructor``` y un método público ```generate()``` que devuelve un nuevo ID único cada vez que se llama.
 
+### Gestor
 
-## Conclusión
+Cuyo enunciado nos indicaba lo siguiente:
 
+Por último, deberá crear una clase Gestor que permita gestionar el tratamiento de la información del sistema.
+
+Para el funcionamiento de la clase Gestor, también necesitará hacer uso de Inquirer.js. En concreto, un usuario podrá:
+
+Registrarse en el sistema. Un usuario que se conecte por primera vez al sistema deberá poder incluir su información para ser almacenada en el sistema. Asimismo, un usuario podrá visualizar el listado de usuarios existentes dentro del sistema y añadir/borrar amigos.
+
+Visualizar todas las rutas existentes dentro del sistema. En este apartado se deben poder consultar el listado de rutas así como acceder a la información completa de cada una de ellas.
+
+Unirse a un grupo existente. Este apartado considera la opción de un usuario que desea incluirse dentro de un grupo ya existente en el sistema.
+
+Visualizar, crear y borrar grupos. Un usuario podrá borrar un grupo, pero solo si esta ha sido creado por él, es decir, no se podrá borrar un grupo pre-cargado en el sistema. Por otro lado, los grupos se podrán guardar usando el mismo sistema empleado para guardar la información cargada en el sistema. Por último, considere que en posteriores conexiones al sistema, el usuario podrá desear borrar un grupo que haya creado anteriormente. Debido a esto, se deberá distinguir entre los grupos creados por el usuario y los creados por el sistema con el objetivo de evitar borrar información sin permiso.
+
+#### Código 
+
+Dentro del fichero src/Gestor tenemos:
+
+- ```BasicGestor.ts```:
+
+```TypeScript
+
+```
+
+
+
+- ```Gestor.ts```:
+
+```TypeScript
+
+```
+
+
+
+## Pruebas y cubrimiento
+
+Han sido realiazadas pruebas con mucha y chai con el fin de verificar el correcto funcionamiento de todos y cada uno de los ficheros del proyecto. A continuación se muestras las pruebas realizadas para cada parte:
+
+- ```Estadistica.spec.ts```:
+
+```TypeScript
+import "mocha";
+import { expect } from "chai";
+
+import { EstadisticaUsuario } from "../src/Estadistica/EstadisticaUsuario";
+import { EstadisticaGrupo } from "../src/Estadistica/EstadisticaGrupo";
+
+describe("EstadisticaUsuario class tests", () => {
+  it("EstadisticaUsuario debería tener estadísticas diarias, semanales, mensuales y anuales", () => {
+    const estadistica = new EstadisticaUsuario();
+    expect(estadistica.dia.km).to.equal(0);
+    expect(estadistica.dia.desnivel).to.equal(0);
+    expect(estadistica.semana.km).to.equal(0);
+    expect(estadistica.semana.desnivel).to.equal(0);
+    expect(estadistica.mes.km).to.equal(0);
+    expect(estadistica.mes.desnivel).to.equal(0);
+  });
+});
+
+describe("EstadisticaGrupo class tests", () => {
+  it("EstadisticaGrupo debería tener estadísticas diarias, semanales, mensuales y anuales", () => {
+    const estadistica = new EstadisticaGrupo();
+    expect(estadistica.semana.km).to.equal(0);
+    expect(estadistica.semana.desnivel).to.equal(0);
+    expect(estadistica.mes.km).to.equal(0);
+    expect(estadistica.mes.desnivel).to.equal(0);
+    expect(estadistica.año.km).to.equal(0);
+    expect(estadistica.año.desnivel).to.equal(0);
+  });
+});
+```
+
+- ```Gestor.spec.ts```:
+
+```TypeScript
+import "mocha";
+import { expect } from "chai";
+
+import { Coordenada } from "../src/Ruta/Coordenada";
+import { Ruta } from "../src/Ruta/Ruta";
+import { Usuario } from "../src/Usuario/Usuario";
+import { Grupo } from "../src/Grupo/Grupo";
+import { Reto } from "../src/Reto/Reto";
+
+import { Gestor } from "../src/Gestor/Gestor";
+
+
+const usuario = new Usuario("Pepe", "Ciclismo");
+const gestor = Gestor.getInstance();
+
+describe("Gestor class tests", () => {
+  it("Gestor debería ser una clase singleton", () => {
+    expect(Gestor.getInstance()).to.be.equal(gestor);
+  });
+  it("Gestor debería tener una colección de rutas", () => {
+    expect(gestor.rutas).to.be.an("array");
+    expect(gestor.rutas).to.be.empty;
+  });
+  it("Gestor debería ser capaz de añadir rutas", () => {
+    const ruta = new Ruta(
+      "Ruta de prueba",
+      new Coordenada(0, 0),
+      new Coordenada(1, 1),
+      1,
+      1,
+      "Ciclismo"
+    );
+    gestor.addRuta(ruta);
+    expect(gestor.rutas).to.have.lengthOf(1);
+    expect(gestor.rutas[0].nombre).to.be.equal("Ruta de prueba");
+  });
+  it("Gestor debería ser capaz de eliminar rutas", () => {
+    gestor.removeRuta(gestor.rutas[0].id);
+    expect(gestor.rutas).to.be.empty;
+  });
+  it("Gestor debería tener una colección de usuarios", () => {
+    expect(gestor.usuarios).to.be.an("array");
+    expect(gestor.usuarios).to.be.empty;
+  });
+  it("Gestor debería ser capaz de añadir usuarios", () => {
+    gestor.addUsuario(usuario);
+    expect(gestor.usuarios).to.have.lengthOf(1);
+    expect(gestor.usuarios[0].nombre).to.be.equal("Pepe");
+  });
+  it("Gestor debería ser capaz de eliminar usuarios", () => {
+    gestor.removeUsuario(usuario.id);
+    expect(gestor.usuarios).to.be.empty;
+  });
+  it("Gestor debería tener una colección de grupos", () => {
+    expect(gestor.grupos).to.be.an("array");
+    expect(gestor.grupos).to.be.empty;
+  });
+  it("Gestor debería ser capaz de añadir grupos", () => {
+    const grupo = new Grupo("Ciclismo");
+    gestor.addGrupo(grupo);
+    expect(gestor.grupos).to.have.lengthOf(1);
+    expect(gestor.grupos[0].nombre).to.be.equal("Ciclismo");
+  });
+  it("Gestor debería ser capaz de eliminar grupos", () => {
+    gestor.removeGrupo(gestor.grupos[0].id);
+    expect(gestor.grupos).to.be.empty;
+  });
+  it("Gestor debería ser capaz de añadir usuarios a grupos", () => {
+    const grupo = new Grupo("Ciclismo");
+    gestor.addGrupo(grupo);
+    gestor.addUsuario(usuario);
+    gestor.grupos[0].addParticipante(usuario.id);
+    expect(gestor.grupos[0].participantes).to.have.lengthOf(1);
+    expect(gestor.grupos[0].participantes).to.include(usuario.id);
+  });
+  it("Gestor debería ser capaz de eliminar usuarios de grupos", () => {
+    gestor.grupos[0].removeParticipante(usuario.id);
+    expect(gestor.grupos[0].participantes).to.be.empty;
+  });
+  it("Gestor debería tener una colección de retos", () => {
+    expect(gestor.retos).to.be.an("array");
+    expect(gestor.retos).to.be.empty;
+  });
+  it("Gestor debería ser capaz de añadir retos", () => {
+    const reto = new Reto(
+      "Ruta de prueba",
+      "Ciclismo",
+      1);
+    gestor.addReto(reto);
+    expect(gestor.retos).to.have.lengthOf(1);
+    expect(gestor.retos[0].rutas).to.include(1);
+  });
+  it("Gestor debería ser capaz de eliminar retos", () => {
+    gestor.removeReto(gestor.retos[0].id);
+    expect(gestor.retos).to.be.empty;
+  });
+  it("Gestor debería tener un método para ejecutar un menú", () => {
+    expect(gestor.promptUser).to.be.a("function");
+  });
+});
+```
+
+- ```Grupo.spec.ts```:
+
+```TypeScript
+import "mocha";
+import { expect } from "chai";
+import { Grupo } from "../src/Grupo/Grupo";
+
+const grupo = new Grupo("Ciclismo");
+
+describe("Grupo class tests", () => {
+  it("Grupo debería tener un identificador", () => {
+    expect(grupo.id).to.be.a("number");
+    expect(grupo.id).to.equal(0);
+  });
+  it("Grupo debería tener un nombre", () => {
+    expect(grupo.nombre).to.be.a("string");
+    expect(grupo.nombre).to.equal("Ciclismo");
+  });
+  it("Grupo debería tener una lista de participantes", () => {
+    expect(grupo.participantes).to.be.a("array");
+    expect(grupo.participantes).to.be.empty;
+  });
+  it("Grupo debería poder modificar su lista de participantes", () => {
+    grupo.addParticipante(1);
+    grupo.addParticipante(2);
+    grupo.addParticipante(3);
+    expect(grupo.participantes).to.be.a("array");
+    expect(grupo.participantes).to.have.lengthOf(3);
+    expect(grupo.participantes).to.deep.equal([1, 2, 3]);
+    grupo.removeParticipante(2);
+    expect(grupo.participantes).to.be.a("array");
+    expect(grupo.participantes).to.have.lengthOf(2);
+    expect(grupo.participantes).to.deep.equal([1, 3]);
+  });
+  it("Grupo debería tener estadísticas semanales, mensuales y anuales", () => {
+    expect(grupo.estadisticas).to.be.a("object");
+    expect(grupo.estadisticas).to.have.property("semana");
+  });
+  it("Grupo debe tener un ranking de sus integrantes", () => {
+    expect(grupo.ranking).to.be.a("array");
+    expect(grupo.ranking).to.be.empty;
+  });
+  it("Grupo debería poder modificar su ranking", () => {
+    grupo.ranking = [1, 2, 3];
+    expect(grupo.ranking).to.be.a("array");
+    expect(grupo.ranking).to.deep.equal([1, 2, 3]);
+  });
+  it("Grupo debe tener una lista de rutas favoritas", () => {
+    expect(grupo.rutasFavoritas).to.be.a("array");
+    expect(grupo.rutasFavoritas).to.be.empty;
+  });
+  it("Grupo debe poder modificar su lista de rutas favoritas", () => {
+    grupo.addRutaFavorita(1);
+    grupo.addRutaFavorita(2);
+    grupo.addRutaFavorita(3);
+    expect(grupo.rutasFavoritas).to.be.a("array");
+    expect(grupo.rutasFavoritas).to.have.lengthOf(3);
+    expect(grupo.rutasFavoritas).to.deep.equal([1, 2, 3]);
+    grupo.removeRutaFavorita(2);
+    expect(grupo.rutasFavoritas).to.be.a("array");
+    expect(grupo.rutasFavoritas).to.have.lengthOf(2);
+    expect(grupo.rutasFavoritas).to.deep.equal([1, 3]);
+  });
+  it("Grupo debe tener un historial de entrenamientos", () => {
+    expect(grupo.historial).to.be.a("array");
+    expect(grupo.historial).to.be.empty;
+  });
+});
+```
+
+- ```Reto.spec.ts```:
+
+```TypeScript
+import "mocha";
+import { expect } from "chai";
+
+import { Reto } from "../src/Reto/Reto";
+
+const reto = new Reto("Reto 1", "Ciclismo");
+
+describe("Reto class tests", () => {
+  it("Reto debería tener un identificador", () => {
+    expect(reto.id).to.be.a("number");
+    expect(reto.id).to.equal(0);
+  });
+  it("Reto debería tener un nombre", () => {
+    expect(reto.nombre).to.be.a("string");
+    expect(reto.nombre).to.equal("Reto 1");
+  });
+  it("Reto debería tener una lista de rutas", () => {
+    expect(reto.rutas).to.be.a("array");
+    expect(reto.rutas).to.be.empty;
+  });
+  it("Reto debería poder modificar su lista de rutas", () => {
+    reto.addRuta(1);
+    expect(reto.rutas).to.be.a("array");
+    expect(reto.rutas).to.have.lengthOf(1);
+    expect(reto.rutas).to.deep.equal([1]);
+    reto.removeRuta(1);
+    expect(reto.rutas).to.be.a("array");
+    expect(reto.rutas).to.be.empty;
+  });
+  it("Reto debería tener un tipo de actividad", () => {
+    expect(reto.tipo).to.be.a("string");
+    expect(reto.tipo).to.equal("Ciclismo");
+  });
+  it("Reto debería tener una lista de usuarios", () => {
+    expect(reto.usuarios).to.be.a("array");
+    expect(reto.usuarios).to.be.empty;
+  });
+  it("Reto debería poder modificar su lista de usuarios", () => {
+    reto.addUsuario(1);
+    expect(reto.usuarios).to.be.a("array");
+    expect(reto.usuarios).to.have.lengthOf(1);
+    expect(reto.usuarios).to.deep.equal([1]);
+    reto.removeUsuario(1);
+    expect(reto.usuarios).to.be.a("array");
+    expect(reto.usuarios).to.be.empty;
+  });
+  it("Reto debería tener una cantidad de kilómetros a realizar", () => {
+    expect(reto.km).to.be.a("number");
+    expect(reto.km).to.equal(0);
+    reto.km = 100;
+    expect(reto.km).to.be.a("number");
+    expect(reto.km).to.equal(100);
+  });
+});
+```
+
+- ```Ruta.spec.ts```:
+
+```TypeScript
+import "mocha";
+import { expect } from "chai";
+
+import { Coordenada } from "../src/Ruta/Coordenada";
+import { Ruta } from "../src/Ruta/Ruta";
+
+const ruta = new Ruta(
+  "Ruta de prueba",
+  new Coordenada(0, 0),
+  new Coordenada(1, 1),
+  1,
+  1,
+  "Ciclismo"
+);
+
+describe("Coordenada class tests", () => {
+  it("Coordenada debería tener una latitud", () => {
+    const coordenada = new Coordenada();
+    expect(coordenada.latitud).to.be.a("number");
+    expect(coordenada.latitud).to.equal(0);
+  });
+  it("Coordenada debería tener una longitud", () => {
+    const coordenada = new Coordenada();
+    expect(coordenada.longitud).to.be.a("number");
+    expect(coordenada.longitud).to.equal(0);
+  });
+});
+
+describe("Ruta class tests", () => {
+  it("Ruta debería tener un nombre", () => {
+    expect(ruta.nombre).to.be.a("string");
+    expect(ruta.nombre).to.equal("Ruta de prueba");
+  });
+  it("Ruta debería tener un identificador", () => {
+    expect(ruta.id).to.be.a("number");
+    expect(ruta.id).to.equal(0);
+  });
+  it("Ruta debería tener una coordenada de inicio", () => {
+    expect(ruta.inicio).to.be.an.instanceOf(Coordenada);
+    expect(ruta.inicio.latitud).to.equal(0);
+    expect(ruta.inicio.longitud).to.equal(0);
+  });
+  it("Ruta debería tener una coordenada de fin", () => {
+    expect(ruta.fin).to.be.an.instanceOf(Coordenada);
+    expect(ruta.fin.latitud).to.equal(1);
+    expect(ruta.fin.longitud).to.equal(1);
+  });
+  it("Ruta debería tener una longitud", () => {
+    expect(ruta.longitud).to.be.a("number");
+    expect(ruta.longitud).to.equal(1);
+  });
+  it("Ruta debería tener un desnivel", () => {
+    expect(ruta.desnivel).to.be.a("number");
+    expect(ruta.desnivel).to.equal(1);
+  });
+  it("Ruta debería tener un actividad de actividad", () => {
+    expect(ruta.actividad).to.be.a("string");
+    expect(ruta.actividad).to.equal("Ciclismo");
+  });
+  it("Ruta debería tener una lista de usuarios", () => {
+    expect(ruta.usuarios).to.be.a("array");
+    expect(ruta.usuarios).to.deep.equal([]);
+  });
+  it("Ruta debería poder modificar su lista de usuarios", () => {
+    ruta.addUsuario(1);
+    expect(ruta.usuarios).to.deep.equal([1]);
+    ruta.removeUsuario(1);
+    expect(ruta.usuarios).to.deep.equal([]);
+  });
+  it("Ruta debería tener una calificación", () => {
+    expect(ruta.calificacion).to.be.a("number");
+    expect(ruta.calificacion).to.equal(0);
+  });
+  it("Ruta debería poder modificar su calificación", () => {
+    ruta.calificacion = 5;
+    expect(ruta.calificacion).to.equal(5);
+  });
+});
+```
+
+- ```Usuario.spec.ts```:
+
+```TypeScript
+import "mocha";
+import { expect } from "chai";
+
+import { Usuario } from "../src/Usuario/Usuario";
+import { EstadisticaUsuario } from "../src/Estadistica/EstadisticaUsuario";
+
+const usuario = new Usuario("Iluzio", "Ciclismo");
+
+describe("Usuario class tests", () => {
+  it("Usuario debería tener un nombre", () => {
+    expect(usuario.nombre).to.be.a("string");
+    expect(usuario.nombre).to.equal("Iluzio");
+  });
+  it("Usuario debería tener un identificador", () => {
+    expect(usuario.id).to.be.a("number");
+  });
+  it("Usuario debería tener una activad rutinaria", () => {
+    expect(usuario.actividad).to.be.a("string");
+    expect(usuario.actividad).to.equal("Ciclismo");
+    usuario.actividad = "Running";
+    expect(usuario.actividad).to.equal("Running");
+  });
+  it("Usuario debería tener una lista de amigos", () => {
+    expect(usuario.amigos).to.be.a("array");
+    expect(usuario.amigos).to.be.empty;
+  });
+  it("Usuario debería poder modificar su lista de amigos", () => {
+    usuario.addAmigo(1);
+    expect(usuario.amigos).to.deep.equal([1]);
+    usuario.removeAmigo(1);
+    expect(usuario.amigos).to.be.empty;
+  });
+  it("Usuario debería tener una lista de grupos de amigos", () => {
+    expect(usuario.grupos).to.be.a("array");
+    expect(usuario.grupos).to.be.empty;
+  });
+  it("Usuario debería poder modificar su lista de grupos de amigos", () => {
+    usuario.addGrupo(1);
+    expect(usuario.grupos).to.deep.equal([1]);
+    usuario.removeGrupo(1);
+    expect(usuario.grupos).to.be.empty;
+  });
+  it("Usuario debería tener unas estadísticas", () => {
+    expect(usuario.estadisticas).to.be.an.instanceOf(EstadisticaUsuario);
+    expect(usuario.estadisticas.dia.km).to.equal(0);
+    expect(usuario.estadisticas.dia.desnivel).to.equal(0);
+    expect(usuario.estadisticas.semana.km).to.equal(0);
+    expect(usuario.estadisticas.semana.desnivel).to.equal(0);
+    expect(usuario.estadisticas.mes.km).to.equal(0);
+    expect(usuario.estadisticas.mes.desnivel).to.equal(0);
+  });
+  it("Usuario debería poder modificar sus estadísticas", () => {
+    usuario.estadisticas.dia.km = 10;
+    usuario.estadisticas.dia.desnivel = 100;
+    usuario.estadisticas.semana.km = 100;
+    usuario.estadisticas.semana.desnivel = 1000;
+    usuario.estadisticas.mes.km = 1000;
+    usuario.estadisticas.mes.desnivel = 10000;
+    expect(usuario.estadisticas.dia.km).to.equal(10);
+    expect(usuario.estadisticas.dia.desnivel).to.equal(100);
+    expect(usuario.estadisticas.semana.km).to.equal(100);
+    expect(usuario.estadisticas.semana.desnivel).to.equal(1000);
+    expect(usuario.estadisticas.mes.km).to.equal(1000);
+    expect(usuario.estadisticas.mes.desnivel).to.equal(10000);
+  });
+  it("Usuario debería tener una lista de rutas favoritas", () => {
+    expect(usuario.rutasFavoritas).to.be.a("array");
+    expect(usuario.rutasFavoritas).to.be.empty;
+  });
+  it("Usuario debería poder modificar su lista de rutas favoritas", () => {
+    usuario.addRutaFavorita(1);
+    expect(usuario.rutasFavoritas).to.deep.equal([1]);
+    usuario.removeRutaFavorita(1);
+    expect(usuario.rutasFavoritas).to.be.empty;
+  });
+  it("Usuario debería tener una lista de retos activos", () => {
+    expect(usuario.retos).to.be.a("array");
+    expect(usuario.retos).to.be.empty;
+  });
+  it("Usuario debería poder modificar su lista de retos activos", () => {
+    usuario.addReto(1);
+    expect(usuario.retos).to.deep.equal([1]);
+    usuario.removeReto(1);
+    expect(usuario.retos).to.be.empty;
+  });
+  it("Usuario debería tener un registro de sus rutas", () => {
+    expect(usuario.historial).to.be.a("array");
+    expect(usuario.historial).to.be.empty;
+  });
+});
+```
+Y como podemos ver a continuación todas las pruebas fueron superadas con éxito:
+```bash
+  EstadisticaUsuario class tests
+    ✔ EstadisticaUsuario debería tener estadísticas diarias, semanales, mensuales y anuales
+
+  EstadisticaGrupo class tests
+    ✔ EstadisticaGrupo debería tener estadísticas diarias, semanales, mensuales y anuales
+
+  Gestor class tests
+    ✔ Gestor debería ser una clase singleton
+    ✔ Gestor debería tener una colección de rutas
+    ✔ Gestor debería ser capaz de añadir rutas
+    ✔ Gestor debería ser capaz de eliminar rutas
+    ✔ Gestor debería tener una colección de usuarios
+    ✔ Gestor debería ser capaz de añadir usuarios
+    ✔ Gestor debería ser capaz de eliminar usuarios
+    ✔ Gestor debería tener una colección de grupos
+    ✔ Gestor debería ser capaz de añadir grupos
+    ✔ Gestor debería ser capaz de eliminar grupos
+    ✔ Gestor debería ser capaz de añadir usuarios a grupos
+    ✔ Gestor debería ser capaz de eliminar usuarios de grupos
+    ✔ Gestor debería tener una colección de retos
+    ✔ Gestor debería ser capaz de añadir retos
+    ✔ Gestor debería ser capaz de eliminar retos
+    ✔ Gestor debería tener un método para ejecutar un menú
+
+  Grupo class tests
+    ✔ Grupo debería tener un identificador
+    ✔ Grupo debería tener un nombre
+    ✔ Grupo debería tener una lista de participantes
+    ✔ Grupo debería poder modificar su lista de participantes
+    ✔ Grupo debería tener estadísticas semanales, mensuales y anuales
+    ✔ Grupo debe tener un ranking de sus integrantes
+    ✔ Grupo debería poder modificar su ranking
+    ✔ Grupo debe tener una lista de rutas favoritas
+    ✔ Grupo debe poder modificar su lista de rutas favoritas
+    ✔ Grupo debe tener un historial de entrenamientos
+
+  Reto class tests
+    ✔ Reto debería tener un identificador
+    ✔ Reto debería tener un nombre
+    ✔ Reto debería tener una lista de rutas
+    ✔ Reto debería poder modificar su lista de rutas
+    ✔ Reto debería tener un tipo de actividad
+    ✔ Reto debería tener una lista de usuarios
+    ✔ Reto debería poder modificar su lista de usuarios
+    ✔ Reto debería tener una cantidad de kilómetros a realizar
+
+  Coordenada class tests
+    ✔ Coordenada debería tener una latitud
+    ✔ Coordenada debería tener una longitud
+
+  Ruta class tests
+    ✔ Ruta debería tener un nombre
+    ✔ Ruta debería tener un identificador
+    ✔ Ruta debería tener una coordenada de inicio
+    ✔ Ruta debería tener una coordenada de fin
+    ✔ Ruta debería tener una longitud
+    ✔ Ruta debería tener un desnivel
+    ✔ Ruta debería tener un actividad de actividad
+    ✔ Ruta debería tener una lista de usuarios
+    ✔ Ruta debería poder modificar su lista de usuarios
+    ✔ Ruta debería tener una calificación
+    ✔ Ruta debería poder modificar su calificación
+
+  Usuario class tests
+    ✔ Usuario debería tener un nombre
+    ✔ Usuario debería tener un identificador
+    ✔ Usuario debería tener una activad rutinaria
+    ✔ Usuario debería tener una lista de amigos
+    ✔ Usuario debería poder modificar su lista de amigos
+    ✔ Usuario debería tener una lista de grupos de amigos
+    ✔ Usuario debería poder modificar su lista de grupos de amigos
+    ✔ Usuario debería tener unas estadísticas
+    ✔ Usuario debería poder modificar sus estadísticas
+    ✔ Usuario debería tener una lista de rutas favoritas
+    ✔ Usuario debería poder modificar su lista de rutas favoritas
+    ✔ Usuario debería tener una lista de retos activos
+    ✔ Usuario debería poder modificar su lista de retos activos
+    ✔ Usuario debería tener un registro de sus rutas
+
+  63 passing (36ms)
+```
+
+También podemos comprobar el cubrimiento de código con Istanbul y Coveralls:
+
+```bash
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+------------------------|---------|----------|---------|---------|-------------------
+All files               |   96.19 |    91.66 |    97.4 |   96.59 | 
+ Estadistica            |     100 |      100 |     100 |     100 | 
+  Entrenamiento.ts      |     100 |      100 |     100 |     100 | 
+  EstadisticaGrupo.ts   |     100 |      100 |     100 |     100 | 
+  EstadisticaUsuario.ts |     100 |      100 |     100 |     100 | 
+ Gestor                 |   90.27 |    85.71 |    92.3 |    90.9 | 
+  BasicGestor.ts        |     100 |      100 |     100 |     100 | 
+  Gestor.ts             |   86.27 |    85.71 |   77.77 |   87.75 | 227-235
+ Grupo                  |     100 |      100 |     100 |     100 | 
+  Grupo.ts              |     100 |      100 |     100 |     100 | 
+ Otros                  |     100 |      100 |     100 |     100 | 
+  IdGenerator.ts        |     100 |      100 |     100 |     100 | 
+ Reto                   |     100 |      100 |     100 |     100 | 
+  Reto.ts               |     100 |      100 |     100 |     100 | 
+ Ruta                   |     100 |      100 |     100 |     100 | 
+  BasicRuta.ts          |     100 |      100 |     100 |     100 | 
+  Coordenada.ts         |     100 |      100 |     100 |     100 |
+------------------------|---------|----------|---------|---------|-------------------
+```
+
+## Conclusión 
+
+Ha sido una práctica con cierto nivel de complejidad pero que nos a ayudado no a saber trabajar en equipo por separado si no a usar herramientas como LiveShare en VSC que ha sido de gran ayuda. Cabe destacar que en esta práctica hemos alcanzado nuestro objetivo que era acabar con algo funcional, gracias al uso de todos los conocimientos adquiridos en la asignatura hasta esta semana. Incluso utilizamos patrones como ```Singleton``` por ejemplo. También tuvimos en cuenta y respetamos los principios Solid.
+
+Por último, hay que mencionar la gran utilidad de Istanbul, Coveralls y Sonar, que te ayudan ha realizar un seguimiento y cubrimiento del código ejemplar junto a una buena caliad de código.
 ## Elementos Bibliográficos:
 
 - Guión de la práctica 7, https://ull-esit-inf-dsi-2223.github.io/prct07-destravate-dataModel/.

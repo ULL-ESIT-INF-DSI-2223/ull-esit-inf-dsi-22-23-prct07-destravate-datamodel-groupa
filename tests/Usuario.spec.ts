@@ -13,7 +13,6 @@ describe("Usuario class tests", () => {
   });
   it("Usuario debería tener un identificador", () => {
     expect(usuario.id).to.be.a("number");
-    expect(usuario.id).to.equal(0);
   });
   it("Usuario debería tener una activad rutinaria", () => {
     expect(usuario.actividad).to.be.a("string");
